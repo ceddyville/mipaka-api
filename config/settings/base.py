@@ -20,6 +20,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "django_filters",
     "corsheaders",
+    "drf_spectacular",
 ]
 
 LOCAL_APPS = [
@@ -96,6 +97,21 @@ REST_FRAMEWORK = {
     },
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
+    ],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+# ── OPENAPI (drf-spectacular) ─────────────────────────────
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Mipaka API",
+    "DESCRIPTION": "Administrative divisions across East & Central Africa — counties, regions, districts, wards, villages — through a single consistent interface.",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "TAGS": [
+        {"name": "Countries", "description": "Country metadata and division level labels"},
+        {"name": "Divisions", "description": "Administrative divisions — filterable by country, level, parent, and name"},
+        {"name": "Historical Names", "description": "Period-based historical naming across eras"},
+        {"name": "Eras", "description": "Historical eras (precolonial, colonial, post-independence)"},
     ],
 }
 

@@ -10,3 +10,4 @@ python-decouple>=3.8
 whitenoise>=6.6
 gunicorn>=21.2
 dj-database-url>=2.1
+drf-spectacular>=0.27
