@@ -1,3 +1,4 @@
+import redis as _redis
 from .base import *
 
 DEBUG = True
@@ -11,9 +12,9 @@ REST_FRAMEWORK["DEFAULT_THROTTLE_RATES"] = {"anon": "10000/day"}
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Fall back to local-memory cache if Redis isn't running
-import redis as _redis
 try:
-    _r = _redis.from_url(config("REDIS_URL", default="redis://localhost:6379/0"))
+    _r = _redis.from_url(
+        config("REDIS_URL", default="redis://localhost:6379/0"))
     _r.ping()
 except Exception:
     CACHES = {
