@@ -11,7 +11,7 @@
 
 **Every border. One API.**
 
-*Mipaka* — Swahili for *boundaries*
+_Mipaka_ — Swahili for _boundaries_
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-c8622a.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11+-e8b86d.svg)](https://python.org)
@@ -29,19 +29,19 @@ Mipaka is a free, open source REST API providing normalized access to administra
 
 Every country has different hierarchy names and depths. Mipaka normalizes them all:
 
-| Country | L1 | L2 | L3 | L4 | L5 | L6 |
-|---------|----|----|----|----|----|----|
-| 🇰🇪 Kenya | County | Constituency | Ward | — | — | — |
-| 🇹🇿 Tanzania | Region | District | Ward | — | — | — |
-| 🇺🇬 Uganda | Region | District | County | Sub-county | Parish | Village |
-| 🇷🇼 Rwanda | Province | District | Sector | Cell | Village | — |
-| 🇧🇮 Burundi | Province | Commune | Colline | — | — | — |
-| 🇨🇩 DRC | Province | Territory | — | — | — | — |
-| 🇸🇸 South Sudan | State | County | Payam | — | — | — |
+| Country        | L1       | L2           | L3      | L4         | L5      | L6      |
+| -------------- | -------- | ------------ | ------- | ---------- | ------- | ------- |
+| 🇰🇪 Kenya       | County   | Constituency | Ward    | —          | —       | —       |
+| 🇹🇿 Tanzania    | Region   | District     | Ward    | —          | —       | —       |
+| 🇺🇬 Uganda      | Region   | District     | County  | Sub-county | Parish  | Village |
+| 🇷🇼 Rwanda      | Province | District     | Sector  | Cell       | Village | —       |
+| 🇧🇮 Burundi     | Province | Commune      | Colline | —          | —       | —       |
+| 🇨🇩 DRC         | Province | Territory    | —       | —          | —       | —       |
+| 🇸🇸 South Sudan | State    | County       | Payam   | —          | —       | —       |
 
 ### Beyond Boundaries — Historical Names
 
-Mipaka also carries **period-based historical naming** — every division can hold multiple names across eras. Built for genealogy research, where a birth certificate from 1923 saying *"Léopoldville"* needs to resolve to modern *"Kinshasa"* with full historical context.
+Mipaka also carries **period-based historical naming** — every division can hold multiple names across eras. Built for genealogy research, where a birth certificate from 1923 saying _"Léopoldville"_ needs to resolve to modern _"Kinshasa"_ with full historical context.
 
 ```bash
 # What was Kinshasa called in 1923?
@@ -90,19 +90,19 @@ Base URL: `http://localhost:8000/api/v1/`
 
 ### Core Endpoints
 
-| Endpoint | Description |
-|----------|-------------|
-| `GET /countries/` | All countries with division level labels |
-| `GET /countries/{code}/` | Country detail |
-| `GET /countries/{code}/top/` | Level-1 divisions (counties, regions…) |
-| `GET /countries/{code}/eras/` | Historical eras for a country |
-| `GET /divisions/` | List divisions — filterable |
-| `GET /divisions/{id}/` | Detail with ancestors + children |
-| `GET /divisions/{id}/children/` | Direct children |
-| `GET /divisions/{id}/names/` | All historical names |
-| `GET /eras/` | All historical eras |
-| `GET /names/` | Search historical place names |
-| `GET /health/` | Health check |
+| Endpoint                        | Description                              |
+| ------------------------------- | ---------------------------------------- |
+| `GET /countries/`               | All countries with division level labels |
+| `GET /countries/{code}/`        | Country detail                           |
+| `GET /countries/{code}/top/`    | Level-1 divisions (counties, regions…)   |
+| `GET /countries/{code}/eras/`   | Historical eras for a country            |
+| `GET /divisions/`               | List divisions — filterable              |
+| `GET /divisions/{id}/`          | Detail with ancestors + children         |
+| `GET /divisions/{id}/children/` | Direct children                          |
+| `GET /divisions/{id}/names/`    | All historical names                     |
+| `GET /eras/`                    | All historical eras                      |
+| `GET /names/`                   | Search historical place names            |
+| `GET /health/`                  | Health check                             |
 
 ### Filter Parameters
 
@@ -174,15 +174,15 @@ GET /api/v1/divisions/42/names/
 
 <a name="coverage"></a>
 
-| Country | Status | Levels Available | Records |
-|---------|--------|-----------------|---------|
-| 🇰🇪 Kenya | ✅ Complete | County → Ward | 1,787 |
-| 🇹🇿 Tanzania | ⚠️ Partial | Region → District | 207 |
-| 🇺🇬 Uganda | ✅ Complete | Region → Village | ~84,000 |
-| 🇷🇼 Rwanda | ✅ Complete | Province → Village | 17,441 |
-| 🇧🇮 Burundi | ⚠️ Partial | Province → Colline | ~496 |
-| 🇨🇩 DRC | ⚠️ Partial | Provinces + Territories | 174 |
-| 🇸🇸 South Sudan | ⚠️ Partial | States + Counties | 82 |
+| Country        | Status      | Levels Available        | Records |
+| -------------- | ----------- | ----------------------- | ------- |
+| 🇰🇪 Kenya       | ✅ Complete | County → Ward           | 1,787   |
+| 🇹🇿 Tanzania    | ⚠️ Partial  | Region → District       | 207     |
+| 🇺🇬 Uganda      | ✅ Complete | Region → Village        | ~84,000 |
+| 🇷🇼 Rwanda      | ✅ Complete | Province → Village      | 17,441  |
+| 🇧🇮 Burundi     | ⚠️ Partial  | Province → Colline      | ~496    |
+| 🇨🇩 DRC         | ⚠️ Partial  | Provinces + Territories | 174     |
+| 🇸🇸 South Sudan | ⚠️ Partial  | States + Counties       | 82      |
 
 > **Kenya historical divisions:** 8 provinces, 41 districts (1963), and 48 districts (1992) are also included for historical research.
 
@@ -194,16 +194,16 @@ GET /api/v1/divisions/42/names/
 
 ## Data Sources
 
-| Country | Source | License |
-|---------|--------|---------|
-| Kenya | [kenyaareadata.vercel.app](https://kenyaareadata.vercel.app) | Public |
-| Tanzania | [Kijacode/Tanzania_Geo_Data](https://github.com/Kijacode/Tanzania_Geo_Data) | Open |
-| Uganda | [kusaasira/uganda-geo-data](https://github.com/kusaasira/uganda-geo-data) | MIT |
-| Rwanda | [jnkindi/rwanda-locations-json](https://github.com/jnkindi/rwanda-locations-json) | Open |
-| Burundi | Wikipedia + OCHA HDX | CC-BY |
-| DRC | Wikipedia + OCHA COD-AB | Public |
-| South Sudan | OCHA COD-AB | Public |
-| Historical names | Wikipedia + Encyclopaedia Britannica | CC-BY |
+| Country          | Source                                                                            | License |
+| ---------------- | --------------------------------------------------------------------------------- | ------- |
+| Kenya            | [kenyaareadata.vercel.app](https://kenyaareadata.vercel.app)                      | Public  |
+| Tanzania         | [Kijacode/Tanzania_Geo_Data](https://github.com/Kijacode/Tanzania_Geo_Data)       | Open    |
+| Uganda           | [kusaasira/uganda-geo-data](https://github.com/kusaasira/uganda-geo-data)         | MIT     |
+| Rwanda           | [jnkindi/rwanda-locations-json](https://github.com/jnkindi/rwanda-locations-json) | Open    |
+| Burundi          | Wikipedia + OCHA HDX                                                              | CC-BY   |
+| DRC              | Wikipedia + OCHA COD-AB                                                           | Public  |
+| South Sudan      | OCHA COD-AB                                                                       | Public  |
+| Historical names | Wikipedia + Encyclopaedia Britannica                                              | CC-BY   |
 
 ---
 
@@ -262,7 +262,7 @@ MIT — see [LICENSE](LICENSE)
 
 Built with ❤️ for the African developer community
 
-*"Mipaka ni zaidi ya mistari kwenye ramani."*
-*Boundaries are more than lines on a map.*
+_"Mipaka ni zaidi ya mistari kwenye ramani."_
+_Boundaries are more than lines on a map._
 
 </div>
