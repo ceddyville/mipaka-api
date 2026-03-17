@@ -1,0 +1,312 @@
+[
+  {
+    "id": "TZ-R-001",
+    "native_id": "1",
+    "name": "Arusha",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-002",
+    "native_id": "2",
+    "name": "Dar Es Salaam",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-003",
+    "native_id": "3",
+    "name": "Dodoma",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-004",
+    "native_id": "4",
+    "name": "Geita",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-005",
+    "native_id": "5",
+    "name": "Iringa",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-006",
+    "native_id": "6",
+    "name": "Kagera",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-007",
+    "native_id": "7",
+    "name": "Katavi",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-008",
+    "native_id": "8",
+    "name": "Kigoma",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-009",
+    "native_id": "9",
+    "name": "Kilimanjaro",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-010",
+    "native_id": "10",
+    "name": "Lindi",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-011",
+    "native_id": "11",
+    "name": "Manyara",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-012",
+    "native_id": "12",
+    "name": "Mara",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-013",
+    "native_id": "13",
+    "name": "Mbeya",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-014",
+    "native_id": "14",
+    "name": "Morogoro",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-015",
+    "native_id": "15",
+    "name": "Mtwara",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-016",
+    "native_id": "16",
+    "name": "Mwanza",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-017",
+    "native_id": "17",
+    "name": "Njombe",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-018",
+    "native_id": "18",
+    "name": "Pemba Kaskazini",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-019",
+    "native_id": "19",
+    "name": "Pemba Kusini",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-020",
+    "native_id": "20",
+    "name": "Pwani",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-021",
+    "native_id": "21",
+    "name": "Rukwa",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-022",
+    "native_id": "22",
+    "name": "Ruvuma",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-023",
+    "native_id": "23",
+    "name": "Shinyanga",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-024",
+    "native_id": "24",
+    "name": "Simiyu",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-025",
+    "native_id": "25",
+    "name": "Singida",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-026",
+    "native_id": "26",
+    "name": "Songwe",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-027",
+    "native_id": "27",
+    "name": "Tabora",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-028",
+    "native_id": "28",
+    "name": "Tanga",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-029",
+    "native_id": "29",
+    "name": "Unguja Kaskazini",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-030",
+    "native_id": "30",
+    "name": "Unguja Mjini Magharibi",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-R-031",
+    "native_id": "31",
+    "name": "Unguja Kusini",
+    "level": 1,
+    "level_name": "Region",
+    "country": "TZ",
+    "source": "Kijacode/Tanzania_Geo_Data",
+    "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  }
+]

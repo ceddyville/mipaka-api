@@ -1,0 +1,472 @@
+[
+  {
+    "id": "KE-CO-001",
+    "native_id": "1",
+    "name": "Baringo",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-002",
+    "native_id": "2",
+    "name": "Bomet",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-003",
+    "native_id": "3",
+    "name": "Bungoma",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-004",
+    "native_id": "4",
+    "name": "Busia",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-005",
+    "native_id": "5",
+    "name": "Elgeyo/Marakwet",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-006",
+    "native_id": "6",
+    "name": "Embu",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-007",
+    "native_id": "7",
+    "name": "Garissa",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-008",
+    "native_id": "8",
+    "name": "Homa Bay",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-009",
+    "native_id": "9",
+    "name": "Isiolo",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-010",
+    "native_id": "10",
+    "name": "Kajiado",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-011",
+    "native_id": "11",
+    "name": "Kakamega",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-012",
+    "native_id": "12",
+    "name": "Kericho",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-013",
+    "native_id": "13",
+    "name": "Kiambu",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-014",
+    "native_id": "14",
+    "name": "Kilifi",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-015",
+    "native_id": "15",
+    "name": "Kirinyaga",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-016",
+    "native_id": "16",
+    "name": "Kisii",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-017",
+    "native_id": "17",
+    "name": "Kisumu",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-018",
+    "native_id": "18",
+    "name": "Kitui",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-019",
+    "native_id": "19",
+    "name": "Kwale",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-020",
+    "native_id": "20",
+    "name": "Laikipia",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-021",
+    "native_id": "21",
+    "name": "Lamu",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-022",
+    "native_id": "22",
+    "name": "Machakos",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-023",
+    "native_id": "23",
+    "name": "Makueni",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-024",
+    "native_id": "24",
+    "name": "Mandera",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-025",
+    "native_id": "25",
+    "name": "Marsabit",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-026",
+    "native_id": "26",
+    "name": "Meru",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-027",
+    "native_id": "27",
+    "name": "Migori",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-028",
+    "native_id": "28",
+    "name": "Mombasa",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-029",
+    "native_id": "29",
+    "name": "Murang'A",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-030",
+    "native_id": "30",
+    "name": "Nairobi City",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-031",
+    "native_id": "31",
+    "name": "Nakuru",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-032",
+    "native_id": "32",
+    "name": "Nandi",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-033",
+    "native_id": "33",
+    "name": "Narok",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-034",
+    "native_id": "34",
+    "name": "Nyamira",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-035",
+    "native_id": "35",
+    "name": "Nyandarua",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-036",
+    "native_id": "36",
+    "name": "Nyeri",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-037",
+    "native_id": "37",
+    "name": "Samburu",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-038",
+    "native_id": "38",
+    "name": "Siaya",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-039",
+    "native_id": "39",
+    "name": "Taita Taveta",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-040",
+    "native_id": "40",
+    "name": "Tana River",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-041",
+    "native_id": "41",
+    "name": "Tharaka - Nithi",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-042",
+    "native_id": "42",
+    "name": "Trans Nzoia",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-043",
+    "native_id": "43",
+    "name": "Turkana",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-044",
+    "native_id": "44",
+    "name": "Uasin Gishu",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-045",
+    "native_id": "45",
+    "name": "Vihiga",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-046",
+    "native_id": "46",
+    "name": "Wajir",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  },
+  {
+    "id": "KE-CO-047",
+    "native_id": "47",
+    "name": "West Pokot",
+    "level": 1,
+    "level_name": "County",
+    "country": "KE",
+    "source": "kenyaareadata.vercel.app",
+    "source_url": "https://kenyaareadata.vercel.app"
+  }
+]

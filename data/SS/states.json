@@ -1,0 +1,102 @@
+[
+  {
+    "id": "SS-S-01",
+    "native_id": "SS01",
+    "name": "Central Equatoria",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-02",
+    "native_id": "SS02",
+    "name": "Eastern Equatoria",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-03",
+    "native_id": "SS03",
+    "name": "Jonglei",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-04",
+    "native_id": "SS04",
+    "name": "Lakes",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-05",
+    "native_id": "SS05",
+    "name": "Northern Bahr El Ghazal",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-06",
+    "native_id": "SS06",
+    "name": "Unity",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-07",
+    "native_id": "SS07",
+    "name": "Upper Nile",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-08",
+    "native_id": "SS08",
+    "name": "Warrap",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-09",
+    "native_id": "SS09",
+    "name": "Western Bahr El Ghazal",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  },
+  {
+    "id": "SS-S-10",
+    "native_id": "SS10",
+    "name": "Western Equatoria",
+    "level": 1,
+    "level_name": "State",
+    "country": "SS",
+    "source": "HDX / OCHA COD-AB",
+    "source_url": "https://data.humdata.org"
+  }
+]

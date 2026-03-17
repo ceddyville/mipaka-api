@@ -1,0 +1,52 @@
+[
+  {
+    "id": "BI-P-1",
+    "native_id": "1",
+    "name": "Buhumuza",
+    "level": 1,
+    "level_name": "Province",
+    "country": "BI",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_Burundi"
+  },
+  {
+    "id": "BI-P-2",
+    "native_id": "2",
+    "name": "Bujumbura",
+    "level": 1,
+    "level_name": "Province",
+    "country": "BI",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_Burundi"
+  },
+  {
+    "id": "BI-P-3",
+    "native_id": "3",
+    "name": "Burunga",
+    "level": 1,
+    "level_name": "Province",
+    "country": "BI",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_Burundi"
+  },
+  {
+    "id": "BI-P-4",
+    "native_id": "4",
+    "name": "Butanyerera",
+    "level": 1,
+    "level_name": "Province",
+    "country": "BI",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_Burundi"
+  },
+  {
+    "id": "BI-P-5",
+    "native_id": "5",
+    "name": "Gitega",
+    "level": 1,
+    "level_name": "Province",
+    "country": "BI",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_Burundi"
+  }
+]

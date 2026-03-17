@@ -1,0 +1,38 @@
+[
+  {
+    "id": "UG-C",
+    "name": "Central",
+    "level": 1,
+    "level_name": "Region",
+    "country": "UG",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_Uganda"
+  },
+  {
+    "id": "UG-E",
+    "name": "Eastern",
+    "level": 1,
+    "level_name": "Region",
+    "country": "UG",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_Uganda"
+  },
+  {
+    "id": "UG-N",
+    "name": "Northern",
+    "level": 1,
+    "level_name": "Region",
+    "country": "UG",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_Uganda"
+  },
+  {
+    "id": "UG-W",
+    "name": "Western",
+    "level": 1,
+    "level_name": "Region",
+    "country": "UG",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_Uganda"
+  }
+]

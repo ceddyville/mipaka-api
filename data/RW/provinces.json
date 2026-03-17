@@ -1,0 +1,52 @@
+[
+  {
+    "id": "RW-P-1",
+    "native_id": "1",
+    "name": "Kigali City",
+    "level": 1,
+    "level_name": "Province",
+    "country": "RW",
+    "source": "jnkindi/rwanda-locations-json",
+    "source_url": "https://github.com/jnkindi/rwanda-locations-json"
+  },
+  {
+    "id": "RW-P-2",
+    "native_id": "2",
+    "name": "Southern Province",
+    "level": 1,
+    "level_name": "Province",
+    "country": "RW",
+    "source": "jnkindi/rwanda-locations-json",
+    "source_url": "https://github.com/jnkindi/rwanda-locations-json"
+  },
+  {
+    "id": "RW-P-3",
+    "native_id": "3",
+    "name": "Western Province",
+    "level": 1,
+    "level_name": "Province",
+    "country": "RW",
+    "source": "jnkindi/rwanda-locations-json",
+    "source_url": "https://github.com/jnkindi/rwanda-locations-json"
+  },
+  {
+    "id": "RW-P-4",
+    "native_id": "4",
+    "name": "Northern Province",
+    "level": 1,
+    "level_name": "Province",
+    "country": "RW",
+    "source": "jnkindi/rwanda-locations-json",
+    "source_url": "https://github.com/jnkindi/rwanda-locations-json"
+  },
+  {
+    "id": "RW-P-5",
+    "native_id": "5",
+    "name": "Eastern Province",
+    "level": 1,
+    "level_name": "Province",
+    "country": "RW",
+    "source": "jnkindi/rwanda-locations-json",
+    "source_url": "https://github.com/jnkindi/rwanda-locations-json"
+  }
+]
