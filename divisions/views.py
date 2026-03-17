@@ -1,5 +1,6 @@
 from rest_framework import viewsets, mixins
 from rest_framework.decorators import action
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
@@ -28,6 +29,7 @@ class CountryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.
     GET /api/v1/countries/UG/top/       Level-1 divisions for Uganda
     GET /api/v1/countries/UG/eras/      All historical eras for Uganda
     """
+    permission_classes = [AllowAny]
     queryset = (
         Country.objects
         .filter(is_active=True)
@@ -72,6 +74,7 @@ class EraViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     GET /api/v1/eras/?era_type=colonial     All colonial eras
     GET /api/v1/eras/?colonial_power=belgian Belgian-controlled eras
     """
+    permission_classes = [AllowAny]
     queryset = Era.objects.select_related("country").all()
     serializer_class = EraSerializer
     filter_backends  = [DjangoFilterBackend, SearchFilter, OrderingFilter]
@@ -103,6 +106,7 @@ class DivisionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
     GET /api/v1/divisions/{id}/children/            Direct children
     GET /api/v1/divisions/{id}/names/               All historical names
     """
+    permission_classes = [AllowAny]
     queryset = (
         Division.objects
         .filter(is_active=True)
@@ -199,6 +203,7 @@ class DivisionNameViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     GET /api/v1/names/?name_type=indigenous       Pre-colonial indigenous names
     GET /api/v1/names/?year=1923                  Names active in 1923
     """
+    permission_classes = [AllowAny]
     serializer_class = DivisionNameSerializer
     filter_backends  = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     search_fields    = ["name", "etymology", "notes"]

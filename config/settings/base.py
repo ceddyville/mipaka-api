@@ -1,3 +1,4 @@
+import dj_database_url
 from decouple import config
 from pathlib import Path
 
@@ -62,7 +63,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 # ── DATABASE ──────────────────────────────────────────────
-import dj_database_url
 
 DATABASES = {
     "default": dj_database_url.config(
@@ -95,6 +95,9 @@ REST_FRAMEWORK = {
     "DEFAULT_THROTTLE_RATES": {
         "anon": "1000/day",
     },
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
     ],
@@ -110,8 +113,10 @@ SPECTACULAR_SETTINGS = {
     "TAGS": [
         {"name": "Countries", "description": "Country metadata and division level labels"},
         {"name": "Divisions", "description": "Administrative divisions — filterable by country, level, parent, and name"},
-        {"name": "Historical Names", "description": "Period-based historical naming across eras"},
-        {"name": "Eras", "description": "Historical eras (precolonial, colonial, post-independence)"},
+        {"name": "Historical Names",
+            "description": "Period-based historical naming across eras"},
+        {"name": "Eras",
+            "description": "Historical eras (precolonial, colonial, post-independence)"},
     ],
 }
 
