@@ -112,6 +112,10 @@ HISTORICAL_NAMES = {
         ("Nakuru",       "Pre-colonial Kingdoms & Communities","Nakuru",         "Maasai",   "indigenous", "Dusty place in Maa — Maasai name for the lake area"),
         ("Eldoret",      "Kenya Colony and Protectorate",     "64",             "English",  "colonial",   "Called '64' — 64 miles from Kisumu on railway mile-posts"),
         ("Eldoret",      "Pre-colonial Kingdoms & Communities","Sisibo",         "Nandi",    "indigenous", "Nandi people's name for the plateau area"),
+        # Historical district/town name changes from Wikipedia Sub-counties_of_Kenya
+        ("Murang'a",     "Kenya Colony and Protectorate",     "Fort Hall",      "English",  "colonial",   "Colonial district HQ — named after a British fort; renamed Murang'a at independence"),
+        ("Nyahururu",    "Kenya Colony and Protectorate",     "Thompson's Falls","English", "colonial",   "Named after explorer Joseph Thomson; renamed Nyahururu post-independence"),
+        ("Hola",         "Kenya Colony and Protectorate",     "Galole",         "Orma",     "indigenous", "Tana River District HQ — renamed from Galole to Hola"),
     ],
     "TZ": [
         ("Dar es Salaam","German East Africa",                "Dar es Salaam",  "Arabic",   "colonial",   "Haven of peace in Arabic — Swahili Sultan founded 1866, Germans expanded"),
