@@ -59,22 +59,26 @@ GET /api/v1/names/?name_type=indigenous
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mipaka-api.git
+git clone https://github.com/ceddyville/mipaka-api.git
 cd mipaka-api
 
 python -m venv venv && source venv/bin/activate
 pip install -r requirements-dev.txt
 
+# Option A: SQLite (no extra installs)
+export DATABASE_URL=sqlite:///db.sqlite3
+
+# Option B: PostgreSQL
 cp .env.example .env   # fill in your DB details
 createdb mipaka
+
 python manage.py migrate
-
-python converters/convert_kenya.py --out ./data/KE
-python manage.py sync_kenya
-python manage.py seed_eras
-
+python manage.py sync_kenya      # loads pre-built JSON from data/KE/
+python manage.py seed_eras        # loads historical names
 python manage.py runserver
 ```
+
+All division data is **pre-built** in the `data/` directory — no need to run converters or pull from external sources.
 
 Full setup instructions in **[SETUP.md](SETUP.md)**.
 
@@ -172,13 +176,17 @@ GET /api/v1/divisions/42/names/
 
 | Country | Status | Levels Available | Records |
 |---------|--------|-----------------|---------|
-| 🇰🇪 Kenya | ✅ Complete | County → Ward | ~1,800 |
-| 🇹🇿 Tanzania | ✅ Complete | Region → Ward | ~4,100 |
-| 🇺🇬 Uganda | ✅ Complete | Region → Village | ~65,000 |
-| 🇷🇼 Rwanda | ✅ Complete | Province → Village | ~17,500 |
-| 🇧🇮 Burundi | ⚠️ Partial | Province + Communes (collines incomplete) | ~160 |
-| 🇨🇩 DRC | ⚠️ Partial | Provinces + Territories | ~175 |
-| 🇸🇸 South Sudan | ⚠️ Partial | States + Counties | ~82 |
+| 🇰🇪 Kenya | ✅ Complete | County → Ward | 1,787 |
+| 🇹🇿 Tanzania | ⚠️ Partial | Region → District | 207 |
+| 🇺🇬 Uganda | ✅ Complete | Region → Village | ~84,000 |
+| 🇷🇼 Rwanda | ✅ Complete | Province → Village | 17,441 |
+| 🇧🇮 Burundi | ⚠️ Partial | Province → Colline | ~496 |
+| 🇨🇩 DRC | ⚠️ Partial | Provinces + Territories | 174 |
+| 🇸🇸 South Sudan | ⚠️ Partial | States + Counties | 82 |
+
+> **Kenya historical divisions:** 8 provinces, 41 districts (1963), and 48 districts (1992) are also included for historical research.
+
+> **Tanzania note:** Ward-level data is not available in the upstream source; only regions and districts are included.
 
 **Historical names seeded for:** ~60 major cities across all 7 countries covering pre-colonial, colonial, and post-independence eras.
 
@@ -211,8 +219,9 @@ mipaka-api/
 │       ├── sync_*.py       # One per country
 │       └── seed_eras.py    # Historical names
 ├── converters/             # One-time data conversion scripts
-├── data/                   # Pre-built JSON files (the mipaka-data dataset)
-│   ├── KE/  TZ/  UG/  RW/
+├── data/                   # Pre-built JSON — all division data lives here
+│   ├── KE/                 # counties, constituencies, wards + historical provinces/districts
+│   ├── TZ/  UG/  RW/
 │   └── BI/  CD/  SS/
 ├── config/                 # Django settings
 └── SETUP.md                # Full local setup guide
