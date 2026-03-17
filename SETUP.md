@@ -9,13 +9,14 @@ Follow the steps in order. Should take about 25 minutes.
 
 ### 1.1 Python 3.11+
 
-| OS | Download | Notes |
-|----|----------|-------|
-| Windows | https://www.python.org/downloads/ | ⚠️ Check **"Add Python to PATH"** during install |
-| macOS | https://www.python.org/downloads/ | Or `brew install python` |
-| Linux | `sudo apt install python3.11 python3.11-venv` | |
+| OS      | Download                                      | Notes                                            |
+| ------- | --------------------------------------------- | ------------------------------------------------ |
+| Windows | https://www.python.org/downloads/             | ⚠️ Check **"Add Python to PATH"** during install |
+| macOS   | https://www.python.org/downloads/             | Or `brew install python`                         |
+| Linux   | `sudo apt install python3.11 python3.11-venv` |                                                  |
 
 Verify:
+
 ```bash
 python --version    # should show 3.11+
 ```
@@ -26,31 +27,35 @@ python --version    # should show 3.11+
 
 ### 1.2 PostgreSQL 18
 
-| OS | Download |
-|----|----------|
+| OS      | Download                                                                              |
+| ------- | ------------------------------------------------------------------------------------- |
 | Windows | https://www.enterprisedb.com/downloads/postgres-postgresql-downloads → Windows x86-64 |
-| macOS | https://www.enterprisedb.com/downloads/postgres-postgresql-downloads → macOS |
-| Linux | `sudo apt install postgresql postgresql-contrib` |
+| macOS   | https://www.enterprisedb.com/downloads/postgres-postgresql-downloads → macOS          |
+| Linux   | `sudo apt install postgresql postgresql-contrib`                                      |
 
 **During the Windows installer:**
+
 - Note the password you set for the `postgres` user — you'll need it
 - Leave port as `5432`
 - Click **Skip** when Stack Builder appears at the end
 
 **After install on Windows — add PostgreSQL to PATH:**
+
 1. `Win + S` → search "Environment Variables" → "Edit the system environment variables"
 2. Click "Environment Variables..." → under "System variables" find "Path" → "Edit"
 3. Click "New" → add `C:\Program Files\PostgreSQL\18\bin`
 4. OK → OK → OK → **restart PowerShell**
 
 **Windows known issue — COMSPEC error during install:**
-If you see *"The environment variable COMSPEC does not seem to point to cmd.exe"*:
+If you see _"The environment variable COMSPEC does not seem to point to cmd.exe"_:
+
 1. Open Environment Variables (as above)
 2. Find `COMSPEC` in System variables → Edit
 3. Value must be exactly `C:\Windows\system32\cmd.exe` (no trailing semicolon)
 4. Click OK, restart, run installer again
 
 Verify:
+
 ```powershell
 psql --version    # should show psql (PostgreSQL) 18.x
 ```
@@ -59,13 +64,14 @@ psql --version    # should show psql (PostgreSQL) 18.x
 
 ### 1.3 Redis
 
-| OS | Download | Notes |
-|----|----------|-------|
+| OS      | Download                                                        | Notes                                      |
+| ------- | --------------------------------------------------------------- | ------------------------------------------ |
 | Windows | https://github.com/tporadowski/redis/releases → download `.msi` | Installs as a Windows service, auto-starts |
-| macOS | `brew install redis` then `brew services start redis` | |
-| Linux | `sudo apt install redis-server` then `sudo service redis start` | |
+| macOS   | `brew install redis` then `brew services start redis`           |                                            |
+| Linux   | `sudo apt install redis-server` then `sudo service redis start` |                                            |
 
 Verify:
+
 ```bash
 redis-cli ping    # should return PONG
 ```
@@ -74,11 +80,11 @@ redis-cli ping    # should return PONG
 
 ### 1.4 Git
 
-| OS | Download |
-|----|----------|
-| Windows | https://git-scm.com/download/win |
-| macOS | `brew install git` or Xcode Command Line Tools |
-| Linux | `sudo apt install git` |
+| OS      | Download                                       |
+| ------- | ---------------------------------------------- |
+| Windows | https://git-scm.com/download/win               |
+| macOS   | `brew install git` or Xcode Command Line Tools |
+| Linux   | `sudo apt install git`                         |
 
 ---
 
@@ -89,18 +95,21 @@ redis-cli ping    # should return PONG
 If you downloaded the zip:
 
 **Windows (PowerShell):**
+
 ```powershell
 Expand-Archive mipaka-api-final.zip -DestinationPath .
 cd mipaka-api
 ```
 
 **macOS / Linux:**
+
 ```bash
 unzip mipaka-api-final.zip
 cd mipaka-api
 ```
 
 Or if you're cloning from GitHub:
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/mipaka-api.git
 cd mipaka-api
@@ -111,6 +120,7 @@ cd mipaka-api
 ### Step 2 — Python Environment
 
 **Option A — Using Conda (recommended if Conda is installed):**
+
 ```powershell
 conda create -n mipaka python=3.11
 conda activate mipaka
@@ -120,6 +130,7 @@ pip install -r requirements-dev.txt
 **Option B — Using venv:**
 
 Windows:
+
 ```powershell
 python -m venv venv
 venv\Scripts\activate
@@ -127,6 +138,7 @@ pip install -r requirements-dev.txt
 ```
 
 macOS / Linux:
+
 ```bash
 python -m venv venv
 source venv/bin/activate
@@ -140,11 +152,13 @@ Your prompt should show `(mipaka)` or `(venv)` confirming the environment is act
 ### Step 3 — Environment Variables
 
 Windows:
+
 ```powershell
 copy .env.example .env
 ```
 
 macOS / Linux:
+
 ```bash
 cp .env.example .env
 ```
@@ -161,9 +175,11 @@ DJANGO_SETTINGS_MODULE=config.settings.development
 ```
 
 Generate a secret key by running:
+
 ```bash
 python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
 ```
+
 Copy the output into `SECRET_KEY=` in `.env`.
 
 **Quick-start without PostgreSQL or Redis:**
@@ -187,12 +203,15 @@ DJANGO_SETTINGS_MODULE=config.settings.development
 **If using PostgreSQL:**
 
 Windows:
+
 ```powershell
 psql -U postgres -c "CREATE DATABASE mipaka;"
 ```
+
 Enter your PostgreSQL password when prompted (characters won't show — that's normal).
 
 macOS / Linux:
+
 ```bash
 createdb mipaka
 ```
@@ -201,6 +220,7 @@ createdb mipaka
 Skip the above — Django creates the SQLite file automatically on migrate.
 
 Then run migrations:
+
 ```bash
 python manage.py migrate
 python manage.py createsuperuser
@@ -215,15 +235,15 @@ You do **not** need to run any converters or clone any external repos.
 
 The `data/` directory contains:
 
-| Country | Files | Records |
-|---------|-------|---------|
-| BI (Burundi) | provinces, communes, collines | ~478 |
-| CD (DRC) | provinces, territories | ~174 |
-| KE (Kenya) | counties, constituencies, wards | ~1,787 |
-| RW (Rwanda) | provinces, districts, sectors, cells, villages | ~17,441 |
-| SS (South Sudan) | states, counties | ~82 |
-| TZ (Tanzania) | regions, districts | ~207 |
-| UG (Uganda) | regions, districts, counties, subcounties, parishes, villages | ~83,903 |
+| Country          | Files                                                         | Records |
+| ---------------- | ------------------------------------------------------------- | ------- |
+| BI (Burundi)     | provinces, communes, collines                                 | ~478    |
+| CD (DRC)         | provinces, territories                                        | ~174    |
+| KE (Kenya)       | counties, constituencies, wards                               | ~1,787  |
+| RW (Rwanda)      | provinces, districts, sectors, cells, villages                | ~17,441 |
+| SS (South Sudan) | states, counties                                              | ~82     |
+| TZ (Tanzania)    | regions, districts                                            | ~207    |
+| UG (Uganda)      | regions, districts, counties, subcounties, parishes, villages | ~83,903 |
 
 Raw source files are also saved (prefixed `raw_`) in case you need to re-run converters.
 
@@ -231,6 +251,7 @@ Raw source files are also saved (prefixed `raw_`) in case you need to re-run con
 <summary>Click to see how to re-run converters (only if source data changes)</summary>
 
 **Windows (PowerShell):**
+
 ```powershell
 # Kenya — fetches live from API
 python converters\convert_kenya.py --out data\KE
@@ -249,6 +270,7 @@ python converters\convert_uganda.py --src .\uganda-geo-data\src\Uganda\Data --ou
 ```
 
 **macOS / Linux:**
+
 ```bash
 python converters/convert_kenya.py --out ./data/KE
 
@@ -311,6 +333,7 @@ python manage.py runserver
 ```
 
 Open your browser and test these URLs:
+
 ```
 http://localhost:8000/health/
 http://localhost:8000/api/v1/countries/
@@ -330,6 +353,7 @@ http://localhost:8000/api/v1/divisions/?year=1923&country=CD
 → Python wasn't added to PATH during install. Reinstall Python and check "Add to PATH".
 
 **`venv\Scripts\activate` fails with execution policy error (Windows)**
+
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
@@ -339,6 +363,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 **`could not connect to server` (PostgreSQL)**
 → PostgreSQL service isn't running.
+
 - Windows: `Win + R` → `services.msc` → find **postgresql-x64-18** → Start
 - Mac: `brew services start postgresql`
 - Linux: `sudo service postgresql start`
@@ -348,16 +373,19 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 **`redis.exceptions.ConnectionError`**
 → Redis isn't running.
+
 - Windows: `Win + R` → `services.msc` → find **Redis** → Start
 - Mac: `brew services start redis`
 - Linux: `sudo service redis start`
 
 **`psycopg2` install fails (Windows)**
+
 ```powershell
 pip install psycopg2-binary
 ```
 
 **`dj_database_url` import error**
+
 ```bash
 pip install dj-database-url
 ```
