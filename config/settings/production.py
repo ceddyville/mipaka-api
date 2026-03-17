@@ -1,3 +1,4 @@
+import redis as _redis
 from .base import *
 
 DEBUG = False
@@ -16,3 +17,15 @@ CORS_ALLOWED_ORIGINS = [
     # "https://mipaka.dev",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
+
+# Cache — use Redis if available, otherwise fall back to local memory
+try:
+    _r = _redis.from_url(
+        config("REDIS_URL", default="redis://localhost:6379/0"))
+    _r.ping()
+except Exception:
+    CACHES = {
+        "default": {
+            "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        }
+    }
