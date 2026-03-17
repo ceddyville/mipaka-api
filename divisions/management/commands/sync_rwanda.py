@@ -4,7 +4,8 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from divisions.models import Country, Division, DivisionLevel
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "data", "RW")
+BASE_DIR = os.path.join(os.path.dirname(__file__),
+                        "..", "..", "..", "data", "RW")
 
 LEVEL_MAP = {
     1: ("Province", "Intara"),
@@ -33,7 +34,8 @@ class Command(BaseCommand):
 
         country, _ = Country.objects.get_or_create(
             code="RW",
-            defaults={"name": "Rwanda", "native_name": "Rwanda", "max_levels": 5},
+            defaults={"name": "Rwanda",
+                      "native_name": "Rwanda", "max_levels": 5},
         )
         for level, (name, name_sw) in LEVEL_MAP.items():
             DivisionLevel.objects.get_or_create(
@@ -42,11 +44,16 @@ class Command(BaseCommand):
             )
 
         with transaction.atomic():
-            if "provinces" in levels: self._sync_provinces(country)
-            if "districts" in levels: self._sync_districts(country)
-            if "sectors"   in levels: self._sync_sectors(country)
-            if "cells"     in levels: self._sync_cells(country)
-            if "villages"  in levels: self._sync_villages(country)
+            if "provinces" in levels:
+                self._sync_provinces(country)
+            if "districts" in levels:
+                self._sync_districts(country)
+            if "sectors" in levels:
+                self._sync_sectors(country)
+            if "cells" in levels:
+                self._sync_cells(country)
+            if "villages" in levels:
+                self._sync_villages(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Rwanda sync complete."))
 
@@ -77,7 +84,8 @@ class Command(BaseCommand):
     def _sync_provinces(self, country):
         self.stdout.write("Syncing provinces...")
         data = self._load("provinces.json")
-        if data is None: return
+        if data is None:
+            return
         for item in data:
             obj, created = Division.objects.update_or_create(
                 country=country, native_id=item["native_id"], level=1,
@@ -91,7 +99,8 @@ class Command(BaseCommand):
     def _sync_districts(self, country):
         self.stdout.write("Syncing districts...")
         data = self._load("districts.json")
-        if data is None: return
+        if data is None:
+            return
         province_map = self._build_map(country, 1)
         ok = skipped = 0
         for item in data:
@@ -105,14 +114,16 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} districts." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} districts." + (f" Skipped {skipped}." if skipped else ""))
 
     # ── SECTORS ───────────────────────────────────────────────────────────────
 
     def _sync_sectors(self, country):
         self.stdout.write("Syncing sectors...")
         data = self._load("sectors.json")
-        if data is None: return
+        if data is None:
+            return
         district_map = self._build_map(country, 2)
         ok = skipped = 0
         for item in data:
@@ -126,14 +137,16 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} sectors." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} sectors." + (f" Skipped {skipped}." if skipped else ""))
 
     # ── CELLS ─────────────────────────────────────────────────────────────────
 
     def _sync_cells(self, country):
         self.stdout.write("Syncing cells...")
         data = self._load("cells.json")
-        if data is None: return
+        if data is None:
+            return
         sector_map = self._build_map(country, 3)
         ok = skipped = 0
         for item in data:
@@ -147,14 +160,16 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} cells." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} cells." + (f" Skipped {skipped}." if skipped else ""))
 
     # ── VILLAGES ──────────────────────────────────────────────────────────────
 
     def _sync_villages(self, country):
         self.stdout.write("Syncing villages (bulk)...")
         data = self._load("villages.json")
-        if data is None: return
+        if data is None:
+            return
         cell_map = self._build_map(country, 4)
         existing = set(
             Division.objects.filter(country=country, level=5)
@@ -180,10 +195,12 @@ class Command(BaseCommand):
             ))
         chunk = 500
         for i in range(0, len(to_create), chunk):
-            Division.objects.bulk_create(to_create[i:i + chunk], ignore_conflicts=True)
+            Division.objects.bulk_create(
+                to_create[i:i + chunk], ignore_conflicts=True)
             self.stdout.write(
                 f"  Inserted chunk {i // chunk + 1}/{(len(to_create) - 1) // chunk + 1}..."
             )
         self.stdout.write(
-            f"  Synced {len(to_create):,} villages." + (f" Skipped {skipped}." if skipped else "")
+            f"  Synced {len(to_create):,} villages." +
+            (f" Skipped {skipped}." if skipped else "")
         )

@@ -4,7 +4,8 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from divisions.models import Country, Division, DivisionLevel
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "data", "KE")
+BASE_DIR = os.path.join(os.path.dirname(__file__),
+                        "..", "..", "..", "data", "KE")
 
 LEVEL_MAP = {
     1: ("County",       "Kaunti"),
@@ -28,7 +29,8 @@ class Command(BaseCommand):
 
         country, _ = Country.objects.get_or_create(
             code="KE",
-            defaults={"name": "Kenya", "native_name": "Kenya", "max_levels": 3},
+            defaults={"name": "Kenya",
+                      "native_name": "Kenya", "max_levels": 3},
         )
         for level, (name, name_sw) in LEVEL_MAP.items():
             DivisionLevel.objects.get_or_create(
@@ -37,9 +39,12 @@ class Command(BaseCommand):
             )
 
         with transaction.atomic():
-            if "counties"       in levels: self._sync_counties(country)
-            if "constituencies" in levels: self._sync_constituencies(country)
-            if "wards"          in levels: self._sync_wards(country)
+            if "counties" in levels:
+                self._sync_counties(country)
+            if "constituencies" in levels:
+                self._sync_constituencies(country)
+            if "wards" in levels:
+                self._sync_wards(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Kenya sync complete."))
 
@@ -64,7 +69,8 @@ class Command(BaseCommand):
     def _sync_counties(self, country):
         self.stdout.write("Syncing counties...")
         data = self._load("counties.json")
-        if data is None: return
+        if data is None:
+            return
         for item in data:
             obj, created = Division.objects.update_or_create(
                 country=country, native_id=item["native_id"], level=1,
@@ -76,7 +82,8 @@ class Command(BaseCommand):
     def _sync_constituencies(self, country):
         self.stdout.write("Syncing constituencies...")
         data = self._load("constituencies.json")
-        if data is None: return
+        if data is None:
+            return
         county_map = self._build_map(country, 1)
         ok = skipped = 0
         for item in data:
@@ -90,12 +97,14 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} constituencies." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} constituencies." + (f" Skipped {skipped}." if skipped else ""))
 
     def _sync_wards(self, country):
         self.stdout.write("Syncing wards...")
         data = self._load("wards.json")
-        if data is None: return
+        if data is None:
+            return
         constituency_map = self._build_map(country, 2)
         ok = skipped = 0
         for item in data:
@@ -109,4 +118,5 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} wards." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} wards." + (f" Skipped {skipped}." if skipped else ""))

@@ -1,9 +1,11 @@
-import json, os
+import json
+import os
 from django.core.management.base import BaseCommand
 from django.db import transaction
 from divisions.models import Country, Division, DivisionLevel
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "data", "BI")
+BASE_DIR = os.path.join(os.path.dirname(__file__),
+                        "..", "..", "..", "data", "BI")
 
 LEVEL_MAP = {
     1: ("Province", "Intara"),
@@ -27,12 +29,13 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
-        levels  = options["levels"]
-        legacy  = options["legacy"]
+        levels = options["levels"]
+        legacy = options["legacy"]
 
         country, _ = Country.objects.get_or_create(
             code="BI",
-            defaults={"name": "Burundi", "native_name": "Uburundi", "max_levels": 3},
+            defaults={"name": "Burundi",
+                      "native_name": "Uburundi", "max_levels": 3},
         )
         for level, (name, name_sw) in LEVEL_MAP.items():
             DivisionLevel.objects.get_or_create(
@@ -41,9 +44,12 @@ class Command(BaseCommand):
             )
 
         with transaction.atomic():
-            if "provinces" in levels: self._sync_provinces(country, legacy)
-            if "communes"  in levels: self._sync_communes(country)
-            if "collines"  in levels: self._sync_collines(country)
+            if "provinces" in levels:
+                self._sync_provinces(country, legacy)
+            if "communes" in levels:
+                self._sync_communes(country)
+            if "collines" in levels:
+                self._sync_collines(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Burundi sync complete."))
 
@@ -64,7 +70,8 @@ class Command(BaseCommand):
         label = "18-province legacy" if legacy else "5-province (2025)"
         self.stdout.write(f"Syncing provinces ({label})...")
         data = self._load(filename)
-        if data is None: return
+        if data is None:
+            return
         # Clear existing before re-seeding if switching structure
         Division.objects.filter(country=country, level=1).delete()
         for item in data:
@@ -78,33 +85,43 @@ class Command(BaseCommand):
     def _sync_communes(self, country):
         self.stdout.write("Syncing communes...")
         data = self._load("communes.json")
-        if data is None: return
-        province_map = {d.native_id: d for d in Division.objects.filter(country=country, level=1) if d.native_id}
+        if data is None:
+            return
+        province_map = {d.native_id: d for d in Division.objects.filter(
+            country=country, level=1) if d.native_id}
         ok = skipped = 0
         for item in data:
             parent = province_map.get(item.get("parent_province_id"))
-            if not parent: skipped += 1; continue
+            if not parent:
+                skipped += 1
+                continue
             Division.objects.update_or_create(
                 country=country, native_id=item["native_id"], level=2,
                 defaults={"name": item["name"], "parent": parent,
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} communes." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} communes." + (f" Skipped {skipped}." if skipped else ""))
 
     def _sync_collines(self, country):
         self.stdout.write("Syncing collines...")
         data = self._load("collines.json")
-        if data is None: return
-        commune_map = {d.native_id: d for d in Division.objects.filter(country=country, level=2) if d.native_id}
+        if data is None:
+            return
+        commune_map = {d.native_id: d for d in Division.objects.filter(
+            country=country, level=2) if d.native_id}
         ok = skipped = 0
         for item in data:
             parent = commune_map.get(item.get("parent_commune_id"))
-            if not parent: skipped += 1; continue
+            if not parent:
+                skipped += 1
+                continue
             Division.objects.update_or_create(
                 country=country, native_id=item["native_id"], level=3,
                 defaults={"name": item["name"], "parent": parent,
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} collines." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} collines." + (f" Skipped {skipped}." if skipped else ""))

@@ -4,7 +4,8 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from divisions.models import Country, Division, DivisionLevel
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "data", "TZ")
+BASE_DIR = os.path.join(os.path.dirname(__file__),
+                        "..", "..", "..", "data", "TZ")
 
 LEVEL_MAP = {
     1: ("Region",   "Mkoa"),
@@ -28,7 +29,8 @@ class Command(BaseCommand):
 
         country, _ = Country.objects.get_or_create(
             code="TZ",
-            defaults={"name": "Tanzania", "native_name": "Tanzania", "max_levels": 3},
+            defaults={"name": "Tanzania",
+                      "native_name": "Tanzania", "max_levels": 3},
         )
         for level, (name, name_sw) in LEVEL_MAP.items():
             DivisionLevel.objects.get_or_create(
@@ -37,9 +39,12 @@ class Command(BaseCommand):
             )
 
         with transaction.atomic():
-            if "regions"   in levels: self._sync_regions(country)
-            if "districts" in levels: self._sync_districts(country)
-            if "wards"     in levels: self._sync_wards(country)
+            if "regions" in levels:
+                self._sync_regions(country)
+            if "districts" in levels:
+                self._sync_districts(country)
+            if "wards" in levels:
+                self._sync_wards(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Tanzania sync complete."))
 
@@ -65,7 +70,8 @@ class Command(BaseCommand):
     def _sync_regions(self, country):
         self.stdout.write("Syncing regions...")
         data = self._load("regions.json")
-        if data is None: return
+        if data is None:
+            return
         for item in data:
             obj, created = Division.objects.update_or_create(
                 country=country, native_id=item["native_id"], level=1,
@@ -77,7 +83,8 @@ class Command(BaseCommand):
     def _sync_districts(self, country):
         self.stdout.write("Syncing districts...")
         data = self._load("districts.json")
-        if data is None: return
+        if data is None:
+            return
         region_map = self._build_map(country, 1)
         ok = skipped = 0
         for item in data:
@@ -91,12 +98,14 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} districts." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} districts." + (f" Skipped {skipped}." if skipped else ""))
 
     def _sync_wards(self, country):
         self.stdout.write("Syncing wards...")
         data = self._load("wards.json")
-        if data is None: return
+        if data is None:
+            return
         district_map = self._build_map(country, 2)
         ok = skipped = 0
         for item in data:
@@ -110,4 +119,5 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} wards." + (f" Skipped {skipped}." if skipped else ""))
+        self.stdout.write(
+            f"  Synced {ok:,} wards." + (f" Skipped {skipped}." if skipped else ""))

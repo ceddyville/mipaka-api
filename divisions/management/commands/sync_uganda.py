@@ -4,7 +4,8 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from divisions.models import Country, Division, DivisionLevel
 
-BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "data", "UG")
+BASE_DIR = os.path.join(os.path.dirname(__file__),
+                        "..", "..", "..", "data", "UG")
 
 LEVEL_MAP = {
     1: ("Region",     "Mkoa"),
@@ -15,7 +16,8 @@ LEVEL_MAP = {
     6: ("Village",    "Kijiji"),
 }
 
-ALL_LEVELS = ["regions", "districts", "counties", "subcounties", "parishes", "villages"]
+ALL_LEVELS = ["regions", "districts", "counties",
+              "subcounties", "parishes", "villages"]
 
 
 class Command(BaseCommand):
@@ -39,7 +41,8 @@ class Command(BaseCommand):
 
         country, _ = Country.objects.get_or_create(
             code="UG",
-            defaults={"name": "Uganda", "native_name": "Uganda", "max_levels": 6},
+            defaults={"name": "Uganda",
+                      "native_name": "Uganda", "max_levels": 6},
         )
         for level, (name, name_sw) in LEVEL_MAP.items():
             DivisionLevel.objects.get_or_create(
@@ -48,12 +51,18 @@ class Command(BaseCommand):
             )
 
         with transaction.atomic():
-            if "regions"     in levels: self._sync_regions(country)
-            if "districts"   in levels: self._sync_districts(country)
-            if "counties"    in levels: self._sync_counties(country, skip_flags)
-            if "subcounties" in levels: self._sync_subcounties(country)
-            if "parishes"    in levels: self._sync_parishes(country)
-            if "villages"    in levels: self._sync_villages(country)
+            if "regions" in levels:
+                self._sync_regions(country)
+            if "districts" in levels:
+                self._sync_districts(country)
+            if "counties" in levels:
+                self._sync_counties(country, skip_flags)
+            if "subcounties" in levels:
+                self._sync_subcounties(country)
+            if "parishes" in levels:
+                self._sync_parishes(country)
+            if "villages" in levels:
+                self._sync_villages(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Uganda sync complete."))
 
@@ -77,7 +86,8 @@ class Command(BaseCommand):
     def _sync_regions(self, country):
         self.stdout.write("Syncing regions...")
         data = self._load("regions.json")
-        if data is None: return self._missing("regions.json")
+        if data is None:
+            return self._missing("regions.json")
         for item in data:
             obj, created = Division.objects.update_or_create(
                 country=country, native_id=item["id"], level=1,
@@ -91,12 +101,15 @@ class Command(BaseCommand):
     def _sync_districts(self, country):
         self.stdout.write("Syncing districts...")
         data = self._load("districts.json")
-        if data is None: return self._missing("districts.json")
+        if data is None:
+            return self._missing("districts.json")
         for region_data in data:
             try:
-                region = Division.objects.get(country=country, native_id=region_data["id"], level=1)
+                region = Division.objects.get(
+                    country=country, native_id=region_data["id"], level=1)
             except Division.DoesNotExist:
-                self.stdout.write(self.style.WARNING(f"  Region '{region_data['name']}' not found — run regions first"))
+                self.stdout.write(self.style.WARNING(
+                    f"  Region '{region_data['name']}' not found — run regions first"))
                 continue
             for d in region_data.get("children", []):
                 obj, created = Division.objects.update_or_create(
@@ -104,14 +117,16 @@ class Command(BaseCommand):
                     defaults={"parent": region, "source": region_data["source"],
                               "source_url": region_data["source_url"]},
                 )
-                self.stdout.write(f"  {'[+]' if created else '[~]'} {obj.name}")
+                self.stdout.write(
+                    f"  {'[+]' if created else '[~]'} {obj.name}")
 
     # ── COUNTIES ──────────────────────────────────────────────────────────────
 
     def _sync_counties(self, country, skip_flags=False):
         self.stdout.write("Syncing counties...")
         data = self._load("counties.json")
-        if data is None: return self._missing("counties.json")
+        if data is None:
+            return self._missing("counties.json")
         skipped = 0
         for item in data:
             if item.get("needs_verification") and not skip_flags:
@@ -121,25 +136,30 @@ class Command(BaseCommand):
                 ))
                 continue
             try:
-                parent = Division.objects.get(country=country, name=item["parent_district"], level=2)
+                parent = Division.objects.get(
+                    country=country, name=item["parent_district"], level=2)
             except Division.DoesNotExist:
-                self.stdout.write(self.style.WARNING(f"  District '{item['parent_district']}' not found"))
+                self.stdout.write(self.style.WARNING(
+                    f"  District '{item['parent_district']}' not found"))
                 continue
             obj, created = Division.objects.update_or_create(
                 country=country, native_id=item["id"], level=3,
                 defaults={"name": item["name"], "parent": parent,
                           "source": item["source"], "source_url": item["source_url"]},
             )
-            self.stdout.write(f"  {'[+]' if created else '[~]'} {obj.name} ({item['parent_district']})")
+            self.stdout.write(
+                f"  {'[+]' if created else '[~]'} {obj.name} ({item['parent_district']})")
         if skipped:
-            self.stdout.write(self.style.WARNING(f"  Skipped {skipped} entries pending verification."))
+            self.stdout.write(self.style.WARNING(
+                f"  Skipped {skipped} entries pending verification."))
 
     # ── SUB-COUNTIES ──────────────────────────────────────────────────────────
 
     def _sync_subcounties(self, country):
         self.stdout.write("Syncing sub-counties...")
         data = self._load("subcounties.json")
-        if data is None: return self._missing("subcounties.json")
+        if data is None:
+            return self._missing("subcounties.json")
 
         # Build county native_id → Division lookup
         county_map = {
@@ -162,14 +182,16 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} sub-counties. Skipped {skipped} (unresolved parent).")
+        self.stdout.write(
+            f"  Synced {ok:,} sub-counties. Skipped {skipped} (unresolved parent).")
 
     # ── PARISHES ──────────────────────────────────────────────────────────────
 
     def _sync_parishes(self, country):
         self.stdout.write("Syncing parishes...")
         data = self._load("parishes.json")
-        if data is None: return self._missing("parishes.json")
+        if data is None:
+            return self._missing("parishes.json")
 
         # Build sub-county native_id → Division lookup
         subcounty_map = {
@@ -190,14 +212,16 @@ class Command(BaseCommand):
                           "source": item["source"], "source_url": item["source_url"]},
             )
             ok += 1
-        self.stdout.write(f"  Synced {ok:,} parishes. Skipped {skipped} (unresolved parent).")
+        self.stdout.write(
+            f"  Synced {ok:,} parishes. Skipped {skipped} (unresolved parent).")
 
     # ── VILLAGES ──────────────────────────────────────────────────────────────
 
     def _sync_villages(self, country):
         self.stdout.write("Syncing villages...")
         data = self._load("villages.json")
-        if data is None: return self._missing("villages.json")
+        if data is None:
+            return self._missing("villages.json")
 
         # Build parish native_id → Division lookup
         parish_map = {
@@ -236,7 +260,10 @@ class Command(BaseCommand):
         # Batch insert in chunks of 500
         chunk_size = 500
         for i in range(0, len(to_create), chunk_size):
-            Division.objects.bulk_create(to_create[i:i + chunk_size], ignore_conflicts=True)
-            self.stdout.write(f"  Inserted chunk {i // chunk_size + 1}/{(len(to_create) // chunk_size) + 1}...")
+            Division.objects.bulk_create(
+                to_create[i:i + chunk_size], ignore_conflicts=True)
+            self.stdout.write(
+                f"  Inserted chunk {i // chunk_size + 1}/{(len(to_create) // chunk_size) + 1}...")
 
-        self.stdout.write(f"  Synced {ok:,} villages. Skipped {skipped} (unresolved parent).")
+        self.stdout.write(
+            f"  Synced {ok:,} villages. Skipped {skipped} (unresolved parent).")
