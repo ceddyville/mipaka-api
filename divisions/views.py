@@ -36,7 +36,7 @@ class CountryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.
         .prefetch_related("division_levels", "eras")
     )
     serializer_class = CountrySerializer
-    lookup_field     = "code"
+    lookup_field = "code"
 
     @method_decorator(cache_page(CACHE_TTL))
     def list(self, request, *args, **kwargs):
@@ -49,7 +49,7 @@ class CountryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.
     @action(detail=True, methods=["get"], url_path="top")
     @method_decorator(cache_page(CACHE_TTL))
     def top_level(self, request, code=None):
-        country   = self.get_object()
+        country = self.get_object()
         divisions = Division.objects.filter(
             country=country, level=1, is_active=True
         ).order_by("name")
@@ -61,7 +61,7 @@ class CountryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.
     def eras(self, request, code=None):
         """Returns all historical eras for a country in chronological order."""
         country = self.get_object()
-        eras    = country.eras.all().order_by("started")
+        eras = country.eras.all().order_by("started")
         return Response(EraSerializer(eras, many=True).data)
 
 
@@ -77,10 +77,10 @@ class EraViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.Gene
     permission_classes = [AllowAny]
     queryset = Era.objects.select_related("country").all()
     serializer_class = EraSerializer
-    filter_backends  = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ["era_type", "colonial_power"]
-    search_fields    = ["name", "name_local", "notes"]
-    ordering_fields  = ["started", "era_type"]
+    search_fields = ["name", "name_local", "notes"]
+    ordering_fields = ["started", "era_type"]
 
     def get_queryset(self):
         qs = super().get_queryset()
@@ -113,10 +113,10 @@ class DivisionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
         .select_related("country", "parent")
         .prefetch_related("children", "historical_names__era")
     )
-    filter_backends  = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_class  = DivisionFilter
-    search_fields    = ["name", "name_sw", "code", "historical_names__name"]
-    ordering_fields  = ["name", "level"]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_class = DivisionFilter
+    search_fields = ["name", "name_sw", "code", "historical_names__name"]
+    ordering_fields = ["name", "level"]
 
     def get_serializer_class(self):
         if self.action == "retrieve":
@@ -165,7 +165,7 @@ class DivisionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
     @action(detail=True, methods=["get"])
     def children(self, request, pk=None):
         division = self.get_object()
-        qs       = division.children.filter(is_active=True).order_by("name")
+        qs = division.children.filter(is_active=True).order_by("name")
         return Response(DivisionSerializer(qs, many=True).data)
 
     @action(detail=True, methods=["get"])
@@ -177,7 +177,8 @@ class DivisionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
         GET /api/v1/divisions/42/names/?language=Luganda
         """
         division = self.get_object()
-        qs = division.historical_names.select_related("era").order_by("era__started")
+        qs = division.historical_names.select_related(
+            "era").order_by("era__started")
 
         era_type = request.query_params.get("era_type")
         language = request.query_params.get("language")
@@ -205,21 +206,21 @@ class DivisionNameViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     permission_classes = [AllowAny]
     serializer_class = DivisionNameSerializer
-    filter_backends  = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    search_fields    = ["name", "etymology", "notes"]
-    ordering_fields  = ["era__started", "name"]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    search_fields = ["name", "etymology", "notes"]
+    ordering_fields = ["era__started", "name"]
 
     def get_queryset(self):
         qs = DivisionName.objects.select_related(
             "division", "division__country", "era"
         ).all()
 
-        q         = self.request.query_params.get("q")
-        country   = self.request.query_params.get("country")
-        era_type  = self.request.query_params.get("era_type")
-        language  = self.request.query_params.get("language")
+        q = self.request.query_params.get("q")
+        country = self.request.query_params.get("country")
+        era_type = self.request.query_params.get("era_type")
+        language = self.request.query_params.get("language")
         name_type = self.request.query_params.get("name_type")
-        year      = self.request.query_params.get("year")
+        year = self.request.query_params.get("year")
 
         if q:
             qs = qs.filter(name__icontains=q)
