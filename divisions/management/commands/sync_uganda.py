@@ -143,7 +143,7 @@ class Command(BaseCommand):
                     f"  District '{item['parent_district']}' not found"))
                 continue
             obj, created = Division.objects.update_or_create(
-                country=country, native_id=item["id"], level=3,
+                country=country, native_id=item.get("native_id", item["id"]), level=3,
                 defaults={"name": item["name"], "parent": parent,
                           "source": item["source"], "source_url": item["source_url"]},
             )
