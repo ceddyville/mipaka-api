@@ -18,6 +18,7 @@ _Mipaka_ — Swahili for _boundaries_
 [![Django](https://img.shields.io/badge/Django-5.1-c8622a.svg)](https://djangoproject.com)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-e8b86d.svg)](CONTRIBUTING.md)
 [![Countries](https://img.shields.io/badge/Countries-7-c8622a.svg)](#coverage)
+[![Live API](https://img.shields.io/badge/Live_API-mipaka--api.up.railway.app-e8b86d.svg)](https://mipaka-api.up.railway.app/api/v1/)
 
 </div>
 
@@ -56,6 +57,20 @@ GET /api/v1/names/?name_type=indigenous
 
 ---
 
+## Live API
+
+The API is live at **https://mipaka-api.up.railway.app** — no setup required.
+
+```bash
+# Try it now
+curl https://mipaka-api.up.railway.app/api/v1/countries/
+
+# Interactive docs
+open https://mipaka-api.up.railway.app/api/docs/
+```
+
+---
+
 ## Quick Start
 
 ```bash
@@ -86,7 +101,7 @@ Full setup instructions in **[SETUP.md](SETUP.md)**.
 
 ## API Reference
 
-Base URL: `http://localhost:8000/api/v1/`
+Base URL: `https://mipaka-api.up.railway.app/api/v1/`
 
 ### Core Endpoints
 
@@ -103,6 +118,8 @@ Base URL: `http://localhost:8000/api/v1/`
 | `GET /eras/`                    | All historical eras                      |
 | `GET /names/`                   | Search historical place names            |
 | `GET /health/`                  | Health check                             |
+| `GET /api/docs/`                | Interactive Swagger UI                   |
+| `GET /api/redoc/`               | ReDoc API documentation                  |
 
 ### Filter Parameters
 
@@ -178,15 +195,17 @@ GET /api/v1/divisions/42/names/
 | -------------- | ----------- | ----------------------- | ------- |
 | 🇰🇪 Kenya       | ✅ Complete | County → Ward           | 1,787   |
 | 🇹🇿 Tanzania    | ⚠️ Partial  | Region → District       | 207     |
-| 🇺🇬 Uganda      | ✅ Complete | Region → Village        | ~84,000 |
+| 🇺🇬 Uganda      | ✅ Complete | Region → Village        | 83,012  |
 | 🇷🇼 Rwanda      | ✅ Complete | Province → Village      | 17,441  |
-| 🇧🇮 Burundi     | ⚠️ Partial  | Province → Colline      | ~496    |
+| 🇧🇮 Burundi     | ✅ Complete | Province → Colline      | 491     |
 | 🇨🇩 DRC         | ⚠️ Partial  | Provinces + Territories | 174     |
 | 🇸🇸 South Sudan | ⚠️ Partial  | States + Counties       | 82      |
 
 > **Kenya historical divisions:** 8 provinces, 41 districts (1963), and 48 districts (1992) are also included for historical research.
 
 > **Tanzania note:** Ward-level data is not available in the upstream source; only regions and districts are included.
+
+> **Burundi note:** Uses the legacy 18-province administrative structure (pre-2025) to maintain parent relationships with commune/colline data from OCHA HDX.
 
 **Historical names seeded for:** ~60 major cities across all 7 countries covering pre-colonial, colonial, and post-independence eras.
 
@@ -235,7 +254,7 @@ Mipaka is only as good as its contributors. **If you live in or know a region we
 
 The highest-value contributions right now:
 
-- 🇧🇮 **Burundi collines** — 97 communes still need their collines mapped
+- �🇿 **Tanzania wards** — ward-level data not available in upstream source
 - 🇨🇩 **DRC territories** — 5 entries with disputed province assignments
 - 🇸🇸 **South Sudan payams** — 512 payams not yet in the dataset
 - 🌍 **Indigenous place names** — pre-colonial names in local languages for any city
