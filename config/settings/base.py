@@ -40,6 +40,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "config.middleware.RapidAPIProxyMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -129,6 +130,12 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ── RAPIDAPI ──────────────────────────────────────────────
+# Set this in production to lock API endpoints behind RapidAPI proxy.
+# Leave empty/unset to allow direct access (dev, testing).
+RAPIDAPI_PROXY_SECRET = config("RAPIDAPI_PROXY_SECRET", default="")
+
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Africa/Nairobi"
 USE_I18N = True
