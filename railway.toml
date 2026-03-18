@@ -2,7 +2,7 @@
 builder = "NIXPACKS"
 
 [deploy]
-startCommand = "python manage.py migrate --noinput && python manage.py sync_burundi --levels provinces communes collines && python manage.py sync_uganda --levels subcounties parishes && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2"
+startCommand = "python manage.py migrate --noinput && python manage.py sync_burundi --legacy --levels provinces communes collines && python manage.py sync_uganda --levels counties subcounties parishes && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2"
 healthcheckPath = "/health/"
 healthcheckTimeout = 600
 restartPolicyType = "ON_FAILURE"
