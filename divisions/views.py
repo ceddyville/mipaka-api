@@ -235,6 +235,7 @@ class DivisionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
         return response
 # ── DIVISION NAME (global search) ─────────────────────────────────────────────
 
+
 class DivisionNameViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Searchable index of all historical names across all divisions.
