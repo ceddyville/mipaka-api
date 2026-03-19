@@ -6,10 +6,10 @@ from .models import Country, Division, DivisionLevel, Era, DivisionName
 
 class EraSerializer(serializers.ModelSerializer):
     country_code = serializers.CharField(source="country.code", read_only=True)
-    is_current   = serializers.ReadOnlyField()
+    is_current = serializers.ReadOnlyField()
 
     class Meta:
-        model  = Era
+        model = Era
         fields = [
             "id", "country_code", "name", "name_local",
             "era_type", "colonial_power",
@@ -21,13 +21,13 @@ class EraSerializer(serializers.ModelSerializer):
 # ── DIVISION NAME ─────────────────────────────────────────────────────────────
 
 class DivisionNameSerializer(serializers.ModelSerializer):
-    era_name    = serializers.CharField(source="era.name", read_only=True)
-    era_type    = serializers.CharField(source="era.era_type", read_only=True)
+    era_name = serializers.CharField(source="era.name", read_only=True)
+    era_type = serializers.CharField(source="era.era_type", read_only=True)
     era_started = serializers.CharField(source="era.started", read_only=True)
-    era_ended   = serializers.CharField(source="era.ended", read_only=True)
+    era_ended = serializers.CharField(source="era.ended", read_only=True)
 
     class Meta:
-        model  = DivisionName
+        model = DivisionName
         fields = [
             "id", "name", "language", "name_type",
             "era_name", "era_type", "era_started", "era_ended",
@@ -39,7 +39,7 @@ class DivisionNameSerializer(serializers.ModelSerializer):
 
 class DivisionLevelSerializer(serializers.ModelSerializer):
     class Meta:
-        model  = DivisionLevel
+        model = DivisionLevel
         fields = ["level", "name", "name_sw"]
 
 
@@ -47,11 +47,12 @@ class DivisionLevelSerializer(serializers.ModelSerializer):
 
 class CountrySerializer(serializers.ModelSerializer):
     division_levels = DivisionLevelSerializer(many=True, read_only=True)
-    eras            = EraSerializer(many=True, read_only=True)
+    eras = EraSerializer(many=True, read_only=True)
 
     class Meta:
-        model  = Country
-        fields = ["code", "name", "native_name", "max_levels", "division_levels", "eras"]
+        model = Country
+        fields = ["code", "name", "native_name",
+                  "max_levels", "division_levels", "eras"]
 
 
 # ── DIVISION — BRIEF ──────────────────────────────────────────────────────────
@@ -60,21 +61,23 @@ class DivisionBriefSerializer(serializers.ModelSerializer):
     level_name = serializers.ReadOnlyField()
 
     class Meta:
-        model  = Division
+        model = Division
         fields = ["id", "name", "name_sw", "code", "level", "level_name"]
 
 
 # ── DIVISION — LIST ───────────────────────────────────────────────────────────
 
 class DivisionSerializer(serializers.ModelSerializer):
-    level_name     = serializers.ReadOnlyField()
-    country_code   = serializers.CharField(source="country.code",   read_only=True)
-    country_name   = serializers.CharField(source="country.name",   read_only=True)
-    parent         = DivisionBriefSerializer(read_only=True)
+    level_name = serializers.ReadOnlyField()
+    country_code = serializers.CharField(
+        source="country.code",   read_only=True)
+    country_name = serializers.CharField(
+        source="country.name",   read_only=True)
+    parent = DivisionBriefSerializer(read_only=True)
     children_count = serializers.SerializerMethodField()
 
     class Meta:
-        model  = Division
+        model = Division
         fields = [
             "id", "country_code", "country_name",
             "level", "level_name", "name", "name_sw",
@@ -89,10 +92,10 @@ class DivisionSerializer(serializers.ModelSerializer):
 # ── DIVISION — DETAIL (includes historical names) ─────────────────────────────
 
 class DivisionDetailSerializer(DivisionSerializer):
-    children         = DivisionBriefSerializer(many=True, read_only=True)
-    ancestors        = serializers.SerializerMethodField()
+    children = DivisionBriefSerializer(many=True, read_only=True)
+    ancestors = serializers.SerializerMethodField()
     historical_names = DivisionNameSerializer(many=True, read_only=True)
-    name_in_year     = serializers.SerializerMethodField()
+    name_in_year = serializers.SerializerMethodField()
 
     class Meta(DivisionSerializer.Meta):
         fields = DivisionSerializer.Meta.fields + [
