@@ -6,6 +6,9 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+from django.http import StreamingHttpResponse
+import csv
+import io
 
 from .models import Country, Division, Era, DivisionName
 from .serializers import (
@@ -189,7 +192,47 @@ class DivisionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
 
         return Response(DivisionNameSerializer(qs, many=True).data)
 
+    @action(detail=False, methods=["get"])
+    def export(self, request):
+        """
+        Bulk CSV export of divisions.
+        GET /api/v1/divisions/export/?country=UG
+        GET /api/v1/divisions/export/?country=KE&level=2
+        Streams a CSV file — ideal for data analysis or offline use.
+        """
+        qs = self.filter_queryset(self.get_queryset())
 
+        def rows():
+            buf = io.StringIO()
+            writer = csv.writer(buf)
+            header = [
+                "id", "country_code", "level", "level_name", "name",
+                "name_sw", "code", "parent_id", "parent_name",
+            ]
+            writer.writerow(header)
+            yield buf.getvalue()
+            buf.seek(0)
+            buf.truncate(0)
+
+            for div in qs.iterator(chunk_size=2000):
+                writer.writerow([
+                    div.id,
+                    div.country.code,
+                    div.level,
+                    div.level_name,
+                    div.name,
+                    div.name_sw,
+                    div.code,
+                    div.parent_id or "",
+                    div.parent.name if div.parent else "",
+                ])
+                yield buf.getvalue()
+                buf.seek(0)
+                buf.truncate(0)
+
+        response = StreamingHttpResponse(rows(), content_type="text/csv")
+        response["Content-Disposition"] = 'attachment; filename="mipaka_divisions.csv"'
+        return response
 # ── DIVISION NAME (global search) ─────────────────────────────────────────────
 
 class DivisionNameViewSet(mixins.ListModelMixin, viewsets.GenericViewSet):

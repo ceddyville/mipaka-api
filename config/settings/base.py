@@ -40,6 +40,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "config.middleware.RequestLoggingMiddleware",
     "config.middleware.RapidAPIProxyMiddleware",
 ]
 
@@ -91,7 +92,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 100,
     "DEFAULT_THROTTLE_CLASSES": [
-        "rest_framework.throttling.AnonRateThrottle",
+        "divisions.throttles.SmartAnonThrottle",
     ],
     "DEFAULT_THROTTLE_RATES": {
         "anon": "1000/day",
@@ -135,6 +136,30 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Set this in production to lock API endpoints behind RapidAPI proxy.
 # Leave empty/unset to allow direct access (dev, testing).
 RAPIDAPI_PROXY_SECRET = config("RAPIDAPI_PROXY_SECRET", default="")
+
+# ── LOGGING ───────────────────────────────────────────────
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "[{asctime}] {levelname} {name} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        "mipaka.api": {
+            "handlers": ["console"],
+            "level": "INFO",
+        },
+    },
+}
 
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Africa/Nairobi"

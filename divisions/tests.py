@@ -389,6 +389,28 @@ def test_pagination_structure(api, kenya):
     assert data["count"] == 3
 
 
+# ── Bulk export ──────────────────────────────────────────────────────────────
+
+@pytest.mark.django_db
+class TestExport:
+    def test_export_csv(self, api, kenya, nairobi):
+        r = api.get("/api/v1/divisions/export/?country=KE")
+        assert r.status_code == 200
+        assert r["Content-Type"] == "text/csv"
+        content = b"".join(r.streaming_content).decode()
+        lines = content.strip().split("\n")
+        assert lines[0].startswith("id,country_code")
+        assert len(lines) >= 2  # header + at least 1 data row
+        assert "Nairobi" in content
+
+    def test_export_empty(self, api, kenya):
+        r = api.get("/api/v1/divisions/export/?country=ZZ")
+        assert r.status_code == 200
+        content = b"".join(r.streaming_content).decode()
+        lines = content.strip().split("\n")
+        assert len(lines) == 1  # header only
+
+
 # ── Read-only enforcement ────────────────────────────────────────────────────
 
 @pytest.mark.django_db
