@@ -2,11 +2,11 @@ from django.db import models
 
 
 class Country(models.Model):
-    code         = models.CharField(max_length=2, unique=True)
-    name         = models.CharField(max_length=100)
-    native_name  = models.CharField(max_length=100, blank=True)
-    max_levels   = models.PositiveSmallIntegerField(default=4)
-    is_active    = models.BooleanField(default=True)
+    code = models.CharField(max_length=2, unique=True)
+    name = models.CharField(max_length=100)
+    native_name = models.CharField(max_length=100, blank=True)
+    max_levels = models.PositiveSmallIntegerField(default=4)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = "countries"
@@ -39,16 +39,21 @@ class Era(models.Model):
         ("",         "N/A"),
     ]
 
-    country         = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="eras")
-    name            = models.CharField(max_length=200)          # "Uganda Protectorate"
-    name_local      = models.CharField(max_length=200, blank=True)  # local language name
-    era_type        = models.CharField(max_length=20, choices=ERA_TYPE_CHOICES)
-    colonial_power  = models.CharField(max_length=20, blank=True, choices=COLONIAL_POWER_CHOICES)
-    started         = models.CharField(max_length=20, blank=True)   # "1894" | "~1300" | "pre-1500"
-    ended           = models.CharField(max_length=20, blank=True)   # blank = current/ongoing
-    notes           = models.TextField(blank=True)
-    source          = models.CharField(max_length=255, blank=True)
-    source_url      = models.URLField(blank=True)
+    country = models.ForeignKey(
+        Country, on_delete=models.CASCADE, related_name="eras")
+    name = models.CharField(max_length=200)          # "Uganda Protectorate"
+    name_local = models.CharField(
+        max_length=200, blank=True)  # local language name
+    era_type = models.CharField(max_length=20, choices=ERA_TYPE_CHOICES)
+    colonial_power = models.CharField(
+        max_length=20, blank=True, choices=COLONIAL_POWER_CHOICES)
+    # "1894" | "~1300" | "pre-1500"
+    started = models.CharField(max_length=20, blank=True)
+    # blank = current/ongoing
+    ended = models.CharField(max_length=20, blank=True)
+    notes = models.TextField(blank=True)
+    source = models.CharField(max_length=255, blank=True)
+    source_url = models.URLField(blank=True)
 
     class Meta:
         ordering = ["country", "started"]
@@ -63,10 +68,11 @@ class Era(models.Model):
 
 
 class DivisionLevel(models.Model):
-    country  = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="division_levels")
-    level    = models.PositiveSmallIntegerField()
-    name     = models.CharField(max_length=100)
-    name_sw  = models.CharField(max_length=100, blank=True)
+    country = models.ForeignKey(
+        Country, on_delete=models.CASCADE, related_name="division_levels")
+    level = models.PositiveSmallIntegerField()
+    name = models.CharField(max_length=100)
+    name_sw = models.CharField(max_length=100, blank=True)
 
     class Meta:
         unique_together = ("country", "level")
@@ -81,23 +87,26 @@ class Division(models.Model):
     Any administrative division at any level in any country.
     Self-referential parent/child hierarchy supports unlimited depth.
     """
-    country    = models.ForeignKey(Country, on_delete=models.CASCADE, related_name="divisions")
-    parent     = models.ForeignKey(
+    country = models.ForeignKey(
+        Country, on_delete=models.CASCADE, related_name="divisions")
+    parent = models.ForeignKey(
         "self", null=True, blank=True,
         on_delete=models.CASCADE, related_name="children"
     )
-    level      = models.PositiveSmallIntegerField()
-    name       = models.CharField(max_length=255)          # current official name
-    name_sw    = models.CharField(max_length=255, blank=True)
-    code       = models.CharField(max_length=50, blank=True)
-    native_id  = models.CharField(max_length=100, blank=True)
-    source     = models.CharField(max_length=100, blank=True)
+    level = models.PositiveSmallIntegerField()
+    name = models.CharField(max_length=255)          # current official name
+    name_sw = models.CharField(max_length=255, blank=True)
+    code = models.CharField(max_length=50, blank=True)
+    native_id = models.CharField(max_length=100, blank=True)
+    source = models.CharField(max_length=100, blank=True)
     source_url = models.URLField(blank=True)
-    latitude   = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
-    longitude  = models.DecimalField(max_digits=9, decimal_places=6, null=True, blank=True)
+    latitude = models.DecimalField(
+        max_digits=9, decimal_places=6, null=True, blank=True)
+    longitude = models.DecimalField(
+        max_digits=9, decimal_places=6, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    is_active  = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         ordering = ["country", "level", "name"]
@@ -137,8 +146,10 @@ class Division(models.Model):
         for hn in names:
             era = hn.era
             try:
-                start = int("".join(filter(str.isdigit, era.started or "0")) or 0)
-                end   = int("".join(filter(str.isdigit, era.ended   or "9999")) or 9999)
+                start = int(
+                    "".join(filter(str.isdigit, era.started or "0")) or 0)
+                end = int(
+                    "".join(filter(str.isdigit, era.ended or "9999")) or 9999)
                 if start <= year <= end:
                     return hn
             except (ValueError, TypeError):
@@ -160,15 +171,20 @@ class DivisionName(models.Model):
         ("historical",  "Historical"),
     ]
 
-    division  = models.ForeignKey(Division, on_delete=models.CASCADE, related_name="historical_names")
-    era       = models.ForeignKey(Era, on_delete=models.CASCADE, related_name="division_names")
-    name      = models.CharField(max_length=255)
-    language  = models.CharField(max_length=100, blank=True)   # "Luganda", "French", "Kikongo"
-    name_type = models.CharField(max_length=20, choices=NAME_TYPE_CHOICES, default="official")
-    etymology = models.TextField(blank=True)   # e.g. "Hill of impala in Luganda"
-    notes     = models.TextField(blank=True)
-    source    = models.CharField(max_length=255, blank=True)
-    source_url= models.URLField(blank=True)
+    division = models.ForeignKey(
+        Division, on_delete=models.CASCADE, related_name="historical_names")
+    era = models.ForeignKey(Era, on_delete=models.CASCADE,
+                            related_name="division_names")
+    name = models.CharField(max_length=255)
+    # "Luganda", "French", "Kikongo"
+    language = models.CharField(max_length=100, blank=True)
+    name_type = models.CharField(
+        max_length=20, choices=NAME_TYPE_CHOICES, default="official")
+    # e.g. "Hill of impala in Luganda"
+    etymology = models.TextField(blank=True)
+    notes = models.TextField(blank=True)
+    source = models.CharField(max_length=255, blank=True)
+    source_url = models.URLField(blank=True)
 
     class Meta:
         ordering = ["era__started", "name_type"]
