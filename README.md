@@ -19,6 +19,8 @@ _Mipaka_ — Swahili for _boundaries_
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-e8b86d.svg)](CONTRIBUTING.md)
 [![Countries](https://img.shields.io/badge/Countries-7-c8622a.svg)](#coverage)
 [![Live API](https://img.shields.io/badge/Live_API-mipaka--api.up.railway.app-e8b86d.svg)](https://mipaka-api.up.railway.app/api/v1/)
+[![RapidAPI](https://img.shields.io/badge/RapidAPI-Mipaka-c8622a.svg)](https://rapidapi.com/ceddyville/api/mipaka)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ceddyville-e8b86d.svg)](https://buymeacoffee.com/ceddyville)
 
 </div>
 
@@ -268,6 +270,15 @@ See **[CONTRIBUTING.md](CONTRIBUTING.md)** for how to submit data corrections an
 ```bash
 pytest
 ```
+
+---
+
+## Support & Contact
+
+- **Bug reports & feature requests:** [GitHub Issues](https://github.com/ceddyville/mipaka-api/issues)
+- **Data corrections:** See [CONTRIBUTING.md](CONTRIBUTING.md)
+- **Buy Me a Coffee:** [buymeacoffee.com/ceddyville](https://buymeacoffee.com/ceddyville)
+- **RapidAPI:** [rapidapi.com/ceddyville/api/mipaka](https://rapidapi.com/ceddyville/api/mipaka)
 
 ---
 
