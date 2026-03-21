@@ -41,6 +41,10 @@ class CountryViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets.
     serializer_class = CountrySerializer
     lookup_field = "code"
 
+    def get_object(self):
+        self.kwargs[self.lookup_field] = self.kwargs[self.lookup_field].upper()
+        return super().get_object()
+
     @method_decorator(cache_page(CACHE_TTL))
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
