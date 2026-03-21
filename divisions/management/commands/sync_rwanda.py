@@ -15,7 +15,13 @@ LEVEL_MAP = {
     5: ("Village",  "Umudugudu"),
 }
 
-ALL_LEVELS = ["provinces", "districts", "sectors", "cells", "villages"]
+# Historical levels use high numbers to avoid collisions with current levels.
+HISTORICAL_LEVEL_MAP = {
+    100: ("Prefecture", "Perefegitura"),
+}
+
+ALL_LEVELS = ["provinces", "districts", "sectors", "cells", "villages",
+              "prefectures_2006"]
 
 
 class Command(BaseCommand):
@@ -26,7 +32,7 @@ class Command(BaseCommand):
             "--levels", nargs="+", type=str,
             choices=ALL_LEVELS,
             default=["provinces", "districts", "sectors", "cells"],
-            help="Which levels to sync (default: all except villages)",
+            help="Which levels to sync (default: all except villages and historical)",
         )
 
     def handle(self, *args, **options):
@@ -54,6 +60,8 @@ class Command(BaseCommand):
                 self._sync_cells(country)
             if "villages" in levels:
                 self._sync_villages(country)
+            if "prefectures_2006" in levels:
+                self._sync_prefectures(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Rwanda sync complete."))
 
@@ -204,3 +212,37 @@ class Command(BaseCommand):
             f"  Synced {len(to_create):,} villages." +
             (f" Skipped {skipped}." if skipped else "")
         )
+
+    # ── HISTORICAL DATA ───────────────────────────────────────────────────
+
+    def _sync_prefectures(self, country):
+        """Load dissolved prefectures (level 100) from prefectures_2006.json."""
+        self.stdout.write("Syncing historical prefectures (pre-2006)...")
+        data = self._load("prefectures_2006.json")
+        if data is None:
+            return
+        DivisionLevel.objects.get_or_create(
+            country=country, level=100,
+            defaults={"name": "Prefecture", "name_sw": "Perefegitura"},
+        )
+        for item in data:
+            desc_parts = [item.get("notes", "")]
+            if item.get("era"):
+                desc_parts.append(
+                    f"Era: {item['era']} ({item.get('era_years', '')})")
+            if item.get("successor"):
+                desc_parts.append(f"Successor: {item['successor']}")
+            description = ". ".join(p for p in desc_parts if p)
+
+            obj, created = Division.objects.update_or_create(
+                country=country, native_id=item["native_id"], level=100,
+                defaults={
+                    "name": item["name"],
+                    "parent": None,
+                    "is_active": False,
+                    "description": description,
+                    "source": item.get("source", "Wikipedia"),
+                    "source_url": item.get("source_url", ""),
+                },
+            )
+            self.stdout.write(f"  {'[+]' if created else '[~]'} {obj.name}")

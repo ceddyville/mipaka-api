@@ -16,8 +16,13 @@ LEVEL_MAP = {
     6: ("Village",    "Kijiji"),
 }
 
+# Historical levels
+HISTORICAL_LEVEL_MAP = {
+    100: ("Kingdom", "Obwakabaka"),
+}
+
 ALL_LEVELS = ["regions", "districts", "counties",
-              "subcounties", "parishes", "villages"]
+              "subcounties", "parishes", "villages", "kingdoms"]
 
 
 class Command(BaseCommand):
@@ -63,6 +68,8 @@ class Command(BaseCommand):
                 self._sync_parishes(country)
             if "villages" in levels:
                 self._sync_villages(country)
+            if "kingdoms" in levels:
+                self._sync_kingdoms(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Uganda sync complete."))
 
@@ -267,3 +274,42 @@ class Command(BaseCommand):
 
         self.stdout.write(
             f"  Synced {ok:,} villages. Skipped {skipped} (unresolved parent).")
+
+    # ── HISTORICAL DATA ───────────────────────────────────────────────────
+
+    def _sync_kingdoms(self, country):
+        """Load traditional kingdoms (level 100) from kingdoms.json."""
+        self.stdout.write("Syncing traditional kingdoms...")
+        data = self._load("kingdoms.json")
+        if data is None:
+            return self._missing("kingdoms.json")
+        DivisionLevel.objects.get_or_create(
+            country=country, level=100,
+            defaults={"name": "Kingdom", "name_sw": "Obwakabaka"},
+        )
+        for item in data:
+            desc_parts = [item.get("notes", "")]
+            if item.get("capital"):
+                desc_parts.append(f"Capital: {item['capital']}")
+            if item.get("title"):
+                desc_parts.append(f"Ruler title: {item['title']}")
+            if item.get("ethnic_group"):
+                desc_parts.append(f"Ethnic group: {item['ethnic_group']}")
+            if item.get("year_abolished"):
+                desc_parts.append(f"Abolished: {item['year_abolished']}")
+            if item.get("year_restored"):
+                desc_parts.append(f"Restored: {item['year_restored']}")
+            description = ". ".join(p for p in desc_parts if p)
+
+            obj, created = Division.objects.update_or_create(
+                country=country, native_id=item["native_id"], level=100,
+                defaults={
+                    "name": item["name"],
+                    "parent": None,
+                    "is_active": False,
+                    "description": description,
+                    "source": item.get("source", "Wikipedia"),
+                    "source_url": item.get("source_url", ""),
+                },
+            )
+            self.stdout.write(f"  {'[+]' if created else '[~]'} {obj.name}")

@@ -13,6 +13,11 @@ LEVEL_MAP = {
     3: ("Ward",     "Kata"),
 }
 
+# Historical levels
+HISTORICAL_LEVEL_MAP = {
+    100: ("New Region", "Mkoa Mpya"),
+}
+
 
 class Command(BaseCommand):
     help = "Sync Tanzania administrative divisions from local JSON files (data/TZ/)"
@@ -20,7 +25,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument(
             "--levels", nargs="+", type=str,
-            choices=["regions", "districts", "wards"],
+            choices=["regions", "districts", "wards", "regions_historical"],
             default=["regions", "districts", "wards"],
         )
 
@@ -45,6 +50,8 @@ class Command(BaseCommand):
                 self._sync_districts(country)
             if "wards" in levels:
                 self._sync_wards(country)
+            if "regions_historical" in levels:
+                self._sync_historical_regions(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Tanzania sync complete."))
 
@@ -121,3 +128,47 @@ class Command(BaseCommand):
             ok += 1
         self.stdout.write(
             f"  Synced {ok:,} wards." + (f" Skipped {skipped}." if skipped else ""))
+
+    # ── HISTORICAL DATA ───────────────────────────────────────────────────
+
+    def _sync_historical_regions(self, country):
+        """Load regions created 2002–2016 (level 100) from regions_historical.json."""
+        self.stdout.write("Syncing historical region creations (2002–2016)...")
+        data = self._load("regions_historical.json")
+        if data is None:
+            return
+        DivisionLevel.objects.get_or_create(
+            country=country, level=100,
+            defaults={"name": "New Region", "name_sw": "Mkoa Mpya"},
+        )
+        # Build lookup of current regions by name for parent linking
+        region_map = {
+            d.name: d
+            for d in Division.objects.filter(country=country, level=1)
+        }
+        for item in data:
+            parent = region_map.get(item.get("parent_region"))
+
+            desc_parts = [item.get("notes", "")]
+            if item.get("era"):
+                desc_parts.append(f"Era: {item['era']}")
+            if item.get("parent_region"):
+                desc_parts.append(
+                    f"Split from: {item['parent_region']}")
+            if item.get("year_created"):
+                desc_parts.append(
+                    f"Year created: {item['year_created']}")
+            description = ". ".join(p for p in desc_parts if p)
+
+            obj, created = Division.objects.update_or_create(
+                country=country, native_id=item["native_id"], level=100,
+                defaults={
+                    "name": item["name"],
+                    "parent": parent,
+                    "is_active": False,
+                    "description": description,
+                    "source": item.get("source", "Wikipedia"),
+                    "source_url": item.get("source_url", ""),
+                },
+            )
+            self.stdout.write(f"  {'[+]' if created else '[~]'} {obj.name}")

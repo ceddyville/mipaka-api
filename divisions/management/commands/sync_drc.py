@@ -12,6 +12,11 @@ LEVEL_MAP = {
     2: ("Territory", "Territoire"),
 }
 
+# Historical levels
+HISTORICAL_LEVEL_MAP = {
+    100: ("Province (1997–2015)", "Province"),
+}
+
 
 class Command(BaseCommand):
     help = "Sync DRC administrative divisions from local JSON files (data/CD/)"
@@ -19,7 +24,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument(
             "--levels", nargs="+", type=str,
-            choices=["provinces", "territories"],
+            choices=["provinces", "territories", "provinces_1997"],
             default=["provinces", "territories"],
         )
 
@@ -42,6 +47,8 @@ class Command(BaseCommand):
                 self._sync_provinces(country)
             if "territories" in levels:
                 self._sync_territories(country)
+            if "provinces_1997" in levels:
+                self._sync_historical_provinces(country)
 
         self.stdout.write(self.style.SUCCESS("✓ DRC sync complete."))
 
@@ -91,3 +98,40 @@ class Command(BaseCommand):
             ok += 1
         self.stdout.write(
             f"  Synced {ok:,} territories." + (f" Skipped {skipped}." if skipped else ""))
+
+    # ── HISTORICAL DATA ───────────────────────────────────────────────────
+
+    def _sync_historical_provinces(self, country):
+        """Load 1997–2015 provinces (level 100) from provinces_1997.json."""
+        self.stdout.write("Syncing historical provinces (1997–2015)...")
+        data = self._load("provinces_1997.json")
+        if data is None:
+            return
+        DivisionLevel.objects.get_or_create(
+            country=country, level=100,
+            defaults={"name": "Province (1997–2015)", "name_sw": "Province"},
+        )
+        for item in data:
+            desc_parts = [item.get("notes", "")]
+            if item.get("era"):
+                desc_parts.append(
+                    f"Era: {item['era']} ({item.get('era_years', '')})")
+            if item.get("capital"):
+                desc_parts.append(f"Capital: {item['capital']}")
+            if item.get("successor_provinces"):
+                desc_parts.append(
+                    f"Successors: {', '.join(item['successor_provinces'])}")
+            description = ". ".join(p for p in desc_parts if p)
+
+            obj, created = Division.objects.update_or_create(
+                country=country, native_id=item["native_id"], level=100,
+                defaults={
+                    "name": item["name"],
+                    "parent": None,
+                    "is_active": False,
+                    "description": description,
+                    "source": item.get("source", "Wikipedia"),
+                    "source_url": item.get("source_url", ""),
+                },
+            )
+            self.stdout.write(f"  {'[+]' if created else '[~]'} {obj.name}")

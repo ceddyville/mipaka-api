@@ -82,7 +82,8 @@ class DivisionSerializer(serializers.ModelSerializer):
             "id", "country_code", "country_name",
             "level", "level_name", "name", "name_sw",
             "code", "parent", "children_count",
-            "native_id", "source", "latitude", "longitude",
+            "native_id", "source", "description",
+            "latitude", "longitude",
         ]
 
     def get_children_count(self, obj):
