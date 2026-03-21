@@ -194,7 +194,6 @@ The code is also [open source on GitHub](https://github.com/ceddyville/mipaka-ap
 - **API on RapidAPI:** [rapidapi.com/ceddyville/api/mipaka](https://rapidapi.com/ceddyville/api/mipaka)
 - **GitHub:** [github.com/ceddyville/mipaka-api](https://github.com/ceddyville/mipaka-api)
 - **Interactive Docs:** [mipaka-api.up.railway.app/api/docs/](https://mipaka-api.up.railway.app/api/docs/)
-- **Support:** [Buy Me a Coffee](https://buymeacoffee.com/ceddyville)
 
 ---
 
