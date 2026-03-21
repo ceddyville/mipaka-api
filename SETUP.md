@@ -237,13 +237,13 @@ The `data/` directory contains:
 
 | Country          | Files                                                         | Records |
 | ---------------- | ------------------------------------------------------------- | ------- |
-| BI (Burundi)     | provinces, communes, collines                                 | ~478    |
-| CD (DRC)         | provinces, territories                                        | ~174    |
-| KE (Kenya)       | counties, constituencies, wards                               | ~1,787  |
-| RW (Rwanda)      | provinces, districts, sectors, cells, villages                | ~17,441 |
-| SS (South Sudan) | states, counties                                              | ~82     |
-| TZ (Tanzania)    | regions, districts                                            | ~207    |
-| UG (Uganda)      | regions, districts, counties, subcounties, parishes, villages | ~83,903 |
+| BI (Burundi)     | provinces, communes, collines                                 | ~491    |
+| CD (DRC)         | provinces, territories, provinces_1997 (historical)           | ~185    |
+| KE (Kenya)       | counties, constituencies, wards, provinces + districts (hist) | ~1,954  |
+| RW (Rwanda)      | provinces, districts, sectors, cells, villages, prefectures (hist) | ~17,453 |
+| SS (South Sudan) | states, counties, states_2015 (historical)                    | ~110    |
+| TZ (Tanzania)    | regions, districts, regions_historical                        | ~213    |
+| UG (Uganda)      | regions, districts, counties, subcounties, parishes, villages, kingdoms (hist) | ~83,017 |
 
 Raw source files are also saved (prefixed `raw_`) in case you need to re-run converters.
 
@@ -309,6 +309,17 @@ python manage.py sync_uganda --levels villages
 python manage.py sync_burundi --levels provinces communes collines
 python manage.py sync_drc --levels provinces territories
 python manage.py sync_south_sudan --levels states counties
+```
+
+Then load **historical divisions** (run after current data is synced):
+
+```bash
+python manage.py sync_kenya --levels provinces districts_1963 districts_1992 districts_2007
+python manage.py sync_rwanda --levels prefectures_2006
+python manage.py sync_drc --levels provinces_1997
+python manage.py sync_south_sudan --levels states_2015
+python manage.py sync_tanzania --levels regions_historical
+python manage.py sync_uganda --levels kingdoms
 ```
 
 ---
