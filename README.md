@@ -195,15 +195,17 @@ GET /api/v1/divisions/42/names/
 
 | Country        | Status      | Levels Available        | Records |
 | -------------- | ----------- | ----------------------- | ------- |
-| 🇰🇪 Kenya       | ✅ Complete | County → Ward           | 1,787   |
-| 🇹🇿 Tanzania    | ⚠️ Partial  | Region → District       | 207     |
-| 🇺🇬 Uganda      | ✅ Complete | Region → Village        | 83,012  |
-| 🇷🇼 Rwanda      | ✅ Complete | Province → Village      | 17,441  |
+| 🇰🇪 Kenya       | ✅ Complete | County → Ward           | 1,954   |
+| 🇹🇿 Tanzania    | ⚠️ Partial  | Region → District       | 213     |
+| 🇺🇬 Uganda      | ✅ Complete | Region → Village        | 83,017  |
+| 🇷🇼 Rwanda      | ✅ Complete | Province → Village      | 17,453  |
 | 🇧🇮 Burundi     | ✅ Complete | Province → Colline      | 491     |
-| 🇨🇩 DRC         | ⚠️ Partial  | Provinces + Territories | 174     |
-| 🇸🇸 South Sudan | ⚠️ Partial  | States + Counties       | 82      |
+| 🇨🇩 DRC         | ⚠️ Partial  | Provinces + Territories | 185     |
+| 🇸🇸 South Sudan | ⚠️ Partial  | States + Counties       | 110     |
 
-> **Kenya historical divisions:** 8 provinces, 41 districts (1963), and 48 districts (1992) are also included for historical research.
+> **Kenya historical divisions:** 8 provinces, 41 districts (1963), 48 districts (1992), and 70 districts (2007) are also included for historical research.
+
+> **Historical divisions across all countries:** Rwanda pre-2006 prefectures (12), DRC 1997–2015 provinces (11), South Sudan 2015–2020 states (28), Tanzania new regions (6), Uganda traditional kingdoms (5) — 229 total historical records.
 
 > **Tanzania note:** Ward-level data is not available in the upstream source; only regions and districts are included.
 
@@ -242,8 +244,8 @@ mipaka-api/
 ├── converters/             # One-time data conversion scripts
 ├── data/                   # Pre-built JSON — all division data lives here
 │   ├── KE/                 # counties, constituencies, wards + historical provinces/districts
-│   ├── TZ/  UG/  RW/
-│   └── BI/  CD/  SS/
+│   ├── TZ/  UG/  RW/      # + historical regions, kingdoms, prefectures
+│   └── BI/  CD/  SS/      # + historical provinces, states
 ├── config/                 # Django settings
 └── SETUP.md                # Full local setup guide
 ```
