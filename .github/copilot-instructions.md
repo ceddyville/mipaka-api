@@ -13,21 +13,22 @@
 
 ## Countries & Data (103,194 total records)
 
-| Country | Code | Levels | Records | Status |
-|---------|------|--------|---------|--------|
-| Kenya | KE | County → Constituency → Ward | 1,787 | Complete |
-| Tanzania | TZ | Region → District | 207 | Partial (no wards in source) |
-| Uganda | UG | Region → District → County → Sub-county → Parish → Village | 83,012 | Complete |
-| Rwanda | RW | Province → District → Sector → Cell → Village | 17,441 | Complete |
-| Burundi | BI | Province → Commune → Colline | 491 | Complete |
-| DRC | CD | Province → Territory | 174 | Partial |
-| South Sudan | SS | State → County → Payam | 82 | Partial |
+| Country     | Code | Levels                                                     | Records | Status                       |
+| ----------- | ---- | ---------------------------------------------------------- | ------- | ---------------------------- |
+| Kenya       | KE   | County → Constituency → Ward                               | 1,787   | Complete                     |
+| Tanzania    | TZ   | Region → District                                          | 207     | Partial (no wards in source) |
+| Uganda      | UG   | Region → District → County → Sub-county → Parish → Village | 83,012  | Complete                     |
+| Rwanda      | RW   | Province → District → Sector → Cell → Village              | 17,441  | Complete                     |
+| Burundi     | BI   | Province → Commune → Colline                               | 491     | Complete                     |
+| DRC         | CD   | Province → Territory                                       | 174     | Partial                      |
+| South Sudan | SS   | State → County → Payam                                     | 82      | Partial                      |
 
 Historical names seeded for ~60 major cities covering pre-colonial, colonial, and post-independence eras.
 
 ## Architecture
 
 ### Models (divisions/models.py)
+
 - **Country** — code (ISO 2-letter), name, native_name, max_levels, is_active
 - **Era** — historical periods per country (precolonial/colonial/independence/current) with colonial_power tracking
 - **DivisionLevel** — level definitions per country (e.g. L1="County" in Kenya, L1="Region" in Tanzania)
@@ -35,6 +36,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - **DivisionName** — historical names across eras and languages (e.g. Léopoldville → Kinshasa)
 
 ### API Endpoints (divisions/views.py, divisions/urls.py)
+
 - `GET /api/v1/countries/` — all countries with division levels and eras
 - `GET /api/v1/countries/{code}/` — country detail
 - `GET /api/v1/countries/{code}/top/` — level-1 divisions
@@ -51,6 +53,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - `GET /health/` — health check
 
 ### Key Files
+
 - `config/middleware.py` — RapidAPIProxyMiddleware (blocks direct /api/v1/ access when RAPIDAPI_PROXY_SECRET is set) + RequestLoggingMiddleware (logs method, path, status, duration, subscriber)
 - `config/settings/base.py` — shared settings, DRF config, cache, CORS, logging
 - `config/settings/production.py` — security headers, Redis cache with locmem fallback
@@ -65,6 +68,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - `marketing/` — blog post draft and RapidAPI listing content
 
 ### Deployment
+
 - **Host**: Railway (managed PostgreSQL, gunicorn)
 - **Config**: railway.toml + Procfile
 - **Start command**: migrate then gunicorn
@@ -75,6 +79,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 ## What Has Been Completed
 
 ### Core Build (completed)
+
 - All 7 countries loaded with full hierarchies from external data sources
 - Historical names (eras + division names) for ~60 major cities
 - Kenya historical divisions: 8 provinces (1963), 41 districts (1963), 48 districts (1992)
@@ -84,22 +89,26 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - CORS enabled
 
 ### Monetization & Access Control (completed)
+
 - Listed on RapidAPI marketplace (public, pricing set)
 - RapidAPIProxyMiddleware blocks direct Railway URL access
 - SmartAnonThrottle skips Django rate-limiting for RapidAPI traffic
 - RequestLoggingMiddleware logs all /api/ requests with duration and subscriber
 
 ### Features Added (completed)
+
 - Bulk CSV export endpoint: GET /api/v1/divisions/export/?country=KE
 - Latitude/longitude fields on Division model (nullable, migration applied, no data populated yet)
 - latitude/longitude exposed in API serializers
 
 ### Testing (completed)
+
 - 49 tests passing (pytest-django)
 - Covers: countries, eras, divisions, historical names, filters, search, pagination, read-only enforcement, CSV export
 - Note: if tests fail with `test_children_count` or `test_pagination_structure`, check for stale DJANGO_SETTINGS_MODULE env var — clear it with `Remove-Item Env:DJANGO_SETTINGS_MODULE`
 
 ### Marketing (completed)
+
 - README with ASCII logo, badges (RapidAPI, Buy Me a Coffee, MIT, Python, Django, PRs Welcome)
 - Blog post draft: marketing/blog-devto-kenya-counties-api.md (ready for dev.to)
 - RapidAPI listing content: marketing/rapidapi-listing-content.md
@@ -108,6 +117,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 ## What Remains (TODO)
 
 ### Data Enrichment
+
 - [ ] Populate latitude/longitude coordinates (fields exist, no data yet)
 - [ ] Expand historical data coverage (only ~60 cities have historical names)
 - [ ] Tanzania wards (not available in upstream source)
@@ -115,15 +125,18 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - [ ] Population data, urban classification
 
 ### Infrastructure
+
 - [ ] Add Redis addon on Railway (code already handles fallback)
 - [ ] Custom domain (e.g. api.mipaka.dev)
 
 ### Marketing
+
 - [ ] Publish dev.to blog post
 - [ ] Update RapidAPI listing with long description and tags
 - [ ] Social media promotion
 
 ### Future Features (see memories/repo/future-ideas.md)
+
 - Boundary polygons (GeoJSON)
 - Settlements/Places model
 - Cross-border relationships
@@ -159,6 +172,7 @@ python manage.py seed_eras
 ```
 
 ## Known Gotchas
+
 - PowerShell displays UTF-8 characters like é as garbled Ã© — the actual JSON response is correct
 - DJANGO_SETTINGS_MODULE env var can get stuck in terminal sessions — always clear before running tests
 - Uganda has 83K records, sync takes a while
