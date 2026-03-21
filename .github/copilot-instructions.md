@@ -11,19 +11,30 @@
 - **License**: MIT
 - **Buy Me a Coffee**: https://buymeacoffee.com/ceddyville
 
-## Countries & Data (103,194 total records)
+## Countries & Data (~103,400 total records)
 
 | Country     | Code | Levels                                                     | Records | Status                       |
 | ----------- | ---- | ---------------------------------------------------------- | ------- | ---------------------------- |
-| Kenya       | KE   | County → Constituency → Ward                               | 1,787   | Complete                     |
-| Tanzania    | TZ   | Region → District                                          | 207     | Partial (no wards in source) |
-| Uganda      | UG   | Region → District → County → Sub-county → Parish → Village | 83,012  | Complete                     |
-| Rwanda      | RW   | Province → District → Sector → Cell → Village              | 17,441  | Complete                     |
+| Kenya       | KE   | County → Constituency → Ward                               | 1,954   | Complete                     |
+| Tanzania    | TZ   | Region → District                                          | 213     | Partial (no wards in source) |
+| Uganda      | UG   | Region → District → County → Sub-county → Parish → Village | 83,017  | Complete                     |
+| Rwanda      | RW   | Province → District → Sector → Cell → Village              | 17,453  | Complete                     |
 | Burundi     | BI   | Province → Commune → Colline                               | 491     | Complete                     |
-| DRC         | CD   | Province → Territory                                       | 174     | Partial                      |
-| South Sudan | SS   | State → County → Payam                                     | 82      | Partial                      |
+| DRC         | CD   | Province → Territory                                       | 185     | Partial                      |
+| South Sudan | SS   | State → County → Payam                                     | 110     | Partial                      |
 
 Historical names seeded for ~60 major cities covering pre-colonial, colonial, and post-independence eras.
+
+### Historical Divisions (across all countries, level 100/101, is_active=False)
+
+| Country     | Data                              | Records | Source    |
+| ----------- | --------------------------------- | ------- | --------- |
+| Kenya       | Provinces (8) + Districts (159)   | 167     | Wikipedia |
+| Rwanda      | Prefectures pre-2006 (12)         | 12      | Wikipedia |
+| DRC         | Provinces 1997–2015 (11)          | 11      | Wikipedia |
+| South Sudan | States 2015–2020 (28)             | 28      | Wikipedia |
+| Tanzania    | New regions 2002–2016 (6)         | 6       | Wikipedia |
+| Uganda      | Traditional kingdoms (5)          | 5       | Wikipedia |
 
 ## Architecture
 
@@ -32,7 +43,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - **Country** — code (ISO 2-letter), name, native_name, max_levels, is_active
 - **Era** — historical periods per country (precolonial/colonial/independence/current) with colonial_power tracking
 - **DivisionLevel** — level definitions per country (e.g. L1="County" in Kenya, L1="Region" in Tanzania)
-- **Division** — self-referential parent/child hierarchy, unlimited depth. Fields: name, name_sw, code, native_id, source, latitude, longitude. Indexed on (country,level), (parent), (code)
+- **Division** — self-referential parent/child hierarchy, unlimited depth. Fields: name, name_sw, code, native_id, source, description, latitude, longitude, is_active. Indexed on (country,level), (parent), (code). Historical divisions use level 100/101 with is_active=False
 - **DivisionName** — historical names across eras and languages (e.g. Léopoldville → Kinshasa)
 
 ### API Endpoints (divisions/views.py, divisions/urls.py)
@@ -82,7 +93,14 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 
 - All 7 countries loaded with full hierarchies from external data sources
 - Historical names (eras + division names) for ~60 major cities
-- Kenya historical divisions: 8 provinces (1963), 41 districts (1963), 48 districts (1992)
+- Historical divisions for all 7 countries:
+  - Kenya: 8 provinces + 159 districts (1963/1992/2007 eras)
+  - Rwanda: 12 prefectures (pre-2006)
+  - DRC: 11 provinces (1997–2015 structure)
+  - South Sudan: 28 states (2015–2020 decree)
+  - Tanzania: 6 new regions (2002–2016 splits)
+  - Uganda: 5 traditional kingdoms (abolished 1967, restored 1993)
+  - Burundi: legacy 18-province structure (via --legacy flag)
 - OpenAPI docs via drf-spectacular (Swagger + ReDoc)
 - Read-only API with explicit AllowAny permissions
 - 24-hour cache on list/retrieve endpoints
@@ -100,6 +118,8 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - Bulk CSV export endpoint: GET /api/v1/divisions/export/?country=KE
 - Latitude/longitude fields on Division model (nullable, migration applied, no data populated yet)
 - latitude/longitude exposed in API serializers
+- Description field on Division model (used for historical context/notes)
+- description exposed in DivisionSerializer
 
 ### Testing (completed)
 
@@ -123,11 +143,12 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - [ ] Tanzania wards (not available in upstream source)
 - [ ] DRC — more territories and disputed province assignments
 - [ ] Population data, urban classification
+- [x] Historical divisions for all countries (completed — 229 records across 7 countries)
 
 ### Infrastructure
 
 - [ ] Add Redis addon on Railway (code already handles fallback)
-- [ ] Custom domain (e.g. api.mipaka.dev)
+- [ ] Custom domain — mipaka.dev purchased from simply.com, pending DNS setup
 
 ### Marketing
 
@@ -169,6 +190,14 @@ python manage.py sync_burundi
 python manage.py sync_drc
 python manage.py sync_south_sudan
 python manage.py seed_eras
+
+# Load historical divisions (run after current data is synced)
+python manage.py sync_kenya --levels provinces districts_1963 districts_1992 districts_2007
+python manage.py sync_rwanda --levels prefectures_2006
+python manage.py sync_drc --levels provinces_1997
+python manage.py sync_south_sudan --levels states_2015
+python manage.py sync_tanzania --levels regions_historical
+python manage.py sync_uganda --levels kingdoms
 ```
 
 ## Known Gotchas
