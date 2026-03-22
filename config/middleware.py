@@ -44,23 +44,29 @@ class RapidAPIProxyMiddleware:
     X-RapidAPI-Proxy-Secret header. This prevents users from bypassing
     RapidAPI (and your billing) by calling the Railway URL directly.
 
-    Excluded paths (always allowed without the header):
-      - /health/       (Railway healthcheck)
-      - /admin/        (Django admin)
-      - /api/docs/     (Swagger — useful for you to test)
-      - /api/redoc/
-      - /api/schema/
+    Bypassed for:
+      - Requests originating from mipaka.dev (landing page explorer)
+      - /health/, /admin/, /api/docs/, /api/redoc/, /api/schema/
     """
 
-    EXCLUDED_PREFIXES = ("/health", "/admin", "/api/docs",
-                         "/api/redoc", "/api/schema")
+    ALLOWED_ORIGINS = ("https://mipaka.dev", "http://mipaka.dev")
 
     def __init__(self, get_response):
         self.get_response = get_response
         self.proxy_secret = getattr(settings, "RAPIDAPI_PROXY_SECRET", "")
 
+    def _is_allowed_origin(self, request):
+        origin = request.META.get("HTTP_ORIGIN", "")
+        referer = request.META.get("HTTP_REFERER", "")
+        for allowed in self.ALLOWED_ORIGINS:
+            if origin == allowed or referer.startswith(allowed):
+                return True
+        return False
+
     def __call__(self, request):
         if self.proxy_secret and request.path.startswith("/api/v1/"):
+            if self._is_allowed_origin(request):
+                return self.get_response(request)
             header = request.META.get("HTTP_X_RAPIDAPI_PROXY_SECRET", "")
             if header != self.proxy_secret:
                 return JsonResponse(
