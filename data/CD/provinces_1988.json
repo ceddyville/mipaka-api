@@ -1,0 +1,123 @@
+[
+  {
+    "native_id": "CD-1988-KIN",
+    "name": "Kinshasa",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Kinshasa",
+    "notes": "Capital city-province. Retained the name Kinshasa throughout the Zaire era. Never renamed unlike other provinces.",
+    "successor_provinces": ["Kinshasa"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-BAN",
+    "name": "Bandundu",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Bandundu",
+    "notes": "Retained the name Bandundu during the Zaire era. One of the provinces that kept its name through all regime changes.",
+    "successor_provinces": ["Kwango", "Kwilu", "Mai-Ndombe"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-BAZ",
+    "name": "Bas-Zaïre",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Matadi",
+    "notes": "Formerly Bas-Congo, renamed Bas-Zaïre under Mobutu's authenticité policy in 1971. Reverted to Bas-Congo in 1997 after Mobutu's fall, then became Kongo Central in 2015.",
+    "successor_provinces": ["Kongo Central"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-EQU",
+    "name": "Équateur",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Mbandaka",
+    "notes": "Retained the name Équateur during the Zaire era. Mobutu's home province — received significant development investment. Split into 5 provinces in 2015.",
+    "successor_provinces": ["Équateur", "Mongala", "Nord-Ubangi", "Sud-Ubangi", "Tshuapa"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-KOC",
+    "name": "Kasaï-Occidental",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Kananga",
+    "notes": "Retained the name Kasaï-Occidental through the Zaire era. Rich in diamond deposits.",
+    "successor_provinces": ["Kasaï", "Kasaï-Central"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-KOR",
+    "name": "Kasaï-Oriental",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Mbuji-Mayi",
+    "notes": "Retained the name Kasaï-Oriental through the Zaire era. Mbuji-Mayi became a major diamond mining center under Mobutu.",
+    "successor_provinces": ["Kasaï-Oriental", "Lomami", "Sankuru"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-SHA",
+    "name": "Shaba",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Lubumbashi",
+    "notes": "Formerly Katanga, renamed Shaba (meaning 'copper' in Swahili) under Mobutu's authenticité policy in 1971. Site of two Shaba invasions (1977, 1978). Reverted to Katanga in 1997.",
+    "successor_provinces": ["Haut-Katanga", "Haut-Lomami", "Lualaba", "Tanganyika"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-HAZ",
+    "name": "Haut-Zaïre",
+    "era": "Zaire",
+    "era_years": "1971–1997",
+    "capital": "Kisangani",
+    "notes": "Formerly Province Orientale, renamed Haut-Zaïre under Mobutu's authenticité policy in 1971. Reverted to Orientale in 1997. Scene of major battles during the Simba Rebellion (1964) and both Congo Wars.",
+    "successor_provinces": ["Bas-Uélé", "Haut-Uélé", "Ituri", "Tshopo"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-MAN",
+    "name": "Maniema",
+    "era": "Zaire",
+    "era_years": "1988–1997",
+    "capital": "Kindu",
+    "notes": "Split from Kivu province in 1988 along with Nord-Kivu and Sud-Kivu. Named after the Maniema region, historically associated with the Arab-Swahili slave and ivory trade.",
+    "successor_provinces": ["Maniema"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-NKV",
+    "name": "Nord-Kivu",
+    "era": "Zaire",
+    "era_years": "1988–1997",
+    "capital": "Goma",
+    "notes": "Split from Kivu province in 1988. Home to Virunga National Park and the mountain gorillas. Later became epicenter of the First and Second Congo Wars and the ongoing M23 conflict.",
+    "successor_provinces": ["Nord-Kivu"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1988-SKV",
+    "name": "Sud-Kivu",
+    "era": "Zaire",
+    "era_years": "1988–1997",
+    "capital": "Bukavu",
+    "notes": "Split from Kivu province in 1988. Borders Rwanda and Burundi. Significantly affected by the Rwandan genocide spillover and subsequent Congo Wars.",
+    "successor_provinces": ["Sud-Kivu"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  }
+]

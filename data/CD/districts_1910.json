@@ -1,0 +1,110 @@
+[
+  {
+    "native_id": "CD-D1910-BASCON",
+    "name": "Bas-Congo",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Consolidated in 1910 from the four former districts of Banana, Boma, Matadi, and Cataractes. Located at the mouth of the Congo River.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-MOYCON",
+    "name": "Moyen-Congo",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Middle Congo district. Later merged into Bas-Congo (south) and Lac Léopold II (north) by 1926.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-LACLEO",
+    "name": "Lac Léopold II",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after the lake (now Lake Mai-Ndombe). Located in the central-western Congo basin.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-EQU",
+    "name": "Équateur",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named for its position straddling the equator. Later split into a smaller Équateur and Lulonga in 1912.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-BAN",
+    "name": "Bangala",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after the Bangala people along the Congo River. Located in the north-central part of the colony.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-UBA",
+    "name": "Ubangi",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after the Ubangi River, the largest right-bank tributary of the Congo. Bordered French Equatorial Africa.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-UEL",
+    "name": "Uele",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after the Uele River. Later split into Bas-Uele and Haut-Uele in 1912.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-ARU",
+    "name": "Aruwimi",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after the Aruwimi River. Part of the dense equatorial forest region explored by Henry Morton Stanley.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-STN",
+    "name": "Stanleyville",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after Stanleyville (now Kisangani). Later split into a smaller Stanleyville, Lowa, Ituri, Maniema, and Kivu in 1912.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-KAT",
+    "name": "Katanga",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Made a vice-government general in 1910 from parts of the Stanley Falls and Lualaba districts. Rich in copper and cobalt — the economic heart of the colony. Later divided into Lomami, Tanganika-Moero, Haut-Luapula, and Lulua in 1912.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-KAS",
+    "name": "Kasai",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after the Kasai River. Later split into Sankuru (north) and a smaller Kasai (south) in 1912.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1910-KWA",
+    "name": "Kwango",
+    "era": "Congo Free State / Early Belgian Congo",
+    "era_years": "1910–1912",
+    "notes": "Named after the Kwango River. Located in the southwestern part of the colony, bordering Portuguese Angola.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  }
+]

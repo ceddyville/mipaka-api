@@ -1,0 +1,162 @@
+[
+  {
+    "native_id": "CD-D1933-LEO",
+    "name": "Léopoldville",
+    "parent_province": "Léopoldville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Urban district created around the capital city. New in the 1926 reorganization.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-BASCON",
+    "name": "Bas-Congo",
+    "parent_province": "Léopoldville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Coastal district at the mouth of the Congo River. Included the ports of Boma and Matadi.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-KWA",
+    "name": "Kwango",
+    "parent_province": "Léopoldville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after the Kwango River. Bordered Portuguese Angola to the south.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-LACLEO",
+    "name": "Lac Léopold II",
+    "parent_province": "Léopoldville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after Lake Léopold II (now Lake Mai-Ndombe). Absorbed parts of the former Moyen-Congo district.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-SAN",
+    "name": "Sankuru",
+    "parent_province": "Lusambo",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after the Sankuru River. Part of the Kasai region.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-KAS",
+    "name": "Kasai",
+    "parent_province": "Lusambo",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after the Kasai River. Diamond-rich region.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-CONUBA",
+    "name": "Congo-Ubangi",
+    "parent_province": "Coquilhatville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Formed from the merger of former Bangala, Ubangi, and Lulonga districts in the 1933 reorganization.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-TSH",
+    "name": "Tshuapa",
+    "parent_province": "Coquilhatville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after the Tshuapa River. Located in the central Congo basin rainforest.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-STN",
+    "name": "Stanleyville",
+    "parent_province": "Stanleyville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "District centered on Stanleyville (now Kisangani), at the navigable head of the Congo River.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-UEL",
+    "name": "Uele",
+    "parent_province": "Stanleyville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Reconsolidated from former Bas-Uele and Haut-Uele districts. Named after the Uele River.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-KIBITU",
+    "name": "Kibali-Ituri",
+    "parent_province": "Stanleyville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Formed from former Ituri and parts of Aruwimi and Haut-Uele districts. Named after the Kibali and Ituri rivers. Gold mining region.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-KIV",
+    "name": "Kivu",
+    "parent_province": "Costermansville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after Lake Kivu. Eastern border district with stunning highland scenery. Later became the provinces of Nord-Kivu and Sud-Kivu.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-MAN",
+    "name": "Maniema",
+    "parent_province": "Costermansville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Formed from parts of the former Lowa and Maniema districts. Historically associated with Arab-Swahili slave trade routes.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-TAN",
+    "name": "Tanganika",
+    "parent_province": "Élisabethville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after Lake Tanganyika. Formed from the consolidation of Tanganika-Moero and parts of Lomami.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-LUA",
+    "name": "Lualaba",
+    "parent_province": "Élisabethville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Named after the Lualaba River (upper Congo). Formed from parts of the former Haut-Luapula and Lulua districts.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1933-HAUKAT",
+    "name": "Haut-Katanga",
+    "parent_province": "Élisabethville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "notes": "Upper Katanga, centered on the copper belt around Élisabethville (now Lubumbashi). The economic powerhouse of the Belgian Congo.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  }
+]

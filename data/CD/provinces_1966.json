@@ -1,0 +1,101 @@
+[
+  {
+    "native_id": "CD-1966-KIN",
+    "name": "Kinshasa",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Kinshasa",
+    "notes": "Capital city with province-level status. Formerly Léopoldville, renamed Kinshasa in 1966. During the Zaire era (1971–1997) retained the name Kinshasa. The 1963 constitution briefly created 21 provinces but these were consolidated to 8+Kinshasa in 1966.",
+    "successor_provinces": ["Kinshasa"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-BAN",
+    "name": "Bandundu",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Bandundu",
+    "notes": "Created in the 1966 consolidation from parts of the former Léopoldville province. Retained the same name during the Zaire era. Split into Kwango, Kwilu, and Mai-Ndombe in 2015.",
+    "successor_provinces": ["Kwango", "Kwilu", "Mai-Ndombe"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-BAS",
+    "name": "Bas-Congo",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Matadi",
+    "notes": "Created in the 1966 consolidation. Renamed Bas-Zaïre during the Zaire era (1971–1997), then reverted to Bas-Congo (1997–2015), then renamed Kongo Central in 2015.",
+    "successor_provinces": ["Kongo Central"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-EQU",
+    "name": "Équateur",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Mbandaka",
+    "notes": "Created in the 1966 consolidation from the former Coquilhatville/Équateur province. Retained the same name through all eras. Split into Équateur, Mongala, Nord-Ubangi, Sud-Ubangi, and Tshuapa in 2015.",
+    "successor_provinces": ["Équateur", "Mongala", "Nord-Ubangi", "Sud-Ubangi", "Tshuapa"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-KOC",
+    "name": "Kasaï-Occidental",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Kananga",
+    "notes": "Created from the western part of the former Lusambo/Kasai province. Retained the same name through all eras. Split into Kasaï and Kasaï-Central in 2015.",
+    "successor_provinces": ["Kasaï", "Kasaï-Central"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-KOR",
+    "name": "Kasaï-Oriental",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Mbuji-Mayi",
+    "notes": "Created from the eastern part of the former Lusambo/Kasai province. Retained the same name through all eras. Split into Kasaï-Oriental, Lomami, and Sankuru in 2015.",
+    "successor_provinces": ["Kasaï-Oriental", "Lomami", "Sankuru"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-KAT",
+    "name": "Katanga",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Lubumbashi",
+    "notes": "Continued from the former Élisabethville/Katanga province. Renamed Shaba during the Zaire era (1971–1997), then reverted to Katanga. Split into Haut-Katanga, Haut-Lomami, Lualaba, and Tanganyika in 2015.",
+    "successor_provinces": ["Haut-Katanga", "Haut-Lomami", "Lualaba", "Tanganyika"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-KIV",
+    "name": "Kivu",
+    "era": "Post-independence",
+    "era_years": "1966–1988",
+    "capital": "Bukavu",
+    "notes": "Continued from the former Costermansville/Kivu province. In 1988 split into three separate provinces: Maniema, Nord-Kivu, and Sud-Kivu. This province no longer existed after 1988.",
+    "successor_provinces": ["Maniema", "Nord-Kivu", "Sud-Kivu"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-1966-ORI",
+    "name": "Orientale",
+    "era": "Post-independence",
+    "era_years": "1966–1971",
+    "capital": "Kisangani",
+    "notes": "Continued from the former Stanleyville/Orientale province. Renamed Haut-Zaïre during the Zaire era (1971–1997), then reverted to Orientale. Split into Bas-Uélé, Haut-Uélé, Ituri, and Tshopo in 2015.",
+    "successor_provinces": ["Bas-Uélé", "Haut-Uélé", "Ituri", "Tshopo"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Provinces_of_the_Democratic_Republic_of_the_Congo"
+  }
+]

@@ -1,0 +1,262 @@
+[
+  {
+    "native_id": "CD-D2008-KWA",
+    "name": "Kwango",
+    "parent_province": "Bandundu",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Kwango Province in the 2015 repartition. Territories: Feshi, Kahemba, Kasongo-Lunda, Kenge, Kisandji, Popokabaka.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-KWI",
+    "name": "Kwilu",
+    "parent_province": "Bandundu",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Kwilu Province in 2015. Territories: Bagata, Bulungu, Gungu, Idiofa, Kikwit, Masi-Manimba, and others.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-MAI",
+    "name": "Mai-Ndombe",
+    "parent_province": "Bandundu",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Named after Lake Mai-Ndombe (formerly Lake Léopold II). Became Mai-Ndombe Province in 2015. Territories: Bokoro, Inongo, Kiri, Kutu, Nioki, Oshwe.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-PLA",
+    "name": "Plateaux",
+    "parent_province": "Bandundu",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became part of Mai-Ndombe Province in 2015. Territories: Bolobo, Kwamouth, Mushie, Yumbi.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-BASFL",
+    "name": "Bas-Fleuve",
+    "parent_province": "Bas-Congo",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Lower river district in Bas-Congo. Became part of Kongo Central Province in 2015. Territories: Lukula, Seke-Banza, Tshela.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-CAT",
+    "name": "Cataractes",
+    "parent_province": "Bas-Congo",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Named for the rapids on the lower Congo. Became part of Kongo Central Province in 2015. Territories: Luozi, Mbanza-Ngungu, Songololo.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-LUK",
+    "name": "Lukaya",
+    "parent_province": "Bas-Congo",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became part of Kongo Central Province in 2015. Territories: Kasangulu, Kimvula, Madimba.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-KASD",
+    "name": "Kasaï",
+    "parent_province": "Kasaï-Occidental",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Kasaï Province in 2015. Territories: Dekese, Ilebo, Kamonia (Tshikapa), Luebo, Mweka.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-LULD",
+    "name": "Lulua",
+    "parent_province": "Kasaï-Occidental",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Named after the Lulua River. Became Kasaï-Central Province in 2015. Territories: Demba, Dibaya, Dimbelenge, Kazumba, Luiza.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-KABD",
+    "name": "Kabinda",
+    "parent_province": "Kasaï-Oriental",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Lomami Province in 2015. Territories: Gandajika, Kabinda, Kamiji, Lubao, Luilu.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-SAND",
+    "name": "Sankuru",
+    "parent_province": "Kasaï-Oriental",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Sankuru Province in 2015. Territories: Katako-Kombe, Kole, Lodja, Lomela, Lubefu, Lusambo.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-TSHD",
+    "name": "Tshilenge",
+    "parent_province": "Kasaï-Oriental",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became part of Kasaï-Oriental Province (reduced) in 2015. Territories: Kabeya-Kamwanga, Katanda, Lupatapata, Miabi, Tshilenge.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-EQUD",
+    "name": "Équateur",
+    "parent_province": "Équateur",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Équateur Province (reduced) in 2015. Territories: Basankusu, Bikoro, Bolomba, Bomongo, Ingende, Lukolela, Mankanza.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-MOND",
+    "name": "Mongala",
+    "parent_province": "Équateur",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Mongala Province in 2015. Territories: Bumba, Bongandanga, Lisala.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-NUBAD",
+    "name": "Nord-Ubangi",
+    "parent_province": "Équateur",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Nord-Ubangi Province in 2015. Territories: Businga, Bosobolo, Mobayi-Mbongo, Yakoma.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-SUBAD",
+    "name": "Sud-Ubangi",
+    "parent_province": "Équateur",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Sud-Ubangi Province in 2015. Territories: Budjala, Gemena, Kungu, Libenge.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-TSHUD",
+    "name": "Tshuapa",
+    "parent_province": "Équateur",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Tshuapa Province in 2015. Territories: Befale, Boende, Bokungu, Djolu, Ikela, Monkoto.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-BASUD",
+    "name": "Bas-Uele",
+    "parent_province": "Orientale",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Bas-Uélé Province in 2015. Territories: Aketi, Ango, Bambesa, Bondo, Buta, Gwane, Poko.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-HAUUD",
+    "name": "Haut-Uele",
+    "parent_province": "Orientale",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Haut-Uélé Province in 2015. Territories: Dungu, Faradje, Niangara, Rungu, Wamba, Watsa.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-ITUD",
+    "name": "Ituri",
+    "parent_province": "Orientale",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Ituri Province in 2015. Scene of the Ituri conflict (1999–2003). Territories: Aru, Djugu, Irumu, Mahagi, Mambasa.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-TSHOD",
+    "name": "Tshopo",
+    "parent_province": "Orientale",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Tshopo Province in 2015. Centered on Kisangani. Territories: Bafwasende, Banalia, Basoko, Isangi, Opala, Ubundu, Yahuma.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-HAUKT",
+    "name": "Haut-Katanga",
+    "parent_province": "Katanga",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Haut-Katanga Province in 2015. Copper belt region. Territories: Kambove, Kasenga, Kipushi, Mitwaba, Pweto, Sakania.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-HAULD",
+    "name": "Haut-Lomami",
+    "parent_province": "Katanga",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Haut-Lomami Province in 2015. Territories: Bukama, Kabongo, Kamina, Kanyama, Malemba-Nkulu.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-KOLD",
+    "name": "Kolwezi",
+    "parent_province": "Katanga",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "City-district hybrid: had both communes and territories, led by a mayor. Became Lualaba Province (with Lualaba district) in 2015. Territories: Lubudi, Mutshatsha; Communes: Dilala, Manika.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-LUAD",
+    "name": "Lualaba",
+    "parent_province": "Katanga",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became part of Lualaba Province (with Kolwezi district) in 2015. Territories: Dilolo, Kapanga, Sandoa.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  },
+  {
+    "native_id": "CD-D2008-TAND",
+    "name": "Tanganyika",
+    "parent_province": "Katanga",
+    "era": "Pre-2015 DRC",
+    "era_years": "1966–2015",
+    "notes": "Became Tanganyika Province in 2015. Along Lake Tanganyika. Territories: Kabalo, Kalemie, Kongolo, Manono, Moba, Nyunzu.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Democratic_Republic_of_the_Congo"
+  }
+]

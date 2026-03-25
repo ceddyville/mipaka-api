@@ -1,0 +1,68 @@
+[
+  {
+    "native_id": "CD-1933-LEO",
+    "name": "Léopoldville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "capital": "Léopoldville (now Kinshasa)",
+    "notes": "One of six provinces created in the 1933 colonial reorganization. Named after the capital city. Contained the districts of Léopoldville, Bas-Congo, Kwango, and Lac Léopold II.",
+    "successor_provinces": ["Kinshasa", "Bandundu", "Bas-Congo"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-1933-LUS",
+    "name": "Lusambo",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "capital": "Lusambo",
+    "notes": "Also known as Province du Kasai. Created in the 1933 reorganization from part of the former Congo-Kasaï province. Contained the districts of Sankuru and Kasai.",
+    "successor_provinces": ["Kasaï-Occidental", "Kasaï-Oriental"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-1933-COQ",
+    "name": "Coquilhatville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "capital": "Coquilhatville (now Mbandaka)",
+    "notes": "Also known as Province de l'Équateur. Created from the former Équateur province in the 1933 reorganization. Contained the districts of Congo-Ubangi and Tshuapa.",
+    "successor_provinces": ["Équateur"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-1933-STA",
+    "name": "Stanleyville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "capital": "Stanleyville (now Kisangani)",
+    "notes": "Also known as Province Orientale. Created from part of the former Orientale province in the 1933 reorganization. Contained the districts of Stanleyville, Uele, and Kibali-Ituri.",
+    "successor_provinces": ["Orientale"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-1933-COS",
+    "name": "Costermansville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "capital": "Costermansville (now Bukavu)",
+    "notes": "Also known as Province du Kivu. Created from part of the former Orientale province in the 1933 reorganization. Contained the districts of Kivu and Maniema. Renamed Kivu after independence.",
+    "successor_provinces": ["Nord-Kivu", "Sud-Kivu", "Maniema"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-1933-ELI",
+    "name": "Élisabethville",
+    "era": "Belgian Congo",
+    "era_years": "1933–1960",
+    "capital": "Élisabethville (now Lubumbashi)",
+    "notes": "Also known as Province du Katanga. Katanga was the first province created as a vice-government in 1910. Reorganized in 1933 with the districts of Tanganika, Lualaba, and Haut-Katanga.",
+    "successor_provinces": ["Katanga"],
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  }
+]

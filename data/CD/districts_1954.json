@@ -1,0 +1,262 @@
+[
+  {
+    "native_id": "CD-D1954-LEO",
+    "name": "Léopoldville",
+    "parent_province": "Léopoldville",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Urban district around the capital. By 1954 Léopoldville had grown into the largest city in sub-Saharan Africa.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-LACLEO",
+    "name": "Lac Léopold II",
+    "parent_province": "Léopoldville",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after Lake Léopold II (now Lake Mai-Ndombe). Later became Mai-Ndombe District.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-KWI",
+    "name": "Kwilu",
+    "parent_province": "Léopoldville",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Kwilu River. Site of the Kwilu Rebellion (1963–1965) led by Pierre Mulele after independence.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-KWA",
+    "name": "Kwango",
+    "parent_province": "Léopoldville",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Kwango River. Bordered Portuguese Angola.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-BASCON",
+    "name": "Bas-Congo",
+    "parent_province": "Léopoldville",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Lower Congo district including the Atlantic coast. Key port infrastructure at Matadi and Boma.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-CAT",
+    "name": "Cataractes",
+    "parent_province": "Léopoldville",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named for the cataracts (rapids) on the lower Congo River between Matadi and Kinshasa. An ancient crossroads region.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-LUL",
+    "name": "Lulua",
+    "parent_province": "Lusambo",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Lulua River. Later became part of Kasaï-Occidental province.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-SAN",
+    "name": "Sankuru",
+    "parent_province": "Lusambo",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Sankuru River. Later became Sankuru province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-KAB",
+    "name": "Kabinda",
+    "parent_province": "Lusambo",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the town of Kabinda. Later became Lomami province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-KAS",
+    "name": "Kasai",
+    "parent_province": "Lusambo",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Core Kasai district. Major diamond deposits around Tshikapa.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-EQU",
+    "name": "Équateur",
+    "parent_province": "Équateur",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Equatorial district in the central Congo basin. Dense tropical rainforest.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-MON",
+    "name": "Mongala",
+    "parent_province": "Équateur",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Mongala River. Later became Mongala province in 2015. Birthplace region of Mobutu Sese Seko.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-UBA",
+    "name": "Ubangi",
+    "parent_province": "Équateur",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Ubangi River. Later split into Nord-Ubangi and Sud-Ubangi provinces in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-TSH",
+    "name": "Tshuapa",
+    "parent_province": "Équateur",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Tshuapa River. Remote rainforest region. Later became Tshuapa province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-STN",
+    "name": "Stanleyville",
+    "parent_province": "Orientale",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Centered on Stanleyville (now Kisangani). Major river port and trading center. Later became Tshopo province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-ITU",
+    "name": "Ituri",
+    "parent_province": "Orientale",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Ituri River and Forest. Home to the Mbuti pygmy peoples. Later became Ituri province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-BASUEL",
+    "name": "Bas-Uele",
+    "parent_province": "Orientale",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Lower Uele district. Later became Bas-Uélé province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-HAUUEL",
+    "name": "Haut-Uele",
+    "parent_province": "Orientale",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Upper Uele district. Later became Haut-Uélé province in 2015. Region of Lord's Resistance Army activity in the 2000s.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-SUDKIV",
+    "name": "Sud-Kivu",
+    "parent_province": "Kivu",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Southern Kivu district bordering Lake Tanganyika and Rwanda. Later became Sud-Kivu province.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-NORKIV",
+    "name": "Nord-Kivu",
+    "parent_province": "Kivu",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Northern Kivu district bordering Lake Edward and Uganda. Home to Virunga volcanoes. Later became Nord-Kivu province.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-MAN",
+    "name": "Maniema",
+    "parent_province": "Kivu",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Interior district west of Kivu. Historically the zone of Arab-Swahili influence (Tippu Tip). Later became Maniema province.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-ELI",
+    "name": "Élisabethville",
+    "parent_province": "Katanga",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "District around the copper capital Élisabethville (now Lubumbashi). Heart of the Union Minière du Haut-Katanga operations. Later Haut-Katanga province.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-TAN",
+    "name": "Tanganyika",
+    "parent_province": "Katanga",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after Lake Tanganyika. Eastern Katanga along the lake shore. Later became Tanganyika province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-LUA",
+    "name": "Lualaba",
+    "parent_province": "Katanga",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Lualaba River (upper Congo). Mining district. Later became Lualaba province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-HAULOM",
+    "name": "Haut-Lomami",
+    "parent_province": "Katanga",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Upper Lomami district. Later became Haut-Lomami province in 2015.",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  },
+  {
+    "native_id": "CD-D1954-LUAMOE",
+    "name": "Luapula-Moero",
+    "parent_province": "Katanga",
+    "era": "Late Belgian Congo",
+    "era_years": "1954–1960",
+    "notes": "Named after the Luapula River and Lake Moero (Mweru). Southeastern Katanga bordering Northern Rhodesia (now Zambia).",
+    "source": "Wikipedia",
+    "source_url": "https://en.wikipedia.org/wiki/Districts_of_the_Belgian_Congo"
+  }
+]
