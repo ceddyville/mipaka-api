@@ -52,7 +52,7 @@ GET /api/v1/eras/?country=CD
 | Republic of Zaire                                 | 1971–1997    | Independence       |
 | Democratic Republic of the Congo                  | 1997–present | Current            |
 
-**Uganda has 10 eras** — including 8 pre-colonial kingdoms and chiefdoms:
+**Uganda has 10 eras** — including 8 pre-colonial kingdoms and chiefdoms with their current rulers:
 
 - **Buganda Kingdom** (~1300–present) — Kabaka Ronald Muwenda Mutebi II
 - **Bunyoro-Kitara Kingdom** (~1300–present) — Omukama Solomon Gafabusa Iguru I
@@ -102,15 +102,15 @@ GET /api/v1/divisions/{kinshasa_id}/names/
 
 **Name coverage by country:**
 
-| Country     | Historical Names | Examples                                                                            |
-| ----------- | ---------------- | ----------------------------------------------------------------------------------- |
-| DRC         | 31               | Léopoldville → Kinshasa, Stanleyville → Kisangani, Élisabethville → Lubumbashi      |
-| Uganda      | 28               | Kasozi k'Empala → Kampala, Bugiri → Port Bell, Entebbe (Luganda: "seat")            |
-| Kenya       | 21               | Fort Smith → Nairobi, Port Florence → Kisumu                                        |
-| Tanzania    | 18               | Dar es Salaam (Arabic: "Haven of Peace"), Bagamoyo (Swahili: "Lay down your heart") |
-| Rwanda      | 14               | Nyarugenge → Kigali, Butare → Huye                                                  |
-| South Sudan | 14               | Gondokoro → Juba, Mongalla → colonial river station                                 |
-| Burundi     | 13               | Usumbura → Bujumbura, Kitega → Gitega                                               |
+| Country     | Historical Names | Examples                                                                                |
+| ----------- | ---------------- | --------------------------------------------------------------------------------------- |
+| DRC         | 31               | Nshasa → Léopoldville → Kinshasa, Stanleyville → Kisangani, Élisabethville → Lubumbashi |
+| Uganda      | 28               | Kasozi k'Empala → Kampala, Bugiri → Port Bell, Entebbe (Luganda: "seat")                |
+| Kenya       | 21               | Enkare Nyirobi → Nairobi, Kisumo(or Kisuma) → Port Florence → Kisumu                    |
+| Tanzania    | 18               | Dar es Salaam (Arabic: "Haven of Peace"), Bagamoyo (Swahili: "Lay down your heart")     |
+| Rwanda      | 14               | Nyarugenge → Kigali, Butare → Huye                                                      |
+| South Sudan | 14               | Gondokoro → Juba, Mongalla → colonial river station                                     |
+| Burundi     | 13               | Usumbura → Bujumbura, Kitega → Gitega                                                   |
 
 ---
 

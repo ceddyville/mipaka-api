@@ -28,7 +28,7 @@ I built **Mipaka API** to solve this.
 
 ## What Is Mipaka?
 
-[Mipaka](https://rapidapi.com/ceddyville/api/mipaka) (_Swahili for "boundaries"_) is a free REST API that gives you normalized access to administrative divisions across 7 East African countries — through a single consistent interface.
+[Mipaka](https://mipaka.dev) (_Swahili for "boundaries"_) is a free REST API that gives you normalized access to administrative divisions across 7 East African countries — through a single consistent interface.
 
 **103,194 divisions** across **7 countries** with full parent-child hierarchies:
 
@@ -148,26 +148,42 @@ The API carries ~60 major cities with pre-colonial, colonial, and post-independe
 - **Historical data mapping** — connecting old datasets to modern divisions
 - **Education** — exploring how borders and names evolved
 
-```json
-// GET /api/v1/divisions/{kampala_id}/names/
-[
-  {
-    "name": "Kasozi k'Empala",
-    "language": "Luganda",
-    "name_type": "indigenous",
-    "era_name": "Buganda Kingdom",
-    "era_type": "precolonial",
-    "era_started": "~1300",
-    "etymology": "Hill of impala — Buganda royal seat"
-  },
-  {
-    "name": "Kampala",
-    "era_name": "Uganda Protectorate",
-    "era_type": "colonial",
-    "era_started": "1894",
-    "era_ended": "1962"
-  }
-]
+Here's how four cities across four countries changed names over the centuries:
+
+### Kinshasa, DRC
+
+| Era                      | Name             | Language | Story                                                       |
+| ------------------------ | ---------------- | -------- | ----------------------------------------------------------- |
+| Kingdom of Kongo (~1390) | **Nshasa**       | Kikongo  | Teke fishing village on the Congo River                     |
+| Congo Free State (1885)  | **Léopoldville** | French   | Stanley's trading post, named after King Leopold II         |
+| DR Congo (1966)          | **Kinshasa**     | Lingala  | Indigenous name restored under Mobutu's authenticité policy |
+
+### Juba, South Sudan
+
+| Era                         | Name          | Language | Story                                                         |
+| --------------------------- | ------------- | -------- | ------------------------------------------------------------- |
+| Pre-colonial                | **Jubek**     | Bari     | "Uncultivated land near the river" — Bari people's settlement |
+| Mahdist State (1885)        | **Gondokoro** | English  | Older trading post nearby, abandoned for Juba                 |
+| Anglo-Egyptian Sudan (1899) | **Juba**      | Bari     | British built administrative post in 1922                     |
+
+### Bujumbura, Burundi
+
+| Era                       | Name          | Language | Story                                    |
+| ------------------------- | ------------- | -------- | ---------------------------------------- |
+| Kingdom of Burundi        | **Bujumbura** | Kirundi  | Indigenous name — exact meaning disputed |
+| German East Africa (1889) | **Usumbura**  | German   | German military post on Lake Tanganyika  |
+| Independence (1962)       | **Bujumbura** | Kirundi  | Original name restored                   |
+
+### Kampala, Uganda
+
+| Era                        | Name                | Language | Story                                           |
+| -------------------------- | ------------------- | -------- | ----------------------------------------------- |
+| Buganda Kingdom (~1300)    | **Kasozi k'Empala** | Luganda  | "Hill of impala" — Buganda royal hunting ground |
+| Uganda Protectorate (1894) | **Kampala**         | English  | British fort on the same hill                   |
+
+```bash
+# Query any city's full name history
+GET /api/v1/divisions/{city_id}/names/
 ```
 
 ---
@@ -187,15 +203,16 @@ Great for data analysis, offline use, or loading into your own database.
 
 ## Try It Free
 
-Mipaka is available on [RapidAPI](https://rapidapi.com/ceddyville/api/mipaka) with a generous free tier.
+Try the live explorer at [mipaka.dev](https://mipaka.dev/#explorer) — pick a country, drill down through divisions, and see the API responses in real time.
 
-The code is also [open source on GitHub](https://github.com/ceddyville/mipaka-api) under the MIT license — contributions welcome, especially for countries with partial data (Tanzania wards, DRC territories).
+Mipaka is also available on [RapidAPI](https://rapidapi.com/ceddyville/api/mipaka) with a generous free tier, and the code is [open source on GitHub](https://github.com/ceddyville/mipaka-api) under the MIT license — contributions welcome, especially for countries with partial data (Tanzania wards, DRC territories).
 
 ### Links
 
+- **Website:** [mipaka.dev](https://mipaka.dev)
+- **API Docs:** [api.mipaka.dev/api/docs/](https://api.mipaka.dev/api/docs/)
 - **API on RapidAPI:** [rapidapi.com/ceddyville/api/mipaka](https://rapidapi.com/ceddyville/api/mipaka)
 - **GitHub:** [github.com/ceddyville/mipaka-api](https://github.com/ceddyville/mipaka-api)
-- **Interactive Docs:** [mipaka-api.up.railway.app/api/docs/](https://mipaka-api.up.railway.app/api/docs/)
 
 ---
 
@@ -216,16 +233,10 @@ If you're building anything that needs East African location data — forms, KYC
 
 ## Coming Next
 
-This is **Part 1** of the Mipaka API series. Coming up:
+This is **Part 1** of the Mipaka API series. Next up:
 
 - **Part 2:** What's New — 47 Historical Eras, 124 Place Names, and DRC's Six Administrative Eras
-- **Part 3:** From Léopoldville to Kinshasa — 500 Years of African Border Changes
-- **Part 4:** Building Location Dropdowns for African Apps (React + Vue tutorial)
 
 Follow me to catch the next one!
 
 _Mipaka — every border, one API._
-
----
-
-<a href="https://www.buymeacoffee.com/ceddyville"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=ceddyville&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
