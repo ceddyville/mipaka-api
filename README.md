@@ -18,7 +18,7 @@ _Mipaka_ — Swahili for _boundaries_
 [![Django](https://img.shields.io/badge/Django-5.1-c8622a.svg)](https://djangoproject.com)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-e8b86d.svg)](CONTRIBUTING.md)
 [![Countries](https://img.shields.io/badge/Countries-7-c8622a.svg)](#coverage)
-[![Live API](https://img.shields.io/badge/Live_API-mipaka--api.up.railway.app-e8b86d.svg)](https://mipaka-api.up.railway.app/api/v1/)
+[![Live API](https://img.shields.io/badge/Live_API-api.mipaka.dev-e8b86d.svg)](https://api.mipaka.dev/api/v1/)
 [![RapidAPI](https://img.shields.io/badge/RapidAPI-Mipaka-c8622a.svg)](https://rapidapi.com/ceddyville/api/mipaka)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ceddyville-e8b86d.svg)](https://buymeacoffee.com/ceddyville)
 
@@ -61,14 +61,14 @@ GET /api/v1/names/?name_type=indigenous
 
 ## Live API
 
-The API is live at **https://mipaka-api.up.railway.app** — no setup required.
+The API is live at **https://api.mipaka.dev** — no setup required.
 
 ```bash
 # Try it now
-curl https://mipaka-api.up.railway.app/api/v1/countries/
+curl https://api.mipaka.dev/api/v1/countries/
 
 # Interactive docs
-open https://mipaka-api.up.railway.app/api/docs/
+open https://api.mipaka.dev/api/docs/
 ```
 
 ---
@@ -103,7 +103,7 @@ Full setup instructions in **[SETUP.md](SETUP.md)**.
 
 ## API Reference
 
-Base URL: `https://mipaka-api.up.railway.app/api/v1/`
+Base URL: `https://api.mipaka.dev/api/v1/`
 
 ### Core Endpoints
 

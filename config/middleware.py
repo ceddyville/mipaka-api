@@ -49,7 +49,11 @@ class RapidAPIProxyMiddleware:
       - /health/, /admin/, /api/docs/, /api/redoc/, /api/schema/
     """
 
-    ALLOWED_ORIGINS = ("https://mipaka.dev", "http://mipaka.dev")
+    ALLOWED_ORIGINS = (
+        "https://mipaka.dev",
+        "http://mipaka.dev",
+        "https://www.mipaka.dev",
+    )
 
     def __init__(self, get_response):
         self.get_response = get_response
@@ -58,6 +62,9 @@ class RapidAPIProxyMiddleware:
     def _is_allowed_origin(self, request):
         origin = request.META.get("HTTP_ORIGIN", "")
         referer = request.META.get("HTTP_REFERER", "")
+        # Allow file:// and localhost origins for local development
+        if origin in ("null", "") and not referer:
+            return False
         for allowed in self.ALLOWED_ORIGINS:
             if origin == allowed or referer.startswith(allowed):
                 return True

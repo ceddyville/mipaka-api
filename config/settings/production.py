@@ -12,11 +12,19 @@ SECURE_SSL_REDIRECT = config("SECURE_SSL_REDIRECT", default=False, cast=bool)
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-# Tighten CORS in production — update once you have a real domain
+# Tighten CORS in production
 CORS_ALLOWED_ORIGINS = [
-    # "https://mipaka.dev",
+    "https://api.mipaka.dev",
+    "https://mipaka.dev",
+    "https://mipaka-api.up.railway.app",
 ]
 CORS_ALLOW_ALL_ORIGINS = False
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://api.mipaka.dev",
+    "https://mipaka.dev",
+    "https://mipaka-api.up.railway.app",
+]
 
 # Cache — use Redis if available, otherwise fall back to local memory
 try:

@@ -1,9 +1,11 @@
 ---
-title: I Built a Free REST API for Kenya's 47 Counties, 290 Constituencies, and 1,450 Wards
+title: "Mipaka: A Free REST API for 100K+ Administrative Divisions Across East Africa"
 published: false
-description: Mipaka API — a free REST API for administrative divisions across 7 East African countries. No more hardcoding county arrays.
+description: "Mipaka API — a free REST API for 100K+ administrative divisions across 7 East/Central African countries. Counties, districts, wards, villages — one consistent interface. No more hardcoding location arrays."
 tags: api, python, django, africa
 cover_image:
+canonical_url:
+series: Mipaka API — Every Border, One API
 ---
 
 ## The Problem Every African Developer Knows
@@ -210,4 +212,20 @@ For those curious about the internals:
 
 If you're building anything that needs East African location data — forms, KYC flows, delivery zones, research dashboards — give Mipaka a try. And if you have data for regions I haven't covered yet, [PRs are welcome](https://github.com/ceddyville/mipaka-api/blob/main/CONTRIBUTING.md).
 
+---
+
+## Coming Next
+
+This is **Part 1** of the Mipaka API series. Coming up:
+
+- **Part 2:** What's New — 47 Historical Eras, 124 Place Names, and DRC's Six Administrative Eras
+- **Part 3:** From Léopoldville to Kinshasa — 500 Years of African Border Changes
+- **Part 4:** Building Location Dropdowns for African Apps (React + Vue tutorial)
+
+Follow me to catch the next one!
+
 _Mipaka — every border, one API._
+
+---
+
+<a href="https://www.buymeacoffee.com/ceddyville"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=ceddyville&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>

@@ -6,7 +6,7 @@
 
 - **Stack**: Django 4.2 + Django REST Framework + PostgreSQL + drf-spectacular
 - **Repo**: https://github.com/ceddyville/mipaka-api
-- **Live URL**: https://mipaka-api.up.railway.app
+- **Live URL**: https://api.mipaka.dev (Railway: https://mipaka-api.up.railway.app)
 - **RapidAPI**: https://rapidapi.com/ceddyville/api/mipaka
 - **License**: MIT
 - **Buy Me a Coffee**: https://buymeacoffee.com/ceddyville
@@ -82,10 +82,15 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 
 - **Host**: Railway (managed PostgreSQL, gunicorn)
 - **Config**: railway.toml + Procfile
-- **Start command**: migrate then gunicorn
-- **Health check**: /health/ endpoint (30s timeout)
-- **RAPIDAPI_PROXY_SECRET**: set in Railway env vars — blocks direct API access
+- **Start command**: collectstatic → migrate → gunicorn
+- **Health check**: /health/ endpoint exists but Railway healthcheck disabled (networking probe issue); restartPolicyType=ON_FAILURE handles crashes
+- **Custom domain**: api.mipaka.dev (CNAME → 5nb3riuk.up.railway.app, verified with TXT record _railway-verify.api)
+- **Landing page**: mipaka.dev (separate repo: mipaka-site, static HTML, planned for GitHub Pages)
+- **RAPIDAPI_PROXY_SECRET**: set in Railway env vars — blocks direct /api/v1/ access
+- **Railway env vars**: ALLOWED_HOSTS, DATABASE_URL, DEBUG, DJANGO_SETTINGS_MODULE, RAPIDAPI_PROXY_SECRET, REDIS_URL, SECRET_KEY, PORT (8080)
 - **Cache**: locmem fallback in production (no Redis addon yet)
+- **Domain registrar**: simply.com (mipaka.dev, "Only domains" plan)
+- **DNS records**: CNAME api → 5nb3riuk.up.railway.app, TXT _railway-verify.api → railway verification token
 
 ## What Has Been Completed
 
@@ -120,6 +125,8 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - latitude/longitude exposed in API serializers
 - Description field on Division model (used for historical context/notes)
 - description exposed in DivisionSerializer
+- Browsable API renderer enabled (BrowsableAPIRenderer + JSONRenderer) — shows formatted HTML view in browser
+- collectstatic added to Railway start command (fixes WhiteNoise staticfiles directory warning)
 
 ### Testing (completed)
 
@@ -148,7 +155,19 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 ### Infrastructure
 
 - [ ] Add Redis addon on Railway (code already handles fallback)
-- [ ] Custom domain — mipaka.dev purchased from simply.com, pending DNS setup
+- [x] Custom domain — api.mipaka.dev live and verified on Railway
+- [x] DNS setup — CNAME + TXT verification record added on simply.com
+- [ ] Investigate Railway healthcheck probe failure (app works but probe returns "service unavailable" during deploy)
+- [ ] Set up GitHub Pages for mipaka-site landing page (repo not yet created)
+- [ ] Cloudflare email routing for hello@mipaka.dev
+
+### Landing Page (mipaka-site)
+
+- [x] Static site created at ../mipaka-site/ (single index.html + CNAME)
+- [x] Interactive explorer: country pills → cascading dropdowns → result cards → breadcrumbs → JSON toggle
+- [ ] Create mipaka-site GitHub repo and push
+- [ ] Enable GitHub Pages, add A records for mipaka.dev root domain
+- [ ] Deploy landing page to mipaka.dev
 
 ### Marketing
 
@@ -207,3 +226,8 @@ python manage.py sync_uganda --levels kingdoms
 - Uganda has 83K records, sync takes a while
 - Burundi uses legacy 18-province structure (pre-2025) to maintain parent relationships with HDX data
 - Uganda source uses `sub_counties.json` (underscore) but parish key is `subcounty` (no underscore)
+- Railway healthcheck probe fails with "service unavailable" even though gunicorn starts fine — removed healthcheckPath from railway.toml; restartPolicyType=ON_FAILURE handles crashes instead
+- collectstatic must run before gunicorn in the start command (WhiteNoise needs /app/staticfiles/ to exist)
+- api.mipaka.dev required both CNAME and TXT (_railway-verify.api) DNS records for Railway domain verification
+- Local dev requires `$env:DATABASE_URL="sqlite:///db.sqlite3"` since PostgreSQL isn't running locally
+- Landing page explorer fetches from api.mipaka.dev — RapidAPIProxyMiddleware blocks /api/v1/ on production; landing page needs middleware bypass or RapidAPI proxy headers to work
