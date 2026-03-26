@@ -14,7 +14,7 @@ Every city in East and Central Africa carries layers of names. Kinshasa was Léo
 
 These aren't just trivia — they're essential for anyone working with historical records, genealogy data, colonial-era documents, or research datasets that reference places by names that no longer exist on any map.
 
-I built [Mipaka API](https://rapidapi.com/ceddyville/api/mipaka) to solve the modern problem of location dropdowns. But it's become something more: **a timeline of how African administrative boundaries evolved through pre-colonial kingdoms, colonial occupation, and independence.**
+I built [Mipaka API](https://mipaka.dev) to solve the modern problem of location dropdowns. But it's become something more: **a timeline of how African administrative boundaries evolved through pre-colonial kingdoms, colonial occupation, and independence.**
 
 ---
 
@@ -213,10 +213,14 @@ This isn't just an academic exercise. Real use cases:
 
 ## Try It
 
-- **RapidAPI:** [rapidapi.com/ceddyville/api/mipaka](https://rapidapi.com/ceddyville/api/mipaka) — free tier available
-- **Landing Page:** [mipaka.dev](https://mipaka.dev)
+Try the live explorer at [mipaka.dev](https://mipaka.dev/#explorer) — pick a country and explore historical eras, name changes, and division hierarchies in real time.
+
+### Links
+
+- **Website:** [mipaka.dev](https://mipaka.dev)
+- **API Docs:** [api.mipaka.dev/api/docs/](https://api.mipaka.dev/api/docs/)
+- **API on RapidAPI:** [rapidapi.com/ceddyville/api/mipaka](https://rapidapi.com/ceddyville/api/mipaka) — free tier available
 - **GitHub:** [github.com/ceddyville/mipaka-api](https://github.com/ceddyville/mipaka-api) — MIT license, PRs welcome
-- **Swagger Docs:** [api.mipaka.dev/api/docs/](https://api.mipaka.dev/api/docs/)
 
 The historical data is especially thin for South Sudan and Tanzania — if you have expertise in those regions, contributions are welcome.
 
@@ -224,14 +228,12 @@ The historical data is especially thin for South Sudan and Tanzania — if you h
 
 ## Next in the Series
 
+This is **Part 3** of the Mipaka API series. Missed the earlier posts? Start with [Part 1](link-to-part-1) or catch up on [Part 2](link-to-part-2).
+
+Next up:
+
 - **Part 4:** Building Location Dropdowns for African Apps (React + Vue tutorial)
-- **Part 5:** Uganda's Five Kingdoms — Pre-Colonial Data in a Modern API
-- **Part 6:** Bulk Export & Data Analysis — Working with 88K Administrative Records
 
 Follow me to catch the next post!
 
 _Mipaka — every border, one API._
-
----
-
-<a href="https://www.buymeacoffee.com/ceddyville"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=ceddyville&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>

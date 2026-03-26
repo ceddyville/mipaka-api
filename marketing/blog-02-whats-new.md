@@ -173,27 +173,27 @@ This data enrichment sets the foundation for features coming soon:
 
 ## Try It
 
-Everything above is live on [RapidAPI](https://rapidapi.com/ceddyville/api/mipaka) with a free tier. The code is [open source on GitHub](https://github.com/ceddyville/mipaka-api) — MIT licensed.
+Try the live explorer at [mipaka.dev](https://mipaka.dev/#explorer) — pick a country, drill through divisions, and see historical eras in action.
+
+Everything above is also available on [RapidAPI](https://rapidapi.com/ceddyville/api/mipaka) with a free tier, and the code is [open source on GitHub](https://github.com/ceddyville/mipaka-api) — MIT licensed.
 
 ### Links
 
+- **Website:** [mipaka.dev](https://mipaka.dev)
+- **API Docs:** [api.mipaka.dev/api/docs/](https://api.mipaka.dev/api/docs/)
 - **API on RapidAPI:** [rapidapi.com/ceddyville/api/mipaka](https://rapidapi.com/ceddyville/api/mipaka)
 - **GitHub:** [github.com/ceddyville/mipaka-api](https://github.com/ceddyville/mipaka-api)
-- **Landing Page:** [mipaka.dev](https://mipaka.dev)
-- **Interactive Docs:** [api.mipaka.dev/api/docs/](https://api.mipaka.dev/api/docs/)
 
 ---
 
 ## Coming Next
 
-- **Part 3:** From Léopoldville to Kinshasa — 500 Years of African Border Changes (deep dive)
-- **Part 4:** Building Location Dropdowns for African Apps (React + Vue tutorial)
-- **Part 5:** Uganda's Five Kingdoms — Pre-Colonial Data in a Modern API
+This is **Part 2** of the Mipaka API series. Missed the intro? Start with [Part 1](link-to-part-1).
+
+Next up:
+
+- **Part 3:** From Léopoldville to Kinshasa — 500 Years of African Border Changes
 
 Follow me to catch the next one!
 
 _Mipaka — every border, one API._
-
----
-
-<a href="https://www.buymeacoffee.com/ceddyville"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=ceddyville&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
