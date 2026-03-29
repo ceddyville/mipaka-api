@@ -14,10 +14,11 @@ LEVEL_MAP = {
 }
 
 # Historical levels use high numbers to avoid collisions with current levels.
-# 100 = Province (dissolved 2013), 101 = Historical District
+# 100 = Province (dissolved 2013), 101 = Historical District, 102 = Division
 HISTORICAL_LEVEL_MAP = {
     100: ("Province",  "Mkoa"),
     101: ("District",  "Wilaya"),
+    102: ("Division",  "Tarafa"),
 }
 
 
@@ -30,6 +31,7 @@ class Command(BaseCommand):
             choices=[
                 "counties", "constituencies", "wards",
                 "provinces", "districts_1963", "districts_1992", "districts_2007",
+                "divisions_admin",
             ],
             default=["counties", "constituencies", "wards"],
         )
@@ -66,6 +68,8 @@ class Command(BaseCommand):
             if "districts_2007" in levels:
                 self._sync_historical_districts(
                     country, "districts_2007.json", "provinces")
+            if "divisions_admin" in levels:
+                self._sync_divisions_admin(country)
 
         self.stdout.write(self.style.SUCCESS("✓ Kenya sync complete."))
 
@@ -229,4 +233,52 @@ class Command(BaseCommand):
             ok += 1
         self.stdout.write(
             f"  Synced {ok:,} districts from {filename}."
+            + (f" Skipped {skipped}." if skipped else ""))
+
+    def _sync_divisions_admin(self, country):
+        """Load administrative divisions (level 102) with parent district link."""
+        self.stdout.write("Syncing administrative divisions...")
+        data = self._load("divisions_admin.json")
+        if data is None:
+            return
+        # Ensure Division level exists
+        DivisionLevel.objects.get_or_create(
+            country=country, level=102,
+            defaults={"name": "Division", "name_sw": "Tarafa"},
+        )
+        # Build district lookup by name from level 101.
+        # Later eras overwrite earlier ones, so we link to the newest district.
+        district_map = {}
+        for d in Division.objects.filter(
+            country=country, level=101
+        ).order_by("native_id"):
+            district_map[d.name] = d
+
+        ok = skipped = 0
+        for item in data:
+            parent = district_map.get(item.get("parent_district"))
+            if not parent:
+                self.stdout.write(
+                    self.style.WARNING(
+                        f"  [!] District '{item.get('parent_district')}' "
+                        f"not found for {item['name']} — skipping"))
+                skipped += 1
+                continue
+
+            description = item.get("notes", "")
+
+            Division.objects.update_or_create(
+                country=country, native_id=item["native_id"], level=102,
+                defaults={
+                    "name": item["name"],
+                    "parent": parent,
+                    "is_active": False,
+                    "description": description,
+                    "source": item.get("source", "Wikipedia"),
+                    "source_url": item.get("source_url", ""),
+                },
+            )
+            ok += 1
+        self.stdout.write(
+            f"  Synced {ok:,} administrative divisions."
             + (f" Skipped {skipped}." if skipped else ""))
