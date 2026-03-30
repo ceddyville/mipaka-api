@@ -6,7 +6,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
-from django.http import StreamingHttpResponse
+from django.http import StreamingHttpResponse, JsonResponse
 import csv
 import io
 
@@ -203,7 +203,22 @@ class DivisionViewSet(mixins.ListModelMixin, mixins.RetrieveModelMixin, viewsets
         GET /api/v1/divisions/export/?country=UG
         GET /api/v1/divisions/export/?country=KE&level=2
         Streams a CSV file — ideal for data analysis or offline use.
+        Requires a Pro (or higher) RapidAPI subscription.
         """
+        # Gate: only Pro+ RapidAPI subscribers get full CSV export.
+        # RapidAPI sends the plan name in X-RapidAPI-Subscription.
+        ALLOWED_PLANS = {"PRO", "ULTRA", "MEGA", "CUSTOM"}
+        subscription = request.META.get(
+            "HTTP_X_RAPIDAPI_SUBSCRIPTION", ""
+        ).upper()
+        if subscription not in ALLOWED_PLANS:
+            return JsonResponse(
+                {
+                    "error": "CSV export requires a Pro subscription.",
+                    "upgrade": "https://rapidapi.com/ceddyville/api/mipaka/pricing",
+                },
+                status=403,
+            )
         qs = self.filter_queryset(self.get_queryset())
 
         def rows():

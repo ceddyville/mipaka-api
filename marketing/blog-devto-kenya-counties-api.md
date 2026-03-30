@@ -1,9 +1,9 @@
 ---
 title: "Mipaka: A Free REST API for 100K+ Administrative Divisions Across East Africa"
-published: false
+published: true
 description: "Mipaka API — a free REST API for 100K+ administrative divisions across 7 East/Central African countries. Counties, districts, wards, villages — one consistent interface. No more hardcoding location arrays."
 tags: api, python, django, africa
-cover_image:
+cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bqmyok8ox1odrw55qc1a.JPG
 canonical_url:
 series: Mipaka API — Every Border, One API
 ---
@@ -50,7 +50,7 @@ I built **Mipaka API** to solve this.
 
 ```javascript
 const res = await fetch(
-  "https://rapidapi.com/proxy/mipaka/api/v1/countries/KE/top/",
+  "https://mipaka.p.rapidapi.com/api/v1/countries/KE/top/",
   {
     headers: { "X-RapidAPI-Key": "YOUR_KEY" },
   },
@@ -190,14 +190,14 @@ GET /api/v1/divisions/{city_id}/names/
 
 ## Bulk Export
 
-Need all the data at once? The CSV export endpoint streams the entire dataset:
+Need all the data at once? Pro subscribers get full CSV export — streams the entire dataset for any country:
 
 ```bash
 GET /api/v1/divisions/export/?country=KE
 # Downloads: mipaka_divisions.csv
 ```
 
-Great for data analysis, offline use, or loading into your own database.
+Great for data analysis, offline use, or loading into your own database. [See pricing →](https://rapidapi.com/ceddyville/api/mipaka/pricing)
 
 ---
 

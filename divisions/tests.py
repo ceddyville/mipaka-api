@@ -394,7 +394,8 @@ def test_pagination_structure(api, kenya):
 @pytest.mark.django_db
 class TestExport:
     def test_export_csv(self, api, kenya, nairobi):
-        r = api.get("/api/v1/divisions/export/?country=KE")
+        r = api.get("/api/v1/divisions/export/?country=KE",
+                    HTTP_X_RAPIDAPI_SUBSCRIPTION="PRO")
         assert r.status_code == 200
         assert r["Content-Type"] == "text/csv"
         content = b"".join(r.streaming_content).decode()
@@ -404,11 +405,21 @@ class TestExport:
         assert "Nairobi" in content
 
     def test_export_empty(self, api, kenya):
-        r = api.get("/api/v1/divisions/export/?country=ZZ")
+        r = api.get("/api/v1/divisions/export/?country=ZZ",
+                    HTTP_X_RAPIDAPI_SUBSCRIPTION="PRO")
         assert r.status_code == 200
         content = b"".join(r.streaming_content).decode()
         lines = content.strip().split("\n")
         assert len(lines) == 1  # header only
+
+    def test_export_blocked_for_free_tier(self, api, kenya, nairobi):
+        r = api.get("/api/v1/divisions/export/?country=KE",
+                    HTTP_X_RAPIDAPI_SUBSCRIPTION="BASIC")
+        assert r.status_code == 403
+
+    def test_export_blocked_without_subscription(self, api, kenya, nairobi):
+        r = api.get("/api/v1/divisions/export/?country=KE")
+        assert r.status_code == 403
 
 
 # ── Read-only enforcement ────────────────────────────────────────────────────
