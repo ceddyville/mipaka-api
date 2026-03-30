@@ -27,9 +27,18 @@ Author: Cedric Ongoro (@ceddyville)
 **Hook:** Changelog-style update with concrete numbers
 **CTA:** Explore the new eras and names endpoints
 
-### Week 3 — The Landing Page Post (to write)
+### Week 3 — The History Deep Dive (ready to publish)
 
-**File:** `blog-03-try-it-live.md` (to write)
+**File:** `blog-03-historical-divisions.md`
+**Title:** From Léopoldville to Kinshasa: How Our API Tracks 500 Years of African Border Changes
+**Target audience:** Historians, researchers, genealogy enthusiasts, data journalists
+**Tags:** api, history, africa, opensource
+**Hook:** Every city in East Africa carries layers of names
+**CTA:** Explore the eras endpoint, contribute missing data
+
+### Week 4 — The Landing Page Post (to write)
+
+**File:** `blog-04-try-it-live.md` (to write)
 **Title:** Try Africa's Administrative Data API — No Signup, No Download, Just Click
 **Target audience:** Casual explorers, product managers, non-technical stakeholders, developers evaluating the API
 **Tags:** api, africa, webdev, opensource
@@ -43,15 +52,6 @@ Author: Cedric Ongoro (@ceddyville)
 - Compare it to the raw API (show the JSON response alongside the card)
 - "Ready to build? Here's how to get an API key" — bridge to RapidAPI
   **CTA:** Visit mipaka.dev and explore, then grab an API key on RapidAPI
-
-### Week 4 — The History Deep Dive (ready to publish)
-
-**File:** `blog-03-historical-divisions.md`
-**Title:** From Léopoldville to Kinshasa: How Our API Tracks 500 Years of African Border Changes
-**Target audience:** Historians, researchers, genealogy enthusiasts, data journalists
-**Tags:** api, history, africa, opensource
-**Hook:** Every city in East Africa carries layers of names
-**CTA:** Explore the eras endpoint, contribute missing data
 
 ---
 

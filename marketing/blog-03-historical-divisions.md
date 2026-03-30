@@ -64,7 +64,7 @@ GET /api/v1/countries/CD/eras/
 ]
 ```
 
-The DRC alone has **11 eras** — from five pre-colonial kingdoms (Kongo, Luba, Lunda, Kuba, Azande) through the Congo Free State, Belgian Congo, and three name changes after independence.
+DRC alone has 11 eras — five pre-colonial kingdoms running concurrently (Kongo, Luba, Lunda, Kuba, Azande), each used to attribute city names and territories to the specific kingdom that controlled them, plus six successive administrative periods from the Congo Free State to today.
 
 ---
 
@@ -126,7 +126,7 @@ The DRC is the most dramatic example. The country's internal borders were redraw
 **1910 — Congo Free State:** 12 districts under Leopold's rubber terror
 
 ```bash
-GET /api/v1/divisions/?country=CD&level=101&q=district
+GET /api/v1/divisions/?country=CD&level=100&q=district
 ```
 
 **1933 — Belgian Congo:** Reorganized into 6 provinces and 16 districts
@@ -215,6 +215,8 @@ This isn't just an academic exercise. Real use cases:
 
 Try the live explorer at [mipaka.dev](https://mipaka.dev/#explorer) — pick a country and explore historical eras, name changes, and division hierarchies in real time.
 
+Léopoldville is gone from every map. But in Mipaka, you can still find it — and trace the exact moment it became Kinshasa.
+
 ### Links
 
 - **Website:** [mipaka.dev](https://mipaka.dev)
@@ -228,7 +230,7 @@ The historical data is especially thin for South Sudan and Tanzania — if you h
 
 ## Next in the Series
 
-This is **Part 3** of the Mipaka API series. Missed the earlier posts? Start with [Part 1](link-to-part-1) or catch up on [Part 2](link-to-part-2).
+This is **Part 3** of the Mipaka API series. Missed the earlier posts? Start with [Part 1: Mipaka: A Free REST API for 100K+ Administrative Divisions Across East Africa](https://dev.to/ceddyville/i-built-a-free-rest-api-for-kenyas-47-counties-290-constituencies-and-1450-wards-31j7) or catch up on [Part 2: Mipaka API Update: 47 Historical Eras, 124 Colonial-Era Place Names, and DRC's Complete Administrative History](https://dev.to/ceddyville/mipaka-api-update-47-historical-eras-124-colonial-era-place-names-and-drcs-complete-139o).
 
 Next up:
 

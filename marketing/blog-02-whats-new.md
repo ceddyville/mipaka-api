@@ -10,7 +10,7 @@ series: Mipaka API — Every Border, One API
 
 ## What's Changed Since Launch
 
-In [Part 1](link-to-part-1), I introduced Mipaka — a free REST API for administrative divisions across 7 East/Central African countries. The focus was the basics: cascading dropdowns, search, filtering, and bulk export.
+In [Part 1](https://dev.to/ceddyville/i-built-a-free-rest-api-for-kenyas-47-counties-290-constituencies-and-1450-wards-31j7), I introduced Mipaka — a free REST API for administrative divisions across 7 East/Central African countries. The focus was the basics: cascading dropdowns, search, filtering, and bulk export.
 
 Since then, the API has grown significantly. Here's everything new.
 
@@ -106,7 +106,7 @@ GET /api/v1/divisions/{kinshasa_id}/names/
 | ----------- | ---------------- | --------------------------------------------------------------------------------------- |
 | DRC         | 31               | Nshasa → Léopoldville → Kinshasa, Stanleyville → Kisangani, Élisabethville → Lubumbashi |
 | Uganda      | 28               | Kasozi k'Empala → Kampala, Bugiri → Port Bell, Entebbe (Luganda: "seat")                |
-| Kenya       | 21               | Enkare Nyirobi → Nairobi, Kisumo(or Kisuma) → Port Florence → Kisumu                    |
+| Kenya       | 21               | Enkare Nyirobi → Nairobi, Kisumo/Kisuma → Port Florence → Kisumu                        |
 | Tanzania    | 18               | Dar es Salaam (Arabic: "Haven of Peace"), Bagamoyo (Swahili: "Lay down your heart")     |
 | Rwanda      | 14               | Nyarugenge → Kigali, Butare → Huye                                                      |
 | South Sudan | 14               | Gondokoro → Juba, Mongalla → colonial river station                                     |
@@ -128,6 +128,8 @@ GET /api/v1/divisions/?country=CD&level=100
 # South Sudan's 28 states (2015–2020 decree)
 GET /api/v1/divisions/?country=SS&level=100
 ```
+
+Level 100 is a convention used to separate historical divisions from active administrative data — they won't appear in standard queries unless you filter explicitly.
 
 **What's available:**
 
@@ -165,7 +167,7 @@ Plus **34 cities with coordinates** — the first geo-coded data in the API.
 
 This data enrichment sets the foundation for features coming soon:
 
-- **Coordinates for all countries** — DRC is the pilot, expanding to Kenya, Uganda, and others
+- **Coordinates for all countries** — DRC is the pilot, on the roadmap expand to Kenya, Uganda, and others
 - **GeoJSON boundaries** — polygon data for map rendering
 - **Population data** — census figures tied to divisions
 
@@ -176,6 +178,8 @@ This data enrichment sets the foundation for features coming soon:
 Try the live explorer at [mipaka.dev](https://mipaka.dev/#explorer) — pick a country, drill through divisions, and see historical eras in action.
 
 Everything above is also available on [RapidAPI](https://rapidapi.com/ceddyville/api/mipaka) with a free tier, and the code is [open source on GitHub](https://github.com/ceddyville/mipaka-api) — MIT licensed.
+
+The historical data is the part of Mipaka I'm most proud of. There's nothing else like it — a structured, queryable dataset of how African cities and borders have changed across centuries. If you're a historian, genealogist, or just someone who finds African history fascinating, I'd genuinely love your contributions. The data is open source — PRs welcome.
 
 ### Links
 
@@ -188,7 +192,7 @@ Everything above is also available on [RapidAPI](https://rapidapi.com/ceddyville
 
 ## Coming Next
 
-This is **Part 2** of the Mipaka API series. Missed the intro? Start with [Part 1](link-to-part-1).
+This is **Part 2** of the Mipaka API series. Missed the intro? Start with [Part 1: Mipaka: A Free REST API for 100K+ Administrative Divisions Across East Africa](https://dev.to/ceddyville/i-built-a-free-rest-api-for-kenyas-47-counties-290-constituencies-and-1450-wards-31j7).
 
 Next up:
 

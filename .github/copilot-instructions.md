@@ -6,10 +6,13 @@
 
 - **Stack**: Django 4.2 + Django REST Framework + PostgreSQL + drf-spectacular
 - **Repo**: https://github.com/ceddyville/mipaka-api
-- **Live URL**: https://api.mipaka.dev (Railway: https://mipaka-api.up.railway.app)
+- **Website**: https://mipaka.dev (GitHub Pages)
+- **API**: https://api.mipaka.dev (Railway)
+- **API Docs**: https://api.mipaka.dev/api/docs/
 - **RapidAPI**: https://rapidapi.com/ceddyville/api/mipaka
+- **Email**: hello@mipaka.dev (Cloudflare → Gmail)
 - **License**: MIT
-- **Buy Me a Coffee**: https://buymeacoffee.com/ceddyville
+- **Buy Me a Coffee**: https://buymeacoffee.com/ceddyville (README + landing page ONLY, not in blogs)
 
 ## Countries & Data (~103,400 total records)
 
@@ -27,14 +30,14 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 
 ### Historical Divisions (across all countries, level 100/101, is_active=False)
 
-| Country     | Data                              | Records | Source    |
-| ----------- | --------------------------------- | ------- | --------- |
-| Kenya       | Provinces (8) + Districts (159)   | 167     | Wikipedia |
-| Rwanda      | Prefectures pre-2006 (12)         | 12      | Wikipedia |
-| DRC         | Provinces 1997–2015 (11)          | 11      | Wikipedia |
-| South Sudan | States 2015–2020 (28)             | 28      | Wikipedia |
-| Tanzania    | New regions 2002–2016 (6)         | 6       | Wikipedia |
-| Uganda      | Traditional kingdoms (5)          | 5       | Wikipedia |
+| Country     | Data                            | Records | Source    |
+| ----------- | ------------------------------- | ------- | --------- |
+| Kenya       | Provinces (8) + Districts (159) | 167     | Wikipedia |
+| Rwanda      | Prefectures pre-2006 (12)       | 12      | Wikipedia |
+| DRC         | Provinces 1997–2015 (11)        | 11      | Wikipedia |
+| South Sudan | States 2015–2020 (28)           | 28      | Wikipedia |
+| Tanzania    | New regions 2002–2016 (6)       | 6       | Wikipedia |
+| Uganda      | Traditional kingdoms (5)        | 5       | Wikipedia |
 
 ## Architecture
 
@@ -84,13 +87,13 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - **Config**: railway.toml + Procfile
 - **Start command**: collectstatic → migrate → gunicorn
 - **Health check**: /health/ endpoint exists but Railway healthcheck disabled (networking probe issue); restartPolicyType=ON_FAILURE handles crashes
-- **Custom domain**: api.mipaka.dev (CNAME → 5nb3riuk.up.railway.app, verified with TXT record _railway-verify.api)
+- **Custom domain**: api.mipaka.dev (CNAME → 5nb3riuk.up.railway.app, verified with TXT record \_railway-verify.api)
 - **Landing page**: mipaka.dev (separate repo: mipaka-site, static HTML, planned for GitHub Pages)
 - **RAPIDAPI_PROXY_SECRET**: set in Railway env vars — blocks direct /api/v1/ access
 - **Railway env vars**: ALLOWED_HOSTS, DATABASE_URL, DEBUG, DJANGO_SETTINGS_MODULE, RAPIDAPI_PROXY_SECRET, REDIS_URL, SECRET_KEY, PORT (8080)
 - **Cache**: locmem fallback in production (no Redis addon yet)
 - **Domain registrar**: simply.com (mipaka.dev, "Only domains" plan)
-- **DNS records**: CNAME api → 5nb3riuk.up.railway.app, TXT _railway-verify.api → railway verification token
+- **DNS records**: CNAME api → 5nb3riuk.up.railway.app, TXT \_railway-verify.api → railway verification token
 
 ## What Has Been Completed
 
@@ -137,9 +140,21 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 ### Marketing (completed)
 
 - README with ASCII logo, badges (RapidAPI, Buy Me a Coffee, MIT, Python, Django, PRs Welcome)
-- Blog post draft: marketing/blog-devto-kenya-counties-api.md (ready for dev.to)
+- Blog series: "Mipaka API — Every Border, One API" (3 posts written, see marketing/)
+  - blog-devto-kenya-counties-api.md (Part 1 — launch/intro)
+  - blog-02-whats-new.md (Part 2 — changelog/update)
+  - blog-03-historical-divisions.md (Part 3 — historical deep dive)
+- Content calendar: marketing/content-calendar.md (10-week plan)
 - RapidAPI listing content: marketing/rapidapi-listing-content.md
 - Support & Contact section in README
+
+### Infrastructure (completed)
+
+- Custom domain — api.mipaka.dev live on Railway
+- Landing page — mipaka.dev live on GitHub Pages (HTTPS enforced)
+- DNS managed by Cloudflare (nameservers: dayana/weston.ns.cloudflare.com)
+- Email routing — hello@mipaka.dev → Gmail via Cloudflare
+- www.mipaka.dev CNAME → ceddyville.github.io
 
 ## What Remains (TODO)
 
@@ -156,22 +171,25 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 
 - [ ] Add Redis addon on Railway (code already handles fallback)
 - [x] Custom domain — api.mipaka.dev live and verified on Railway
-- [x] DNS setup — CNAME + TXT verification record added on simply.com
+- [x] DNS setup — Cloudflare managing mipaka.dev (nameservers changed from simply.com)
+- [x] GitHub Pages — mipaka.dev live with HTTPS enforced
+- [x] Cloudflare email routing — hello@mipaka.dev → Gmail
+- [x] www.mipaka.dev CNAME → ceddyville.github.io
 - [ ] Investigate Railway healthcheck probe failure (app works but probe returns "service unavailable" during deploy)
-- [ ] Set up GitHub Pages for mipaka-site landing page (repo not yet created)
-- [ ] Cloudflare email routing for hello@mipaka.dev
+- [ ] Seed eras on production Railway DB (47 eras + 124 historical names)
 
 ### Landing Page (mipaka-site)
 
 - [x] Static site created at ../mipaka-site/ (single index.html + CNAME)
 - [x] Interactive explorer: country pills → cascading dropdowns → result cards → breadcrumbs → JSON toggle
-- [ ] Create mipaka-site GitHub repo and push
-- [ ] Enable GitHub Pages, add A records for mipaka.dev root domain
-- [ ] Deploy landing page to mipaka.dev
+- [x] Historical timeline: 5 cities (Bujumbura, Juba, Kampala, Kinshasa, Nairobi) with selector tabs
+- [x] GitHub repo created and pushed (github.com/ceddyville/mipaka-site)
+- [x] GitHub Pages enabled, HTTPS enforced
+- [x] mipaka.dev live
 
 ### Marketing
 
-- [ ] Publish dev.to blog post
+- [ ] Publish dev.to blog post (Part 1 ready)
 - [ ] Update RapidAPI listing with long description and tags
 - [ ] Social media promotion
 
@@ -228,6 +246,26 @@ python manage.py sync_uganda --levels kingdoms
 - Uganda source uses `sub_counties.json` (underscore) but parish key is `subcounty` (no underscore)
 - Railway healthcheck probe fails with "service unavailable" even though gunicorn starts fine — removed healthcheckPath from railway.toml; restartPolicyType=ON_FAILURE handles crashes instead
 - collectstatic must run before gunicorn in the start command (WhiteNoise needs /app/staticfiles/ to exist)
-- api.mipaka.dev required both CNAME and TXT (_railway-verify.api) DNS records for Railway domain verification
+- api.mipaka.dev required both CNAME and TXT (\_railway-verify.api) DNS records for Railway domain verification
 - Local dev requires `$env:DATABASE_URL="sqlite:///db.sqlite3"` since PostgreSQL isn't running locally
 - Landing page explorer fetches from api.mipaka.dev — RapidAPIProxyMiddleware blocks /api/v1/ on production; landing page needs middleware bypass or RapidAPI proxy headers to work
+
+## Blog Content Standards
+
+See `/memories/repo/blog-standards.md` for full rules. Key points:
+
+- **Mipaka links** → always `mipaka.dev` (not RapidAPI)
+- **"Try it" CTAs** → `mipaka.dev/#explorer` (direct to interactive explorer)
+- **Docs links** → `api.mipaka.dev/api/docs/` (not old Railway URL)
+- **Links section order**: Website, API Docs, RapidAPI, GitHub
+- **Coming Next**: tease only the next post; link back to previous from Part 2+
+- **Series tag**: `series: Mipaka API — Every Border, One API`
+
+## ⚠️ DO NOT Re-introduce These (Removed/Changed by Decision)
+
+1. **Buy Me a Coffee in blog posts** — REMOVED. BMC button/link must NOT appear in any blog post. It lives only on GitHub README and mipaka.dev landing page.
+2. **RapidAPI as primary Mipaka link** — CHANGED. First-mention/intro links to Mipaka must point to `mipaka.dev`, not `rapidapi.com/...`. RapidAPI appears only in the Links section.
+3. **Old Railway URL** — REPLACED. Never use `mipaka-api.up.railway.app` anywhere. Use `api.mipaka.dev` for API and `api.mipaka.dev/api/docs/` for docs.
+4. **Multiple "Coming Next" teasers** — CHANGED. Only tease the single next post, not 3+ future ones.
+5. **Plain mipaka.dev for "Try it"** — CHANGED. Use `mipaka.dev/#explorer` for try-it CTAs to send readers directly to the interactive explorer.
+6. **DNS managed at simply.com** — CHANGED. DNS is now on Cloudflare. simply.com is registrar only (nameservers point to Cloudflare).
