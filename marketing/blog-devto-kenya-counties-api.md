@@ -188,19 +188,6 @@ GET /api/v1/divisions/{city_id}/names/
 
 ---
 
-## Bulk Export
-
-Need all the data at once? Pro subscribers get full CSV export — streams the entire dataset for any country:
-
-```bash
-GET /api/v1/divisions/export/?country=KE
-# Downloads: mipaka_divisions.csv
-```
-
-Great for data analysis, offline use, or loading into your own database. [See pricing →](https://rapidapi.com/ceddyville/api/mipaka/pricing)
-
----
-
 ## Try It Free
 
 Try the live explorer at [mipaka.dev](https://mipaka.dev/#explorer) — pick a country, drill down through divisions, and see the API responses in real time.

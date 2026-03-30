@@ -10,7 +10,7 @@ series: Mipaka API — Every Border, One API
 
 ## What's Changed Since Launch
 
-In [Part 1](https://dev.to/ceddyville/i-built-a-free-rest-api-for-kenyas-47-counties-290-constituencies-and-1450-wards-31j7), I introduced Mipaka — a free REST API for administrative divisions across 7 East/Central African countries. The focus was the basics: cascading dropdowns, search, filtering, and bulk export.
+In [Part 1](https://dev.to/ceddyville/i-built-a-free-rest-api-for-kenyas-47-counties-290-constituencies-and-1450-wards-31j7), I introduced Mipaka — a free REST API for administrative divisions across 7 East/Central African countries. The focus was the basics: cascading dropdowns, search, filtering, and historical names.
 
 Since then, the API has grown significantly. Here's everything new.
 
