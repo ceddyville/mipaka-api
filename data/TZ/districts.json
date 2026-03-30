@@ -1934,5 +1934,60 @@
     "parent_region_id": "30",
     "source": "Kijacode/Tanzania_Geo_Data",
     "source_url": "https://github.com/Kijacode/Tanzania_Geo_Data"
+  },
+  {
+    "id": "TZ-D-0177",
+    "native_id": "177",
+    "name": "Tanganyika",
+    "level": 2,
+    "level_name": "District",
+    "country": "TZ",
+    "parent_region_id": "7",
+    "source": "HackEAC/tanzania-locations-db + Kalebu/mtaa",
+    "source_url": "https://github.com/HackEAC/tanzania-locations-db"
+  },
+  {
+    "id": "TZ-D-0178",
+    "native_id": "178",
+    "name": "Wanging'ombe",
+    "level": 2,
+    "level_name": "District",
+    "country": "TZ",
+    "parent_region_id": "17",
+    "source": "HackEAC/tanzania-locations-db + Kalebu/mtaa",
+    "source_url": "https://github.com/HackEAC/tanzania-locations-db"
+  },
+  {
+    "id": "TZ-D-0179",
+    "native_id": "179",
+    "name": "Kibiti",
+    "level": 2,
+    "level_name": "District",
+    "country": "TZ",
+    "parent_region_id": "20",
+    "source": "HackEAC/tanzania-locations-db + Kalebu/mtaa",
+    "source_url": "https://github.com/HackEAC/tanzania-locations-db"
+  },
+  {
+    "id": "TZ-D-0180",
+    "native_id": "180",
+    "name": "Tabora Urban",
+    "level": 2,
+    "level_name": "District",
+    "country": "TZ",
+    "parent_region_id": "27",
+    "source": "HackEAC/tanzania-locations-db + Kalebu/mtaa",
+    "source_url": "https://github.com/HackEAC/tanzania-locations-db"
+  },
+  {
+    "id": "TZ-D-0181",
+    "native_id": "181",
+    "name": "Tanga Urban",
+    "level": 2,
+    "level_name": "District",
+    "country": "TZ",
+    "parent_region_id": "28",
+    "source": "HackEAC/tanzania-locations-db + Kalebu/mtaa",
+    "source_url": "https://github.com/HackEAC/tanzania-locations-db"
   }
 ]
