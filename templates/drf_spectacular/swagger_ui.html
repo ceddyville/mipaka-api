@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <title>API Docs — Mipaka</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% if favicon_href %}
+    <link rel="icon" href="{{ favicon_href }}" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ swagger_ui_css }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Karla:wght@300;400;500;600&family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --earth: #b83225;
+        --ocean: #0d8c7e;
+        --ocean-lt: #12b8a6;
+        --gold: #e8b030;
+        --laterite: #c4720e;
+        --night: #070a10;
+        --ink: #0e1219;
+        --mist: #f5f0e6;
+        --chalk: #fdfaf4;
+        --ink-dark: #1a1208;
+        --ink-soft: #7a6248;
+        --border-light: rgba(26, 18, 8, 0.12);
+      }
+      html {
+        box-sizing: border-box;
+        overflow-y: scroll;
+      }
+      *,
+      *:after,
+      *:before {
+        box-sizing: inherit;
+      }
+      body {
+        background: #fafafa;
+        margin: 0;
+        font-family: "Karla", system-ui, sans-serif;
+      }
+
+      /* ── NAV (matches mipaka.dev) ── */
+      .mipaka-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 0.85rem 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--border-light);
+        background: rgba(245, 240, 232, 0.96);
+        backdrop-filter: blur(12px);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none !important;
+      }
+      .nav-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: var(--night);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nav-wordmark {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--ink-dark);
+      }
+      .nav-tagline {
+        font-size: 10px;
+        color: var(--ink-soft);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border-left: 1px solid var(--border-light);
+        padding-left: 12px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+      .nav-links a {
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        color: var(--ink-soft);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--ink-dark);
+      }
+      .nav-cta {
+        background: var(--night);
+        color: var(--mist) !important;
+        padding: 0.5rem 1.2rem;
+        border-radius: 4px;
+        font-size: 0.7rem !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      .nav-cta:hover {
+        background: var(--earth);
+        color: #fff !important;
+      }
+
+      /* ── DOC TABS ── */
+      .doc-tabs {
+        display: flex;
+        gap: 0;
+        background: var(--night);
+        padding: 0 2.5rem;
+      }
+      .doc-tab {
+        display: inline-block;
+        padding: 0.6rem 1.5rem;
+        font-size: 0.75rem;
+        font-family: "Karla", system-ui, sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: rgba(245, 240, 230, 0.5);
+        border-bottom: 2px solid transparent;
+        transition:
+          color 0.15s,
+          border-color 0.15s;
+      }
+      .doc-tab:hover {
+        color: var(--mist);
+      }
+      .doc-tab.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+
+      /* ── FOOTER (matches mipaka.dev) ── */
+      .mipaka-footer {
+        background: var(--night);
+        padding: 2.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      .footer-brand {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        color: var(--mist);
+        margin-bottom: 4px;
+      }
+      .footer-brand span {
+        color: var(--ocean-lt);
+      }
+      .footer-sub {
+        margin-top: 8px;
+        font-style: italic;
+        color: rgba(245, 240, 230, 0.3);
+        font-size: 12px;
+      }
+      .footer-cols {
+        display: flex;
+        gap: 3rem;
+      }
+      .footer-col-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(245, 240, 230, 0.35);
+        margin-bottom: 10px;
+      }
+      .footer-col a {
+        display: block;
+        font-size: 13px;
+        color: rgba(245, 240, 230, 0.55);
+        text-decoration: none;
+        margin-bottom: 7px;
+      }
+      .footer-col a:hover {
+        color: var(--mist);
+      }
+
+      @media (max-width: 900px) {
+        .mipaka-nav {
+          padding: 0.7rem 1rem;
+        }
+        .nav-tagline {
+          display: none;
+        }
+        .nav-links {
+          gap: 1rem;
+        }
+        .doc-tabs {
+          padding: 0 1rem;
+        }
+        .mipaka-footer {
+          flex-direction: column;
+        }
+        .footer-cols {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+      }
+    </style>
+    {% endblock head %}
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="mipaka-nav">
+      <a href="https://mipaka.dev" class="nav-logo">
+        <div class="nav-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <rect
+              x="3"
+              y="3"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="#0d8c7e"
+              stroke-width="1.5"
+            />
+            <rect
+              x="14"
+              y="3"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="#b83225"
+              stroke-width="1.5"
+            />
+            <rect
+              x="3"
+              y="14"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="#e8b030"
+              stroke-width="1.5"
+            />
+            <rect
+              x="14"
+              y="14"
+              width="7"
+              height="7"
+              rx="1"
+              stroke="#0d8c7e"
+              stroke-width="1.5"
+            />
+          </svg>
+        </div>
+        <span class="nav-wordmark">mipaka</span>
+        <span class="nav-tagline">Every Border · One API</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://mipaka.dev/#countries">Countries</a>
+        <a href="https://mipaka.dev/#explorer">Explorer</a>
+        <a href="https://mipaka.dev/#history">Timeline</a>
+        <a href="https://dev.to/ceddyville/series/37588" target="_blank"
+          >Blog</a
+        >
+        <a href="/api/docs/" class="nav-cta">API Docs</a>
+      </div>
+    </nav>
+
+    <!-- DOC TABS -->
+    <div class="doc-tabs">
+      <a href="/api/docs/" class="doc-tab active">Swagger</a>
+      <a href="/api/redoc/" class="doc-tab">ReDoc</a>
+    </div>
+
+    {% block body %}
+    <div id="swagger-ui"></div>
+    <script src="{{ swagger_ui_bundle }}"></script>
+    <script src="{{ swagger_ui_standalone }}"></script>
+    {% if script_url %}
+    <script src="{{ script_url }}"></script>
+    {% else %}
+    <script>
+      {% include template_name_js %}
+    </script>
+    {% endif %} {% endblock %}
+
+    <!-- FOOTER -->
+    <footer class="mipaka-footer">
+      <div>
+        <div class="footer-brand">
+          <span>mipaka</span>.dev — Every Border, One API
+        </div>
+        <div class="footer-sub">
+          "Mipaka ni zaidi ya mistari kwenye ramani."
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <div class="footer-col-label">Browse</div>
+          <a href="https://mipaka.dev/#countries">All Countries</a>
+          <a href="https://mipaka.dev/#explorer">Explorer</a>
+          <a href="https://mipaka.dev/#history">Historical Timeline</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Developers</div>
+          <a href="/api/docs/">API Docs</a>
+          <a href="https://github.com/ceddyville/mipaka-api" target="_blank"
+            >GitHub</a
+          >
+          <a href="https://rapidapi.com/ceddyville/api/mipaka" target="_blank"
+            >RapidAPI</a
+          >
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-label">Connect</div>
+          <a href="https://dev.to/ceddyville/series/37588" target="_blank"
+            >Blog</a
+          >
+          <a href="mailto:hello@mipaka.dev">Contact</a>
+          <a href="https://buymeacoffee.com/ceddyville" target="_blank"
+            >Support</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
