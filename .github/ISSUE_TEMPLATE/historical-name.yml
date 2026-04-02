@@ -1,0 +1,82 @@
+name: "Historical Name"
+description: "Add or correct a historical place name (pre-colonial, colonial, or post-independence)"
+title: "[History] "
+labels: ["data", "historical", "contribution"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us track how place names changed through history. Every name tells a story.
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: Country
+      options:
+        - Kenya (KE)
+        - Tanzania (TZ)
+        - Uganda (UG)
+        - Rwanda (RW)
+        - Burundi (BI)
+        - DR Congo (CD)
+        - South Sudan (SS)
+    validations:
+      required: true
+
+  - type: input
+    id: modern_name
+    attributes:
+      label: Modern / current name
+      description: "The name used today for this place."
+      placeholder: "e.g. Kinshasa"
+    validations:
+      required: true
+
+  - type: input
+    id: historical_name
+    attributes:
+      label: Historical name
+      description: "The name you want to add or correct."
+      placeholder: "e.g. Léopoldville"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: era
+    attributes:
+      label: Era
+      description: "When was this name in use?"
+      options:
+        - Pre-colonial (before European contact)
+        - Colonial era
+        - Post-independence / modern
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: "Language of the historical name, if known."
+      placeholder: "e.g. French, Swahili, Maa, Luganda"
+
+  - type: input
+    id: year_range
+    attributes:
+      label: Approximate years
+      description: "When was this name in use?"
+      placeholder: "e.g. 1881–1966"
+
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: "Where did you find this? (URL, book, archive, oral history, etc.)"
+      placeholder: "https://..."
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional context
+      description: "Any background — why the name changed, who renamed it, etc."

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "API Documentation"
+    url: "https://api.mipaka.dev/api/docs/"
+    about: "View the full API reference (Swagger UI)"
+  - name: "Known Data Gaps"
+    url: "https://github.com/ceddyville/mipaka-api/wiki/Known-Data-Gaps"
+    about: "See what data is missing and where help is most needed"

@@ -1,0 +1,67 @@
+name: "Missing Division"
+description: "Report a missing administrative division (county, district, ward, village, etc.)"
+title: "[Data] Missing: "
+labels: ["data", "contribution"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping fill in the map! Please provide as much detail as you can.
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: Country
+      options:
+        - Kenya (KE)
+        - Tanzania (TZ)
+        - Uganda (UG)
+        - Rwanda (RW)
+        - Burundi (BI)
+        - DR Congo (CD)
+        - South Sudan (SS)
+    validations:
+      required: true
+
+  - type: input
+    id: division_name
+    attributes:
+      label: Division name
+      placeholder: "e.g. Matayos"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: level
+    attributes:
+      label: Administrative level
+      description: "What type of division is this?"
+      options:
+        - Region / Province / State
+        - District / County
+        - Constituency / Sub-county / Sector / Commune / Territory
+        - Ward / Parish / Cell / Colline / Payam
+        - Village
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: input
+    id: parent
+    attributes:
+      label: Parent division
+      description: "What division does this sit inside?"
+      placeholder: "e.g. Busia District, Uganda"
+
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: "Where did you find this data? (URL, government gazette, census report, etc.)"
+      placeholder: "https://..."
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: "Any other details — coordinates, alternative names, notes on accuracy."

@@ -1,0 +1,63 @@
+name: "Data Correction"
+description: "Report incorrect data — wrong name, wrong parent, wrong level, wrong coordinates"
+title: "[Fix] "
+labels: ["bug", "data", "contribution"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found something wrong? Let us know. Please include the API response or division ID if you can.
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: Country
+      options:
+        - Kenya (KE)
+        - Tanzania (TZ)
+        - Uganda (UG)
+        - Rwanda (RW)
+        - Burundi (BI)
+        - DR Congo (CD)
+        - South Sudan (SS)
+    validations:
+      required: true
+
+  - type: input
+    id: division
+    attributes:
+      label: Division name or ID
+      description: "Which division has the error?"
+      placeholder: "e.g. Nairobi (ID 47) or just 'Nairobi County'"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: error_type
+    attributes:
+      label: What's wrong?
+      options:
+        - Wrong name / spelling
+        - Wrong parent division
+        - Wrong administrative level
+        - Missing or wrong coordinates
+        - Division no longer exists
+        - Duplicate entry
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: What should it be?
+      description: "Describe the correct data and how you know."
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: "Where can we verify the correction?"
+      placeholder: "https://..."
