@@ -69,7 +69,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 ### Key Files
 
 - `config/middleware.py` — RapidAPIProxyMiddleware (blocks direct /api/v1/ access when RAPIDAPI_PROXY_SECRET is set) + RequestLoggingMiddleware (logs method, path, status, duration, subscriber)
-- `config/settings/base.py` — shared settings, DRF config, cache, CORS, logging
+- `config/settings/base.py` — shared settings, DRF config, cache, CORS, logging, TEMPLATES DIRS includes `templates/`
 - `config/settings/production.py` — security headers, Redis cache with locmem fallback
 - `config/settings/development.py` — DEBUG=True, SQLite fallback
 - `config/settings/testing.py` — test settings
@@ -79,6 +79,8 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - `converters/` — one-time scripts that transform external data → standardized JSON
 - `data/` — pre-built JSON files per country (KE/, TZ/, UG/, RW/, BI/, CD/, SS/)
 - `divisions/management/commands/` — sync_kenya, sync_tanzania, sync_uganda, sync_rwanda, sync_burundi, sync_drc, sync_south_sudan, seed_eras
+- `templates/drf_spectacular/` — custom Swagger UI and ReDoc templates with branded nav, doc tabs, and footer (matching mipaka.dev)
+- `.github/ISSUE_TEMPLATE/` — structured issue forms for data contributions (missing-division, historical-name, data-correction) + config.yml
 - `marketing/` — blog post draft and RapidAPI listing content
 
 ### Deployment
@@ -156,6 +158,31 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - Email routing — hello@mipaka.dev → Gmail via Cloudflare
 - www.mipaka.dev CNAME → ceddyville.github.io
 
+### Landing Page Redesign (completed — April 2026)
+
+- Light/dark alternating section pattern (hero dark → countries light → explorer dark → timeline light → contribute dark → endpoints dark → footer dark)
+- Light frosted-glass nav with SVG quad-mark, Playfair "mipaka" wordmark, tagline, Countries/Explorer/Timeline/Blog links + API Docs CTA
+- New country browse cards with emoji flags, division counts, level tags (alphabetical order)
+- Hero: added "Mipaka" name in subtitle, pill-style stat badges (107,741 divisions / 48 eras / 124 names / Free & Open Source), shuka stripe
+- Contribute CTA section linking to GitHub issue templates
+- New 3-column footer (Browse/Developers/Connect)
+- Explorer pills sorted alphabetically after API fetch
+- _preview.html kept as design reference for parked features (country browse pages, division detail, custom API docs, integration guide)
+
+### Branded API Docs (completed — April 2026)
+
+- Custom Swagger UI and ReDoc templates (templates/drf_spectacular/)
+- Matching nav bar from mipaka.dev (light frosted glass, same links)
+- Dark Swagger/ReDoc tab switcher below nav
+- Matching 3-column footer from mipaka.dev
+- Templates dir added to Django TEMPLATES setting
+
+### Community Contribution Workflow (completed — April 2026)
+
+- GitHub issue templates: missing-division.yml, historical-name.yml, data-correction.yml
+- config.yml: blank issues disabled, contact links to API docs + Known Data Gaps wiki
+- Contribute button on landing page links to issues/new/choose
+
 ## What Remains (TODO)
 
 ### Data Enrichment
@@ -186,6 +213,10 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - [x] GitHub repo created and pushed (github.com/ceddyville/mipaka-site)
 - [x] GitHub Pages enabled, HTTPS enforced
 - [x] mipaka.dev live
+- [x] Landing page redesign: light/dark alternating sections, country cards, contribute CTA, 3-col footer
+- [x] Branded API docs: custom Swagger/ReDoc templates with matching nav + footer
+- [x] Community contribution: GitHub issue templates (missing-division, historical-name, data-correction)
+- [ ] Create Known Data Gaps wiki page (linked from issue template config.yml)
 
 ### Marketing
 
