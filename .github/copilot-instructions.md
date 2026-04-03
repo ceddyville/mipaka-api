@@ -167,7 +167,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - Contribute CTA section linking to GitHub issue templates
 - New 3-column footer (Browse/Developers/Connect)
 - Explorer pills sorted alphabetically after API fetch
-- _preview.html kept as design reference for parked features (country browse pages, division detail, custom API docs, integration guide)
+- \_preview.html kept as design reference for parked features (country browse pages, division detail, custom API docs, integration guide)
 
 ### Branded API Docs (completed — April 2026)
 
@@ -203,7 +203,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 - [x] Cloudflare email routing — hello@mipaka.dev → Gmail
 - [x] www.mipaka.dev CNAME → ceddyville.github.io
 - [ ] Investigate Railway healthcheck probe failure (app works but probe returns "service unavailable" during deploy)
-- [ ] Seed eras on production Railway DB (47 eras + 124 historical names)
+- [x] Seed eras on production Railway DB (48 eras + 114 historical names — some DRC cities missing from divisions)
 
 ### Landing Page (mipaka-site)
 
@@ -220,7 +220,8 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 
 ### Marketing
 
-- [ ] Publish dev.to blog post (Part 1 ready)
+- [x] Publish dev.to blog posts (Part 1 + Part 2 published)
+- [ ] Publish dev.to blog post Part 3 (historical divisions deep dive)
 - [ ] Update RapidAPI listing with long description and tags
 - [ ] Social media promotion
 
