@@ -220,8 +220,7 @@ Historical names seeded for ~60 major cities covering pre-colonial, colonial, an
 
 ### Marketing
 
-- [x] Publish dev.to blog posts (Part 1 + Part 2 published)
-- [ ] Publish dev.to blog post Part 3 (historical divisions deep dive)
+- [x] Publish dev.to blog posts (Part 1 + Part 2 published, Part 3 ready — scheduled Monday)
 - [ ] Update RapidAPI listing with long description and tags
 - [ ] Social media promotion
 
